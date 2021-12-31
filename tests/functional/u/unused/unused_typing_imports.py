@@ -1,8 +1,8 @@
 # pylint: disable=missing-docstring
-"""Regression test for https://github.com/PyCQA/pylint/issues/1168
+"""Regression test for https://github.com/PyCQA/pylint/issues/1168.
 
-The problem was that we weren't handling keyword-only arguments annotations,
-which means we were never processing them.
+The problem was that we weren't handling keyword-only arguments annotations, which means
+we were never processing them.
 """
 
 import re
@@ -64,13 +64,13 @@ def function(arg1,  # type: Iterable
              arg2  # type: List
             ):
     # type: (...) -> Sequence
-    """docstring"""
+    """docstring."""
     print(arg1, arg2)
 
 
 def magic(alpha, beta, gamma):
     # type: (str, Optional[str], Optional[datetime]) -> Any
-    """going strong"""
+    """going strong."""
     return alpha, beta, gamma
 
 

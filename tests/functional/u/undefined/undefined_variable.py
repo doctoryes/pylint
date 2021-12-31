@@ -14,7 +14,7 @@ if DEFINED != 1:
 
 
 def in_method(var):
-    """method doc"""
+    """method doc."""
     var = nomoreknown  # [undefined-variable]
     assert var
 
@@ -25,7 +25,7 @@ DEFINED[__revision__] = OTHER = 'move this is astroid test'
 OTHER += '$'
 
 def bad_default(var, default=unknown2):  # [undefined-variable]
-    """function with default arg's value set to an nonexistent name"""
+    """function with default arg's value set to an nonexistent name."""
     print(var, default)
     print(xxxx)  # [undefined-variable]
     augvar += 1  # [undefined-variable]
@@ -60,7 +60,7 @@ except ValueError:
 print(PLOUF)
 
 def if_branch_test(something):
-    """hop"""
+    """hop."""
     if something == 0:
         if xxx == 1:  # [used-before-assignment]
             pass
@@ -89,48 +89,46 @@ def main():
 # Test shared scope.
 
 def test_arguments(arg=TestClass):  # [used-before-assignment]
-    """ TestClass isn't defined yet. """
+    """TestClass isn't defined yet."""
     return arg
 
 class TestClass(Ancestor):  # [used-before-assignment]
-    """ contains another class, which uses an undefined ancestor. """
+    """contains another class, which uses an undefined ancestor."""
 
     class MissingAncestor(Ancestor1):  # [used-before-assignment]
-        """ no op """
+        """no op."""
 
     def test1(self):
-        """ It should trigger here, because the two classes
-        have the same scope.
-        """
+        """It should trigger here, because the two classes have the same scope."""
         class UsingBeforeDefinition(Empty):  # [used-before-assignment]
-            """ uses Empty before definition """
+            """uses Empty before definition."""
         class Empty(object):
-            """ no op """
+            """no op."""
         return UsingBeforeDefinition
 
     def test(self):
-        """ Ancestor isn't defined yet, but we don't care. """
+        """Ancestor isn't defined yet, but we don't care."""
         class MissingAncestor1(Ancestor):
-            """ no op """
+            """no op."""
         return MissingAncestor1
 
 class Self(object):
-    """ Detect when using the same name inside the class scope. """
+    """Detect when using the same name inside the class scope."""
     obj = Self # [undefined-variable]
 
 class Self1(object):
-    """ No error should be raised here. """
+    """No error should be raised here."""
 
     def test(self):
-        """ empty """
+        """empty."""
         return Self1
 
 
 class Ancestor(object):
-    """ No op """
+    """No op."""
 
 class Ancestor1(object):
-    """ No op """
+    """No op."""
 
 NANA = BAT # [undefined-variable]
 del BAT
@@ -147,7 +145,7 @@ class KeywordArgument(object):
         """enabled is undefined at this point, but it is used before assignment."""
 
     def test2(self, is_disabled=disabled): # [undefined-variable]
-        """disabled is undefined"""
+        """disabled is undefined."""
 
     enabled = True
 
@@ -343,33 +341,33 @@ else:
 # Tests for annotation of variables and potentially undefinition
 
 def value_and_type_assignment():
-    """The variable assigned a value and type"""
+    """The variable assigned a value and type."""
     variable: int = 2
     print(variable)
 
 
 def only_type_assignment():
-    """The variable never gets assigned a value"""
+    """The variable never gets assigned a value."""
     variable: int
     print(variable)  # [undefined-variable]
 
 
 def both_type_and_value_assignment():
-    """The variable first gets a type and subsequently a value"""
+    """The variable first gets a type and subsequently a value."""
     variable: int
     variable = 1
     print(variable)
 
 
 def value_assignment_after_access():
-    """The variable gets a value after it has been accessed"""
+    """The variable gets a value after it has been accessed."""
     variable: int
     print(variable)  # [undefined-variable]
     variable = 1
 
 
 def value_assignment_from_iterator():
-    """The variables gets a value from an iterator"""
+    """The variables gets a value from an iterator."""
     variable: int
     for variable in (1, 2):
         print(variable)
@@ -379,7 +377,7 @@ GLOBAL_VAR: int
 GLOBAL_VAR_TWO: int
 
 def global_var_mixed_assignment():
-    """One global variable never gets assigned a value"""
+    """One global variable never gets assigned a value."""
     global GLOBAL_VAR
     print(GLOBAL_VAR) # [undefined-variable]
     global GLOBAL_VAR_TWO
@@ -393,14 +391,17 @@ GLOBAL_VAR_TWO: int
 
 
 def assignment_in_comprehension():
-    """A previously typed variables gets used in a comprehension. Don't crash!"""
+    """A previously typed variables gets used in a comprehension.
+
+    Don't crash!
+    """
     some_list: List[int]
     some_list = [1, 2, 3]
     some_list = [i * 2 for i in some_list]
 
 
 def decorator_returning_function():
-    """A decorator that returns a wrapper function with decoupled typing"""
+    """A decorator that returns a wrapper function with decoupled typing."""
     def wrapper_with_decoupled_typing():
         print(var)
 
@@ -410,7 +411,7 @@ def decorator_returning_function():
 
 
 def decorator_returning_incorrect_function():
-    """A decorator that returns a wrapper function with decoupled typing"""
+    """A decorator that returns a wrapper function with decoupled typing."""
     def wrapper_with_type_and_no_value():
         print(var) # [undefined-variable]
 
@@ -419,7 +420,7 @@ def decorator_returning_incorrect_function():
 
 
 def typing_and_value_assignment_with_tuple_assignment():
-    """The typed variables get assigned with a tuple assignment"""
+    """The typed variables get assigned with a tuple assignment."""
     var_one: int
     var_two: int
     var_one, var_two = 1, 1

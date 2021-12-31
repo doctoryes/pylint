@@ -1,6 +1,5 @@
 # pylint: disable=undefined-variable, use-list-literal
-"""test suspicious lambda expressions
-"""
+"""test suspicious lambda expressions."""
 
 __revision__ = ''
 

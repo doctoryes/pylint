@@ -1,4 +1,4 @@
-"""Various tests for unpacking generalizations added in Python 3.5"""
+"""Various tests for unpacking generalizations added in Python 3.5."""
 
 # pylint: disable=missing-docstring, invalid-name
 

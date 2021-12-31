@@ -2,7 +2,7 @@
 
 
 def test_pragma():
-    """Test that the control pragmas are not too eager to consume the entire line
+    """Test that the control pragmas are not too eager to consume the entire line.
 
     We should stop either at:
     - ; or #

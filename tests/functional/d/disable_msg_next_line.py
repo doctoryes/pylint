@@ -1,4 +1,4 @@
-"""Test if disable-next only disables messages for the next line"""
+"""Test if disable-next only disables messages for the next line."""
 # pylint: disable=missing-function-docstring
 # pylint: disable-next=unused-argument, invalid-name
 def function_A(arg1, arg2):

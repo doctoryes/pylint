@@ -1,4 +1,4 @@
-"""Check that the constants are on the right side of the comparisons"""
+"""Check that the constants are on the right side of the comparisons."""
 
 # pylint: disable=singleton-comparison, missing-docstring, too-few-public-methods, useless-object-inheritance
 
@@ -13,7 +13,7 @@ def dummy_return():
     return 2
 
 def bad_comparisons():
-    """this is not ok"""
+    """this is not ok."""
     instance = MyClass()
     for i in range(10):
         if 5 <= i:  # [misplaced-comparison-constant]
@@ -30,13 +30,13 @@ def bad_comparisons():
             pass
 
 def good_comparison():
-    """this is ok"""
+    """this is ok."""
     for i in range(10):
         if i == 5:
             pass
 
 def double_comparison():
-    """Check that we return early for non-binary comparison"""
+    """Check that we return early for non-binary comparison."""
     for i in range(10):
         if i == 1 == 2:
             pass
@@ -44,6 +44,6 @@ def double_comparison():
             print("Between 2 and 8 inclusive")
 
 def const_comparison():
-    """Check that we return early for comparison of two constants"""
+    """Check that we return early for comparison of two constants."""
     if 1 == 2:
         pass

@@ -1,4 +1,4 @@
-""" Checks that reversed() receive proper argument """
+"""Checks that reversed() receive proper argument."""
 # pylint: disable=missing-docstring,invalid-name,unused-variable, useless-object-inheritance
 # pylint: disable=too-few-public-methods,no-self-use
 

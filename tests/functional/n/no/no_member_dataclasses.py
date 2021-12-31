@@ -1,5 +1,4 @@
-"""Test various regressions for dataclasses and no-member.
-"""
+"""Test various regressions for dataclasses and no-member."""
 # pylint: disable=missing-docstring, too-few-public-methods
 from abc import ABCMeta, abstractmethod
 from dataclasses import asdict, dataclass, field
@@ -13,8 +12,8 @@ class DeploymentState(metaclass=ABCMeta):
 
     @abstractmethod
     def to_dict(self) -> Dict:
-        """
-        Serializes given DeploymentState instance to Dict.
+        """Serializes given DeploymentState instance to Dict.
+
         :return:
         """
 

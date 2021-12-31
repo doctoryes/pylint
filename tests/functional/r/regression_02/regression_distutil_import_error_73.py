@@ -1,9 +1,7 @@
-"""
-Regression test to check that distutils can be imported
-See https://github.com/PyCQA/pylint/issues/73
+"""Regression test to check that distutils can be imported See
+https://github.com/PyCQA/pylint/issues/73.
 
-See also:
-https://github.com/PyCQA/pylint/issues/2955
+See also: https://github.com/PyCQA/pylint/issues/2955
 https://github.com/PyCQA/astroid/pull/1321
 """
 

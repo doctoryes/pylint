@@ -66,10 +66,14 @@ class Varargs(object):
 class VarargsChild(Varargs):
 
     def has_kwargs(self, arg):  # [arguments-differ]
-        "Not okay to lose capabilities. Also, type has changed."
+        """Not okay to lose capabilities.
+
+        Also, type has changed.
+        """
 
     def no_kwargs(self, arg, **kwargs):  # [arguments-renamed]
-        "Addition of kwargs does not violate LSP, but first argument's name has changed."
+        """Addition of kwargs does not violate LSP, but first argument's name has
+        changed."""
 
 
 class Super(object):
@@ -159,9 +163,7 @@ class MyClass(SuperClass):
 
     @staticmethod
     def impl(*args, **kwargs):
-        """
-        Acceptable use of vararg in subclass because it does not violate LSP.
-        """
+        """Acceptable use of vararg in subclass because it does not violate LSP."""
         super().impl(*args, **kwargs)
 
     @staticmethod
@@ -190,9 +192,7 @@ class Positional(object):
 class PositionalChild(Positional):
 
     def test(self, *args):
-        """
-        Acceptable use of vararg in subclass because it does not violate LSP.
-        """
+        """Acceptable use of vararg in subclass because it does not violate LSP."""
         super().test(args[0], args[1])
 
 class Mixed(object):
@@ -204,18 +204,14 @@ class Mixed(object):
 class MixedChild1(Mixed):
 
     def mixed(self, first, *args, **kwargs):
-        """
-        Acceptable use of vararg in subclass because it does not violate LSP.
-        """
+        """Acceptable use of vararg in subclass because it does not violate LSP."""
         super().mixed(first, *args, **kwargs)
 
 
 class MixedChild2(Mixed):
 
     def mixed(self, first, *args, third, **kwargs):
-        """
-        Acceptable use of vararg in subclass because it does not violate LSP.
-        """
+        """Acceptable use of vararg in subclass because it does not violate LSP."""
         super().mixed(first, *args, third, **kwargs)
 
 
@@ -283,46 +279,46 @@ class ChildT3(ParentT3):
 class AbstractFoo:
 
     def kwonly_1(self, first, *, second, third):
-        "Normal positional with two positional only params."
+        """Normal positional with two positional only params."""
 
     def kwonly_2(self, *, first, second):
-        "Two positional only parameter."
+        """Two positional only parameter."""
 
     def kwonly_3(self, *, first, second):
-        "Two positional only params."
+        """Two positional only params."""
 
     def kwonly_4(self, *, first, second=None):
-        "One positional only and another with a default."
+        """One positional only and another with a default."""
 
     def kwonly_5(self, *, first, **kwargs):
-        "Keyword only and keyword variadics."
+        """Keyword only and keyword variadics."""
 
     def kwonly_6(self, first, second, *, third):
-        "Two positional and one keyword"
+        """Two positional and one keyword."""
 
 
 class Foo(AbstractFoo):
 
     def kwonly_1(self, first, *, second):  # [arguments-differ]
-        "One positional and only one positional only param."
+        """One positional and only one positional only param."""
 
     def kwonly_2(self, *, first):  # [arguments-differ]
-        "Only one positional parameter instead of two positional only parameters."
+        """Only one positional parameter instead of two positional only parameters."""
 
     def kwonly_3(self, first, second):  # [arguments-differ]
-        "Two positional params."
+        """Two positional params."""
 
     def kwonly_4(self, first, second):  # [arguments-differ]
-        "Two positional params."
+        """Two positional params."""
 
     def kwonly_5(self, *, first):  # [arguments-differ]
-        "Keyword only, but no variadics."
+        """Keyword only, but no variadics."""
 
     def kwonly_6(self, *args, **kwargs):  # valid override
-        "Positional and keyword variadics to pass through parent params"
+        """Positional and keyword variadics to pass through parent params."""
 
 
 class Foo2(AbstractFoo):
 
     def kwonly_6(self, first, *args, **kwargs):  # valid override
-        "One positional with the rest variadics to pass through parent params"
+        """One positional with the rest variadics to pass through parent params."""

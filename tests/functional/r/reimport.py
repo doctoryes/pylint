@@ -1,5 +1,4 @@
-"""check reimport
-"""
+"""check reimport."""
 from __future__ import absolute_import, print_function
 
 # pylint: disable=using-constant-test,ungrouped-imports,wrong-import-position,import-outside-toplevel
@@ -17,7 +16,7 @@ if __revision__:
     print(join, exists)
 
 def func(yooo):
-    """reimport in different scope"""
+    """reimport in different scope."""
     import os as ass  # [reimported]
     ass.remove(yooo)
     import re  # [reimported]

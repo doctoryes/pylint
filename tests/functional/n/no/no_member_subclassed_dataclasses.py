@@ -8,8 +8,8 @@ class DeploymentState(metaclass=ABCMeta):
 
     @abstractmethod
     def to_dict(self) -> Dict:
-        """
-        Serializes given DeploymentState instance to Dict.
+        """Serializes given DeploymentState instance to Dict.
+
         :return:
         """
 

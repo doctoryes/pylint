@@ -2,7 +2,8 @@
 # +1: [line-too-long]
 #####################################################################################################
 # +1: [line-too-long]
-""" that one is too long tooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo loooooong"""
+"""that one is too long
+tooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo loooooong."""
 
 # The next line is exactly 80 characters long.
 A = "--------------------------------------------------------------------------"
@@ -31,26 +32,28 @@ def function():
     # +3: [line-too-long]
     """This is a docstring.
 
-    That contains a very, very long line that exceeds the 100 characters limit by a good margin. So good?
+    That contains a very, very long line that exceeds the 100 characters limit by a good
+    margin. So good?
     """
     pass
 
 
 # Don't crash when the line is in a docstring
 def func_with_long(parameter):
-    """
-    # pylint: disable=line-too-long
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccccccccccccccccccccccccccccc
-    """
+    """# pylint: disable=line-too-long aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbccccccccccccccccccccccccccccccccccccccccccccccc
+    ccccc."""
     return parameter
 
 
 # No line-too-long message should be emitted as the disable comment stands for all the multiline
 def issue_2957():
-    """
-    This is a very very very long line within a docstring that should trigger a pylint C0301 error line-too-long
+    """This is a very very very long line within a docstring that should trigger a
+    pylint C0301 error line-too-long.
 
-    Even spread on multiple lines, the disable command is still effective on very very very, maybe too much long docstring
+    Even spread on multiple lines, the disable command is still effective on very very
+    very, maybe too much long docstring
     """#pylint: disable=line-too-long
     return True
 
@@ -58,10 +61,11 @@ def issue_2957():
 def issue_2957_bis():
     # +3: [line-too-long]
     # +4: [line-too-long]
-    """
-    This is a very very very long line within a docstring that should trigger a pylint C0301 error line-too-long
+    """This is a very very very long line within a docstring that should trigger a
+    pylint C0301 error line-too-long.
 
-    Even spread on multiple lines, the disable command is still effective on very very very, maybe too much long docstring
+    Even spread on multiple lines, the disable command is still effective on very very
+    very, maybe too much long docstring
     """
     return True
 

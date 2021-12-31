@@ -1,4 +1,4 @@
-"""Tests for undefined-variable related to typing"""
+"""Tests for undefined-variable related to typing."""
 # pylint: disable=invalid-name, import-error
 
 # Ensure attribute lookups in type comments are accounted for.

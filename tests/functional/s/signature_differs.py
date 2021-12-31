@@ -28,5 +28,5 @@ class Ghij(Abcd):
         self.aaa = aaa
 
     def abcd(self, *args, **kwargs):
-        """Test that a method with variadics does not trigger the warning"""
+        """Test that a method with variadics does not trigger the warning."""
         return super().abcd(*args, **kwargs)

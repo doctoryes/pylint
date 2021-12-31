@@ -1,4 +1,4 @@
-"""Tests for undefined-variable related to classes"""
+"""Tests for undefined-variable related to classes."""
 # pylint: disable=missing-function-docstring, missing-class-docstring, too-few-public-methods
 
 # Test that list comprehensions in base classes are scoped correctly

@@ -16,14 +16,14 @@ class AIter:
 
 
 async def some_iter_func(number):
-    """ emits 1 number per second  """
+    """emits 1 number per second."""
     for i in range(1, number):
         yield i
         await asyncio.sleep(1)
 
 
 async def count_to(number):
-    """ counts to n in async manner"""
+    """counts to n in async manner."""
     async for i in some_iter_func(number):
         print(i)
 

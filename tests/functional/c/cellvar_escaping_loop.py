@@ -63,7 +63,7 @@ def good_case8():
 
 
 def good_case9():
-    """Ignore when the cell var is not defined in a loop"""
+    """Ignore when the cell var is not defined in a loop."""
     i = 10
     lst = []
     for _ in range(10):
@@ -72,7 +72,7 @@ def good_case9():
 
 
 def good_case10():
-    """Ignore when a loop variable is showdowed by an inner function"""
+    """Ignore when a loop variable is showdowed by an inner function."""
     lst = []
     for i in range(10):  # pylint: disable=unused-variable
         def func():
@@ -87,14 +87,16 @@ def good_case10():
 
 
 def good_case_issue3107():
-    """Eager binding of cell variable when used in a non-trivial default argument expression.
-    """
+    """Eager binding of cell variable when used in a non-trivial default argument
+    expression."""
     for i in [[2], [3]]:
         next(filter(lambda j, ix=i[0]: j == ix, [1, 3]))
 
 
 def good_case_issue_5012():
-    """Eager binding of cell variable when used as the default value of a keyword-only argument.
+    """Eager binding of cell variable when used as the default value of a keyword-only
+    argument.
+
     https://github.com/PyCQA/pylint/issues/5012
     """
     funs = []
@@ -199,7 +201,7 @@ def bad_case9():
 
 
 def bad_case10():
-    """Detect when a loop variable is the default argument for a nested function"""
+    """Detect when a loop variable is the default argument for a nested function."""
     lst = []
     for i in range(10):
         def func():
@@ -213,7 +215,8 @@ def bad_case10():
 
 
 def bad_case_issue2846():
-    """Closing over variable that is used within a comprehension in the function body."""
+    """Closing over variable that is used within a comprehension in the function
+    body."""
     lst_a = [
         (lambda: n)  # [cell-var-from-loop]
         for n in range(3)

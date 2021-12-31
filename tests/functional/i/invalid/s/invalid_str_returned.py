@@ -1,4 +1,4 @@
-"""Check invalid value returned by __str__ """
+"""Check invalid value returned by __str__"""
 
 # pylint: disable=too-few-public-methods,missing-docstring,no-self-use,import-error, useless-object-inheritance
 import six
@@ -31,34 +31,34 @@ class ThirdGoodStr(object):
 
 
 class FirstBadStr(object):
-    """ __str__ returns bytes """
+    """__str__ returns bytes."""
 
     def __str__(self):  # [invalid-str-returned]
         return b"123"
 
 
 class SecondBadStr(object):
-    """ __str__ returns int """
+    """__str__ returns int."""
 
     def __str__(self):  # [invalid-str-returned]
         return 1
 
 
 class ThirdBadStr(object):
-    """ __str__ returns node which does not have 'value' in AST """
+    """__str__ returns node which does not have 'value' in AST."""
 
     def __str__(self):  # [invalid-str-returned]
         return lambda: "some str"
 
 
 class AmbiguousStr(object):
-    """ Uninferable return value """
+    """Uninferable return value."""
 
     __str__ = lambda self: Missing
 
 
 class AnotherAmbiguousStr(object):
-    """Potential uninferable return value"""
+    """Potential uninferable return value."""
 
     def __str__(self):
         return str(Missing)

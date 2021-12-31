@@ -1,13 +1,12 @@
 # pylint: disable=no-init,too-few-public-methods,unused-argument,useless-object-inheritance
-"""tagging a function as a class method cause a crash when checking for
-signature overriding
-"""
+"""tagging a function as a class method cause a crash when checking for signature
+overriding."""
 
 def fetch_config(mainattr=None):
-    """return a class method"""
+    """return a class method."""
 
     def fetch_order(cls, attr, var):
-        """a class method"""
+        """a class method."""
         if attr == mainattr:
             return var
         return None
@@ -15,7 +14,7 @@ def fetch_config(mainattr=None):
     return fetch_order
 
 class Aaa(object):
-    """hop"""
+    """hop."""
     fetch_order = fetch_config('A')
 
 __revision__ = None

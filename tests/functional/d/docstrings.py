@@ -12,11 +12,11 @@ def function1(value):
     print(value)
 
 def function2(value):
-    """docstring"""
+    """docstring."""
     print(value)
 
 def function3(value):
-    """docstring"""
+    """docstring."""
     print(value)
 
 # +1: [missing-class-docstring]
@@ -41,7 +41,7 @@ class AAAA(object):
         pass
 
     def method2(self):
-        """ yeah !"""
+        """yeah !"""
         pass
 
     # +1: [empty-docstring]
@@ -80,10 +80,10 @@ def function5():
     pass
 
 def function6():
-    """ I am a {} docstring.""".format("good")
+    """I am a {} docstring.""".format("good")
 
 def function7():
-    """docstring"""
+    """docstring."""
     def inner():
         # Not documented
         return 42

@@ -1,4 +1,4 @@
-"""Tests for bad string format type"""
+"""Tests for bad string format type."""
 # pylint: disable=consider-using-f-string, pointless-statement
 
 # Test formatting of bytes

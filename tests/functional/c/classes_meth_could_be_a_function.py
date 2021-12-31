@@ -1,9 +1,8 @@
 # pylint: disable=missing-docstring,too-few-public-methods,no-init,useless-object-inheritance
-"""
-#2479
+"""#2479.
 
-R0201 (formerly W0212), Method could be a function shouldn't be emitted in case
-like factory method pattern
+R0201 (formerly W0212), Method could be a function shouldn't be emitted in case like
+factory method pattern
 """
 __revision__ = 1
 

@@ -1,4 +1,4 @@
-"""Checks import order rule with imports that isort could generate"""
+"""Checks import order rule with imports that isort could generate."""
 # pylint: disable=unused-import
 import astroid
 import isort

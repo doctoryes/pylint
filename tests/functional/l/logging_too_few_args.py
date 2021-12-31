@@ -1,4 +1,4 @@
-"""Tests for logging-too-few-args"""
+"""Tests for logging-too-few-args."""
 
 import logging
 

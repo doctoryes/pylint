@@ -1,7 +1,7 @@
 """Test PEP 585 without postponed evaluation. Everything should fail.
 
-This check requires Python 3.7 or Python 3.8!
-Testing with 3.8 only, to support TypedDict.
+This check requires Python 3.7 or Python 3.8! Testing with 3.8 only, to support
+TypedDict.
 """
 # pylint: disable=missing-docstring,unused-argument,unused-import,too-few-public-methods,invalid-name,inherit-non-class,unsupported-binary-operation,unused-variable,line-too-long
 import collections

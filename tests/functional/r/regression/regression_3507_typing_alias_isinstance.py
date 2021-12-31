@@ -1,8 +1,5 @@
-"""
-https://github.com/PyCQA/pylint/issues/3507
-False-positive 'isinstance-second-argument-not-valid-type'
-for typing aliases in 'isinstance' calls.
-"""
+"""https://github.com/PyCQA/pylint/issues/3507 False-positive 'isinstance- second-
+argument-not-valid-type' for typing aliases in 'isinstance' calls."""
 import collections
 import collections.abc
 import typing

@@ -1,4 +1,4 @@
-"""Test logging-fstring-interpolation for Python 3.6"""
+"""Test logging-fstring-interpolation for Python 3.6."""
 import logging as renamed_logging
 
 

@@ -1,4 +1,4 @@
-"""Tests for logging-fstring-interpolation with f-strings"""
+"""Tests for logging-fstring-interpolation with f-strings."""
 import logging
 
 VAR = "string"

@@ -44,7 +44,7 @@ else:  # [useless-else-on-loop]
 
 
 def test_return_for2():
-    """no false positive for break in else
+    """no false positive for break in else.
 
     https://bitbucket.org/logilab/pylint/issue/117/useless-else-on-loop-false-positives
     """
@@ -59,8 +59,7 @@ def test_return_for2():
 
 
 def test_break_in_orelse_deep():
-    """no false positive for break in else deeply nested
-    """
+    """no false positive for break in else deeply nested."""
     for _ in range(10):
         if 1 < 2:
             for _ in range(3):
@@ -74,9 +73,8 @@ def test_break_in_orelse_deep():
 
 
 def test_break_in_orelse_deep2():
-    """should rise a useless-else-on-loop message, as the break statement is only
-    for the inner for loop
-    """
+    """should rise a useless-else-on-loop message, as the break statement is only for
+    the inner for loop."""
     for _ in range(10):
         if 1 < 2:
             for _ in range(3):
@@ -90,8 +88,7 @@ def test_break_in_orelse_deep2():
 
 
 def test_break_in_orelse_deep3():
-    """no false positive for break deeply nested in else
-    """
+    """no false positive for break deeply nested in else."""
     for _ in range(10):
         for _ in range(3):
             pass

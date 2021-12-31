@@ -1,16 +1,15 @@
-""" Checks assigning attributes not found in class slots
-will trigger assigning-non-slot warning.
-"""
+"""Checks assigning attributes not found in class slots will trigger assigning- non-slot
+warning."""
 # pylint: disable=too-few-public-methods, no-init, missing-docstring,  import-error, useless-object-inheritance, redundant-u-string-prefix
 from collections import deque
 
 from missing import Unknown
 
 class Empty(object):
-    """ empty """
+    """empty."""
 
 class Bad(object):
-    """ missing not in slots. """
+    """missing not in slots."""
 
     __slots__ = ['member']
 
@@ -18,7 +17,7 @@ class Bad(object):
         self.missing = 42 # [assigning-non-slot]
 
 class Bad2(object):
-    """ missing not in slots """
+    """missing not in slots."""
     __slots__ = [deque.__name__, 'member']
 
     def __init__(self):
@@ -26,7 +25,7 @@ class Bad2(object):
         self.missing = 42 # [assigning-non-slot]
 
 class Bad3(Bad):
-    """ missing not found in slots """
+    """missing not found in slots."""
 
     __slots__ = ['component']
 
@@ -37,16 +36,14 @@ class Bad3(Bad):
         super().__init__()
 
 class Good(Empty):
-    """ missing not in slots, but Empty doesn't
-    specify __slots__.
-    """
+    """missing not in slots, but Empty doesn't specify __slots__."""
     __slots__ = ['a']
 
     def __init__(self):
         self.missing = 42
 
 class Good2(object):
-    """ Using __dict__ in slots will be safe. """
+    """Using __dict__ in slots will be safe."""
 
     __slots__ = ['__dict__', 'comp']
 
@@ -55,7 +52,7 @@ class Good2(object):
         self.missing = 5
 
 class PropertyGood(object):
-    """ Using properties is safe. """
+    """Using properties is safe."""
 
     __slots__ = ['tmp', '_value']
 
@@ -72,7 +69,7 @@ class PropertyGood(object):
         self.test = 42
 
 class PropertyGood2(object):
-    """ Using properties in the body of the class is safe. """
+    """Using properties in the body of the class is safe."""
     __slots__ = ['_value']
 
     def _getter(self):
@@ -90,8 +87,8 @@ class PropertyGood2(object):
 class UnicodeSlots(object):
     """Using unicode objects in __slots__ is okay.
 
-    On Python 3.3 onward, u'' is equivalent to '',
-    so this test should be safe for both versions.
+    On Python 3.3 onward, u'' is equivalent to '', so this test should be safe for both
+    versions.
     """
     __slots__ = (u'first', u'second')
 
@@ -168,7 +165,7 @@ TYPE = TypeVar('TYPE')
 
 
 class Cls(Generic[TYPE]):
-    """ Simple class with slots """
+    """Simple class with slots."""
     __slots__ = ['value']
 
     def __init__(self, value):

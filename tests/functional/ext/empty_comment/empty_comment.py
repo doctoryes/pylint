@@ -1,4 +1,4 @@
-"""empty-comment test-case"""
+"""empty-comment test-case."""
 # +1:[empty-comment]
 A = 5  #
 # +1:[empty-comment]

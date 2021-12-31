@@ -8,10 +8,10 @@ from typing import Generic, TypeVar
 T = TypeVar("T")
 
 class Base(Generic[T], metaclass=ABCMeta):
-    """Base"""
+    """Base."""
 
 class Impl(Base[str]):
-    """Impl"""
+    """Impl."""
 
 
 # https://github.com/PyCQA/astroid/issues/942

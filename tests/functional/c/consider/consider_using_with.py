@@ -99,9 +99,8 @@ def test_lock_acquisition():
 
 @contextlib.contextmanager
 def test_lock_acquisition_in_context_manager1():
-    """
-    The message must not be triggered if the resource allocation is done inside a context manager.
-    """
+    """The message must not be triggered if the resource allocation is done inside a
+    context manager."""
     lock = threading.Lock()
     lock.acquire()  # must not trigger
     yield
@@ -109,9 +108,8 @@ def test_lock_acquisition_in_context_manager1():
 
 
 class MyLockContext:
-    """
-    The message must not be triggered if the resource allocation is done inside a context manager.
-    """
+    """The message must not be triggered if the resource allocation is done inside a
+    context manager."""
 
     def __init__(self):
         self.lock = threading.Lock()
@@ -156,11 +154,12 @@ def test_suppress_in_exit_stack():
 
 
 def test_futures():
-    """
-    Regression test for issue #4689.
-    ThreadPoolExecutor and ProcessPoolExecutor were formerly part of the callables that raised
-    the R1732 message if used outside a with block, but there are legitimate use cases where
-    Executor instances are used e.g. as a persistent background worker pool throughout the program.
+    """Regression test for issue #4689.
+
+    ThreadPoolExecutor and ProcessPoolExecutor were formerly part of the callables that
+    raised the R1732 message if used outside a with block, but there are legitimate use
+    cases where Executor instances are used e.g. as a persistent background worker pool
+    throughout the program.
     """
     thread_executor = ThreadPoolExecutor()
     thread_executor.submit(print, 1)
@@ -218,12 +217,11 @@ with used_pool:
 
 
 def test_subscript_assignment():
-    """
-    Regression test for issue https://github.com/PyCQA/pylint/issues/4732.
-    If a context manager is assigned to a list or dict, we are not able to
-    tell if / how the context manager is used later on, as it is not assigned
-    to a variable or attribute directly.
-    In this case we can only emit the message directly.
+    """Regression test for issue https://github.com/PyCQA/pylint/issues/4732.
+
+    If a context manager is assigned to a list or dict, we are not able to tell if / how
+    the context manager is used later on, as it is not assigned to a variable or
+    attribute directly. In this case we can only emit the message directly.
     """
     job_list = [None, None]
     job_list[0] = subprocess.Popen("ls")  # [consider-using-with]

@@ -1,4 +1,4 @@
-""" Test that import errors are detected. """
+"""Test that import errors are detected."""
 # pylint: disable=invalid-name, unused-import, bare-except, broad-except, wrong-import-order, wrong-import-position
 import totally_missing # [import-error]
 

@@ -1,4 +1,4 @@
-"""Checks import position rule with pep-0008"""
+"""Checks import position rule with pep-0008."""
 # pylint: disable=unused-import
 
 __author__ = 'some author'

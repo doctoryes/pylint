@@ -1,10 +1,10 @@
-"""Test that boolean conditions simplify to a constant value"""
+"""Test that boolean conditions simplify to a constant value."""
 # pylint: disable=pointless-statement
 from unknown import Unknown  # pylint: disable=import-error
 
 
 def func(_):
-    """Pointless function"""
+    """Pointless function."""
 
 
 CONSTANT = 100

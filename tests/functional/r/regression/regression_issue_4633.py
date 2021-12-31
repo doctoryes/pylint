@@ -1,8 +1,6 @@
 # pylint: disable=missing-docstring,too-few-public-methods,no-self-use
 
-"""
-Regression tests for https://github.com/PyCQA/pylint/issues/4633
-"""
+"""Regression tests for https://github.com/PyCQA/pylint/issues/4633."""
 
 from queue import Queue
 from unittest.mock import MagicMock

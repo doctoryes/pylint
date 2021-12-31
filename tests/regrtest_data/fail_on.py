@@ -1,6 +1,4 @@
-"""
-    Pylint score:  -1.67
-"""
+"""Pylint score:  -1.67."""
 import nonexistent
 # pylint: disable=broad-except
 

@@ -1,4 +1,4 @@
-"""Tests for used-before-assignment for typing related issues"""
+"""Tests for used-before-assignment for typing related issues."""
 # pylint: disable=missing-function-docstring
 
 
@@ -6,7 +6,8 @@ from typing import List, Optional
 
 
 class MyClass:
-    """Type annotation or default values for first level methods can't refer to their own class"""
+    """Type annotation or default values for first level methods can't refer to their
+    own class."""
 
     def incorrect_typing_method(
         self, other: MyClass  # [used-before-assignment]
@@ -35,6 +36,7 @@ class MyClass:
 
 class MySecondClass:
     """Class to test self referential variable typing.
+
     This regressed, reported in: https://github.com/PyCQA/pylint/issues/5342
     """
 
@@ -65,6 +67,7 @@ class MyOtherClass:
 
 class MyThirdClass:
     """Class to test self referential variable typing within conditionals.
+
     This regressed, reported in: https://github.com/PyCQA/pylint/issues/5499
     """
 

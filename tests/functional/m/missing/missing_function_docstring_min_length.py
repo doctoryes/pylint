@@ -1,4 +1,4 @@
-"""Tests for missing-function-docstring and the min-length option"""
+"""Tests for missing-function-docstring and the min-length option."""
 # pylint: disable=unused-argument, unnecessary-pass, bare-except
 
 

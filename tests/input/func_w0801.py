@@ -1,6 +1,4 @@
-"""test code similarities
-by default docstring are not considered
-"""
+"""test code similarities by default docstring are not considered."""
 __revision__ = 'id'
 A = 2
 B = 3

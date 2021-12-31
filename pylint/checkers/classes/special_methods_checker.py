@@ -1,7 +1,7 @@
 # Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
 
-"""Special methods checker and helper function's module"""
+"""Special methods checker and helper function's module."""
 
 import astroid
 from astroid import nodes
@@ -23,8 +23,8 @@ NEXT_METHOD = "__next__"
 def _safe_infer_call_result(node, caller, context=None):
     """Safely infer the return value of a function.
 
-    Returns None if inference failed or if there is some ambiguity (more than
-    one node has been inferred). Otherwise, returns inferred value.
+    Returns None if inference failed or if there is some ambiguity (more than one node
+    has been inferred). Otherwise, returns inferred value.
     """
     try:
         inferit = node.infer_call_result(caller, context=context)
@@ -43,9 +43,7 @@ def _safe_infer_call_result(node, caller, context=None):
 
 
 class SpecialMethodsChecker(BaseChecker):
-    """Checker which verifies that special methods
-    are implemented correctly.
-    """
+    """Checker which verifies that special methods are implemented correctly."""
 
     __implements__ = (IAstroidChecker,)
     name = "classes"

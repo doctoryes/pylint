@@ -1,22 +1,21 @@
 # pylint: disable=too-few-public-methods, useless-object-inheritance,missing-docstring
 # pylint: disable=unused-private-member
-"""check method hiding ancestor attribute
-"""
+"""check method hiding ancestor attribute."""
 from __future__ import print_function
 
 
 class Abcd(object):
-    """dummy"""
+    """dummy."""
 
     def __init__(self):
         self.abcd = 1
 
 
 class Cdef(Abcd):
-    """dummy"""
+    """dummy."""
 
     def abcd(self):  # [method-hidden]
-        """test"""
+        """test."""
         print(self)
 
 
@@ -31,7 +30,7 @@ class Dabc(AbcdMixin, Abcd):
 
 
 class CustomProperty:
-    """dummy"""
+    """dummy."""
 
     def __init__(self, _):
         pass
@@ -46,7 +45,7 @@ class CustomProperty:
 
 
 class Ddef:
-    """dummy"""
+    """dummy."""
 
     def __init__(self):
         self.five = "five"

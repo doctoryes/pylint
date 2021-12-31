@@ -1,9 +1,9 @@
 #pylint: disable = missing-any-param-doc
-"""demonstrate FP with useless-type-doc"""
+"""demonstrate FP with useless-type-doc."""
 
 
 def function(public_param: int, _some_private_param: bool = False) -> None:
-    """does things
+    """does things.
 
     Args:
         public_param: an ordinary parameter
@@ -32,12 +32,11 @@ def smart_function(public_param: int, _some_private_param: bool = False) -> None
 
 # +1: [useless-type-doc,useless-param-doc]
 def function_useless_doc(public_param: int, _some_private_param: bool = False) -> None:
-    """does things
+    """does things.
 
     Args:
         public_param: an ordinary parameter
         _some_private_param (bool): private param
-
     """
     for _ in range(public_param):
         ...
@@ -48,7 +47,7 @@ def function_useless_doc(public_param: int, _some_private_param: bool = False) -
 
 
 def test(_new: str) -> str:
-    """foobar
+    """foobar.
 
     :return: comment
     """
@@ -65,7 +64,7 @@ def smarter_test(_new: str) -> str:
 
 # +1: [useless-type-doc,useless-param-doc]
 def test_two(_new: str) -> str:
-    """foobar
+    """foobar.
 
     :param str _new:
     :return: comment

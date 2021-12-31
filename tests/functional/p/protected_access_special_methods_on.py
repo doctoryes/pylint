@@ -1,13 +1,11 @@
-"""Test that check-protected-access-in-special-methods can be used to
-trigger protected-access message emission for single underscore prefixed names
-inside special methods.
-"""
+"""Test that check-protected-access-in-special-methods can be used to trigger protected-
+access message emission for single underscore prefixed names inside special methods."""
 # pylint: disable=missing-class-docstring, invalid-name, unused-variable
 # pylint: disable=too-few-public-methods
 
 
 class Protected:
-    """A class"""
+    """A class."""
 
     def __init__(self):
         self._protected = 42

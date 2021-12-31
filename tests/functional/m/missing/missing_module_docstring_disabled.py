@@ -2,4 +2,4 @@
 
 
 class Documented:
-    "Something."
+    """Something."""

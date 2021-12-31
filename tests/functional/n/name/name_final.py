@@ -1,5 +1,5 @@
 # pylint: disable=missing-docstring,too-few-public-methods
-"""Test typing.Final"""
+"""Test typing.Final."""
 import typing
 from typing import Final
 

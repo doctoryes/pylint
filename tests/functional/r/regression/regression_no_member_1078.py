@@ -1,4 +1,4 @@
-"""Make sure no-member is not emitted when modifying __doc__ via augmented assignment
+"""Make sure no-member is not emitted when modifying __doc__ via augmented assignment.
 
 https://github.com/PyCQA/pylint/issues/1078
 """

@@ -1,8 +1,7 @@
 #pylint: disable= missing-module-docstring
 
 def foobar1(arg1, arg2): #[missing-any-param-doc]
-    """function foobar ...
-    """
+    """function foobar ..."""
     print(arg1, arg2)
 
 def foobar2(arg1, arg2): #[missing-any-param-doc]
@@ -59,7 +58,7 @@ def foobar7(arg1, arg2): #[missing-any-param-doc]
     print(arg1, arg2)
 
 def foobar8(arg1): #[missing-any-param-doc]
-    """function foobar"""
+    """function foobar."""
 
     print(arg1)
 
@@ -106,7 +105,7 @@ def foobar12(arg1, arg2, arg3): #[missing-param-doc, missing-type-doc]
     print(arg1, arg2, arg3)
 
 def foobar13(arg1, *args, arg3=";"):
-    """Description of the function
+    """Description of the function.
 
     Parameters
     ----------
@@ -120,7 +119,7 @@ def foobar13(arg1, *args, arg3=";"):
     print(arg1, args, arg3)
 
 def foobar14(arg1, *args):
-    """Description of the function
+    """Description of the function.
 
     Parameters
     ----------
@@ -132,7 +131,7 @@ def foobar14(arg1, *args):
     print(arg1, args)
 
 def foobar15(*args):
-    """Description of the function
+    """Description of the function.
 
     Parameters
     ----------

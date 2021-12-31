@@ -23,7 +23,7 @@ __revision__.lower();  # [unnecessary-semicolon]
 list() and tuple()  # [expression-not-assigned]
 
 def to_be():
-    """return 42"""
+    """return 42."""
     return "42"
 
 ANSWER = to_be() # ok
@@ -36,7 +36,7 @@ GOOD_ATTRIBUTE_DOCSTRING = 42
 """Module level attribute docstring is fine. """
 
 class ClassLevelAttributeTest(object):
-    """ test attribute docstrings. """
+    """test attribute docstrings."""
 
     good_attribute_docstring = 24
     """ class level attribute docstring is fine either. """
@@ -59,17 +59,17 @@ class ClassLevelAttributeTest(object):
         self.val = val
 
     def test(self):
-        """ invalid attribute docstrings here. """
+        """invalid attribute docstrings here."""
         self.val = 42
         # +1:[pointless-string-statement]
         """ this is an invalid attribute docstring. """
 
 
 def ellipsis():
-    """Test that an Ellipsis as a body does not trigger the error"""
+    """Test that an Ellipsis as a body does not trigger the error."""
     ...
 
 
 class EllipsisBody:
-    """Test that an Ellipsis as a body does not trigger the error"""
+    """Test that an Ellipsis as a body does not trigger the error."""
     ...

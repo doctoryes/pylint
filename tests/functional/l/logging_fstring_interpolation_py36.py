@@ -1,4 +1,4 @@
-"""Test logging-fstring-interpolation for Python 3.6"""
+"""Test logging-fstring-interpolation for Python 3.6."""
 # pylint: disable=invalid-name
 
 from datetime import datetime

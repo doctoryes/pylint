@@ -3,7 +3,7 @@
 
 
 class Aaaa(object):
-    """class with attributes defined in wrong order"""
+    """class with attributes defined in wrong order."""
 
     def __init__(self):
         var1 = self._var2  # [access-member-before-definition]
@@ -23,7 +23,7 @@ class Bbbb(object):
             return attr
 
     def catchme(self, attr):
-        """no AttributeError caught"""
+        """no AttributeError caught."""
         try:
             return self._repo  # [access-member-before-definition]
         except ValueError:

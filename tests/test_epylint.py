@@ -1,4 +1,4 @@
-"""Test for issue https://github.com/PyCQA/pylint/issues/4286"""
+"""Test for issue https://github.com/PyCQA/pylint/issues/4286."""
 # pylint: disable=redefined-outer-name
 from pathlib import PosixPath
 
@@ -9,7 +9,7 @@ from pylint import epylint as lint
 
 @pytest.fixture()
 def example_path(tmp_path: PosixPath) -> PosixPath:
-    content = """class IvrAudioApp:
+    content = """Class IvrAudioApp:
 
     def run(self):
         self.hassan()

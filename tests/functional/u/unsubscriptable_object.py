@@ -1,4 +1,4 @@
-"""Tests for unscubscriptable-object"""
+"""Tests for unscubscriptable-object."""
 
 # Test for typing.NamedTuple
 # See: https://github.com/PyCQA/pylint/issues/1295

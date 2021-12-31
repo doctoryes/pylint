@@ -1,4 +1,4 @@
-""" Tests for invalid-name checker. """
+"""Tests for invalid-name checker."""
 # pylint: disable=unused-import, wrong-import-position, import-outside-toplevel, missing-class-docstring,missing-function-docstring
 # pylint: disable=too-few-public-methods
 
@@ -22,7 +22,7 @@ except ImportError:
     python = 24
 
 def test():
-    """ Shouldn't emit an invalid-name here. """
+    """Shouldn't emit an invalid-name here."""
     try:
         import re
     except ImportError:
@@ -47,11 +47,11 @@ for i in range(10):
 
 
 def dummy_decorator(aaabc, bbbcd):
-    """Some"""
+    """Some."""
     def real_decorator(fff):
-        """pieces of"""
+        """pieces of."""
         def wrapper(*args, **kwargs):
-            """docstring"""
+            """docstring."""
             print(aaabc, bbbcd)
             fff(*args, **kwargs)
         return wrapper
@@ -65,7 +65,7 @@ def dummy_decorator(aaabc, bbbcd):
 
 ])
 def a_very_very_very_long_function_name_WithCamelCase_to_make_it_sad():  # Should be line 65
-    """Docstring"""
+    """Docstring."""
     print('LOL')
 
 a_very_very_very_long_function_name_WithCamelCase_to_make_it_sad()

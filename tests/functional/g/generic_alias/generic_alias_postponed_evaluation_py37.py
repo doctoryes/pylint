@@ -1,7 +1,7 @@
 """Test generic alias support for stdlib types (added in PY39).
 
-In type annotation context, they can be used with postponed evaluation enabled,
-starting with PY37.
+In type annotation context, they can be used with postponed evaluation enabled, starting
+with PY37.
 """
 # flake8: noqa
 # pylint: disable=missing-docstring,pointless-statement

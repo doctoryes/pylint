@@ -8,7 +8,7 @@ from typing import Generic, TypeVar
 TYPE = TypeVar('TYPE')
 
 class Cls(Generic[TYPE]):
-    """ Simple class with slots """
+    """Simple class with slots."""
     __slots__ = ['value']
 
     def __init__(self, value):
@@ -33,23 +33,23 @@ def function8(value=list()):  # [dangerous-default-value]
     return value
 
 def function17(value=collections.deque()):  # [dangerous-default-value]
-    """mutable, dangerous"""
+    """mutable, dangerous."""
     return value
 
 def function18(value=collections.ChainMap()):  # [dangerous-default-value]
-    """mutable, dangerous"""
+    """mutable, dangerous."""
     return value
 
 def function19(value=collections.Counter()):  # [dangerous-default-value]
-    """mutable, dangerous"""
+    """mutable, dangerous."""
     return value
 
 def function20(value=collections.OrderedDict()):  # [dangerous-default-value]
-    """mutable, dangerous"""
+    """mutable, dangerous."""
     return value
 
 def function21(value=collections.defaultdict()):  # [dangerous-default-value]
-    """mutable, dangerous"""
+    """mutable, dangerous."""
     return value
 
 

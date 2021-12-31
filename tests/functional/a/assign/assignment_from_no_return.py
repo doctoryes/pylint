@@ -32,47 +32,47 @@ VALUE = some_func() # [assignment-from-no-return]
 
 
 class Parent:
-    """Parent class"""
+    """Parent class."""
 
     def compute(self):
-        """This isn't supported by all child classes"""
+        """This isn't supported by all child classes."""
 
         # pylint: disable=no-self-use
         raise ValueError('Not supported for this object')
 
     def test(self):
-        """Test"""
+        """Test."""
 
         result = self.compute()
         return result
 
 
 class Child(Parent):
-    """Child class"""
+    """Child class."""
 
     def compute(self):
-        """This is supported for this child class"""
+        """This is supported for this child class."""
 
         return 42
 
 
 # Regression test for https://github.com/PyCQA/pylint/issues/4220
 class A:
-    """Parent class"""
+    """Parent class."""
     def f(self):
-        """This returns something"""
+        """This returns something."""
         return 42
 
 
 class B(A):
-    """Child class"""
+    """Child class."""
     def __init__(self):
         self.a = A()
         result = self.a.f()  # no error here
         print(result)
 
     def f(self):
-        """This doesn't return anything"""
+        """This doesn't return anything."""
 
 
 res = B().a.f()  # no error here

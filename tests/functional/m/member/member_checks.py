@@ -2,20 +2,20 @@
 # pylint: disable=using-constant-test,expression-not-assigned, assigning-non-slot, unused-variable,pointless-statement, wrong-import-order, wrong-import-position,import-outside-toplevel
 from __future__ import print_function
 class Provider(object):
-    """provide some attributes and method"""
+    """provide some attributes and method."""
     cattr = 4
     def __init__(self):
         self.attr = 4
     def method(self, val):
-        """impressive method"""
+        """impressive method."""
         return self.attr * val
     def hophop(self):
-        """hop method"""
+        """hop method."""
         print('hop hop hop', self)
 
 
 class Client(object):
-    """use provider class"""
+    """use provider class."""
 
     def __init__(self):
         self._prov = Provider()
@@ -28,24 +28,24 @@ class Client(object):
         self.set_later = value
 
     def use_method(self):
-        """use provider's method"""
+        """use provider's method."""
         self._prov.hophop()
         self._prov.hophophop()  # [no-member]
 
     def use_attr(self):
-        """use provider's attr"""
+        """use provider's attr."""
         print(self._prov.attr)
         print(self._prov.attribute)  # [no-member]
 
     def debug(self):
-        """print debug information"""
+        """print debug information."""
         print(self.__class__.__name__)
         print(self.__doc__)
         print(self.__dict__)
         print(self.__module__)
 
     def test_bt_types(self):
-        """test access to unexistant member of builtin types"""
+        """test access to unexistant member of builtin types."""
         lis = []
         lis.apppend(self)  # [no-member]
         dic = {}
@@ -136,8 +136,7 @@ type('').portocala # [no-member]
 
 
 def socket_false_positive():
-    """Test a regression
-    Version used:
+    """Test a regression Version used:
 
     - Pylint 0.10.0
     - Logilab common 0.15.0
@@ -154,7 +153,7 @@ def socket_false_positive():
 
 
 def no_conjugate_member(magic_flag):
-    """should not raise E1101 on something.conjugate"""
+    """should not raise E1101 on something.conjugate."""
     if magic_flag:
         something = 1.0
     else:

@@ -1,4 +1,4 @@
-"""Tests for assign-to-new-keyword"""
+"""Tests for assign-to-new-keyword."""
 # pylint: disable=missing-function-docstring, missing-class-docstring, too-few-public-methods, function-redefined
 
 async = "foo"  # [assign-to-new-keyword]

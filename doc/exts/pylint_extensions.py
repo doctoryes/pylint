@@ -2,7 +2,9 @@
 # Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
 
-"""Script used to generate the extensions file before building the actual documentation."""
+"""Script used to generate the extensions file before building the actual
+documentation.
+"""
 
 import os
 import re
@@ -23,7 +25,7 @@ DEPRECATED_MODULES = ["check_docs"]  # ==> docparams
 
 
 def builder_inited(app):
-    """Output full documentation in ReST format for all extension modules"""
+    """Output full documentation in ReST format for all extension modules."""
     # PACKAGE/docs/exts/pylint_extensions.py --> PACKAGE/
     base_path = os.path.dirname(
         os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

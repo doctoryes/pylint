@@ -1,4 +1,4 @@
-"""Checks import order rule"""
+"""Checks import order rule."""
 # pylint: disable=unused-import,ungrouped-imports,wrong-import-order
 # pylint: disable=import-error, too-few-public-methods, missing-docstring,using-constant-test, useless-object-inheritance
 import os.path
@@ -9,7 +9,7 @@ try:
     import sys
 except ImportError:
     class Myclass(object):
-        """docstring"""
+        """docstring."""
 
 if sys.version_info[0] >= 3:
     from collections import OrderedDict

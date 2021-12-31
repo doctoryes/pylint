@@ -1,4 +1,4 @@
-"""Warnings for using open() without specifying an encoding"""
+"""Warnings for using open() without specifying an encoding."""
 # pylint: disable=consider-using-with, too-few-public-methods
 import dataclasses
 import io
@@ -96,7 +96,7 @@ open(FILENAME, mode=MODE)
 
 # -- Functions
 def return_mode_function():
-    """Return a mode for open call"""
+    """Return a mode for open call."""
     return "wb"
 
 open(FILENAME, mode=return_mode_function())
@@ -104,7 +104,7 @@ open(FILENAME, mode=return_mode_function())
 
 # -- Classes
 class IOData:
-    """Class that returns mode strings"""
+    """Class that returns mode strings."""
 
     mode = "wb"
 
@@ -113,12 +113,12 @@ class IOData:
 
     @staticmethod
     def my_mode_method():
-        """Returns a pre-defined mode"""
+        """Returns a pre-defined mode."""
         return "wb"
 
     @staticmethod
     def my_mode_method_returner(mode: str) -> str:
-        """Returns the supplied mode"""
+        """Returns the supplied mode."""
         return mode
 
 
@@ -133,7 +133,7 @@ open(FILENAME, mode=IOData)
 # -- Dataclasses
 @dataclasses.dataclass
 class IOArgs:
-    """Dataclass storing information about how to open a file"""
+    """Dataclass storing information about how to open a file."""
 
     encoding: Optional[str]
     mode: str

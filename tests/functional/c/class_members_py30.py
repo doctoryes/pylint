@@ -1,15 +1,15 @@
-""" Various tests for class members access. """
+"""Various tests for class members access."""
 # pylint: disable=too-few-public-methods,import-error,no-init,missing-docstring, wrong-import-position,wrong-import-order, useless-object-inheritance
 from missing import Missing
 class MyClass(object):
-    """class docstring"""
+    """class docstring."""
 
     def __init__(self):
-        """init"""
+        """init."""
         self.correct = 1
 
     def test(self):
-        """test"""
+        """test."""
         self.correct += 2
         self.incorrect += 2 # [no-member]
         del self.havenot # [no-member]
@@ -17,9 +17,7 @@ class MyClass(object):
         self.nonexistent2[1] = 'hehe' # [no-member]
 
 class XYZMixin(object):
-    """access to undefined members should be ignored in mixin classes by
-    default
-    """
+    """access to undefined members should be ignored in mixin classes by default."""
     def __init__(self):
         print(self.nonexistent)
 
@@ -32,16 +30,16 @@ class NewClass(object):
 from abc import ABCMeta
 
 class TestMetaclass(object, metaclass=ABCMeta):
-    """ Test attribute access for metaclasses. """
+    """Test attribute access for metaclasses."""
 
 class Metaclass(type):
-    """ metaclass """
+    """metaclass."""
     @classmethod
     def test(cls):
-        """ classmethod """
+        """classmethod."""
 
 class UsingMetaclass(object, metaclass=Metaclass):
-    """ empty """
+    """empty."""
 
 TestMetaclass.register(int)
 UsingMetaclass.test()

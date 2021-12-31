@@ -1,4 +1,4 @@
-"""Check invalid value returned by __bool__ """
+"""Check invalid value returned by __bool__"""
 
 # pylint: disable=too-few-public-methods,missing-docstring,no-self-use,import-error, useless-object-inheritance
 import six
@@ -31,32 +31,32 @@ class ThirdGoodBool(object):
 
 
 class FirstBadBool(object):
-    """ __bool__ returns an integer """
+    """__bool__ returns an integer."""
 
     def __bool__(self):  # [invalid-bool-returned]
         return 1
 
 
 class SecondBadBool(object):
-    """ __bool__ returns str """
+    """__bool__ returns str."""
 
     def __bool__(self):  # [invalid-bool-returned]
         return "True"
 
 
 class ThirdBadBool(object):
-    """ __bool__ returns node which does not have 'value' in AST """
+    """__bool__ returns node which does not have 'value' in AST."""
 
     def __bool__(self):  # [invalid-bool-returned]
         return lambda: 3
 
 
 class AmbigousBool(object):
-    """ Uninferable return value """
+    """Uninferable return value."""
     __bool__ = lambda self: Missing
 
 
 class AnotherAmbiguousBool(object):
-    """Potential uninferable return value"""
+    """Potential uninferable return value."""
     def __bool__(self):
         return bool(Missing)

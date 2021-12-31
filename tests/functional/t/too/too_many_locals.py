@@ -10,7 +10,7 @@ def function(arg1, arg2, arg3, arg4, arg5): # [too-many-locals]
 
 
 def too_many_locals_function(): # [too-many-locals]
-    """pylint will complains about too many local variables"""
+    """pylint will complains about too many local variables."""
     args0 = 0
     args1 = args0 * 1
     args2 = args1 * 2

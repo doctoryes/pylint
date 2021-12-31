@@ -1,4 +1,4 @@
-"""Checks for if statements containing too many boolean expressions"""
+"""Checks for if statements containing too many boolean expressions."""
 
 # pylint: disable=invalid-name, comparison-with-itself, chained-comparison, condition-evals-to-constant
 

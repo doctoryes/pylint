@@ -5,7 +5,7 @@ with accept-no-returns-doc = no"""
 
 
 def my_func(self, doc_type):  # [missing-return-doc]
-    """warn_partial_numpy_returns_type
+    """warn_partial_numpy_returns_type.
 
     Arguments
     ---------
@@ -20,7 +20,7 @@ def my_func(self, doc_type):  # [missing-return-doc]
 
 
 def my_func(self, doc_type):  # [missing-return-doc, missing-return-type-doc]
-    """warn_missing_numpy_returns
+    """warn_missing_numpy_returns.
 
     Arguments
     ---------
@@ -31,7 +31,7 @@ def my_func(self, doc_type):  # [missing-return-doc, missing-return-type-doc]
 
 
 def my_func(self):  # [missing-return-doc]
-    """warns_numpy_return_list_of_custom_class_without_description
+    """warns_numpy_return_list_of_custom_class_without_description.
 
     Returns
     -------
@@ -41,10 +41,8 @@ def my_func(self):  # [missing-return-doc]
 
 
 class Foo:
-    """test_finds_missing_property_return_type_numpy
-    Example of a property having return documentation in
-    a numpy style docstring
-    """
+    """test_finds_missing_property_return_type_numpy Example of a property having return
+    documentation in a numpy style docstring."""
 
     @property
     def foo_prop(self):  # [missing-return-type-doc]
@@ -60,10 +58,8 @@ class Foo:
 
 
 class Foo:
-    """test_ignores_non_property_return_type_numpy
-    Example of a class function trying to use `type` as return
-    documentation in a numpy style docstring
-    """
+    """test_ignores_non_property_return_type_numpy Example of a class function trying to
+    use `type` as return documentation in a numpy style docstring."""
 
     def foo_method(self):  # [missing-return-doc, missing-return-type-doc]
         """int: docstring ...
@@ -79,10 +75,8 @@ class Foo:
 
 
 class Foo:
-    """test_non_property_annotation_return_type_numpy
-    Example of a class function trying to use `type` as return
-    documentation in a numpy style docstring
-    """
+    """test_non_property_annotation_return_type_numpy Example of a class function trying
+    to use `type` as return documentation in a numpy style docstring."""
 
     def foo_method(self) -> int:  # [missing-return-doc]
         """int: docstring ...

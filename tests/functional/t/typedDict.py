@@ -1,4 +1,4 @@
-"""Test typing.TypedDict"""
+"""Test typing.TypedDict."""
 # pylint: disable=invalid-name,missing-class-docstring,pointless-statement
 import typing
 from typing import TypedDict

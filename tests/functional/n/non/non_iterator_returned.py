@@ -1,10 +1,10 @@
-"""Check non-iterators returned by __iter__ """
+"""Check non-iterators returned by __iter__"""
 
 # pylint: disable=too-few-public-methods, missing-docstring, no-self-use, useless-object-inheritance, consider-using-with
 
 
 class FirstGoodIterator(object):
-    """ yields in iterator. """
+    """yields in iterator."""
 
     def __iter__(self):
         for index in range(10):
@@ -12,13 +12,13 @@ class FirstGoodIterator(object):
 
 
 class SecondGoodIterator(object):
-    """ __iter__ and next """
+    """__iter__ and next."""
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        """ Infinite iterator, but still an iterator """
+        """Infinite iterator, but still an iterator."""
         return 1
 
     def next(self):
@@ -27,14 +27,14 @@ class SecondGoodIterator(object):
 
 
 class ThirdGoodIterator(object):
-    """ Returns other iterator, not the current instance """
+    """Returns other iterator, not the current instance."""
 
     def __iter__(self):
         return SecondGoodIterator()
 
 
 class FourthGoodIterator(object):
-    """ __iter__ returns iter(...) """
+    """__iter__ returns iter(...)"""
 
     def __iter__(self):
         return iter(range(10))
@@ -74,21 +74,21 @@ class FileBasedIterator(object):
 
 
 class FirstBadIterator(object):
-    """ __iter__ returns a list """
+    """__iter__ returns a list."""
 
     def __iter__(self):  # [non-iterator-returned]
         return []
 
 
 class SecondBadIterator(object):
-    """ __iter__ without next """
+    """__iter__ without next."""
 
     def __iter__(self):  # [non-iterator-returned]
         return self
 
 
 class ThirdBadIterator(object):
-    """ __iter__ returns an instance of another non-iterator """
+    """__iter__ returns an instance of another non-iterator."""
 
     def __iter__(self):  # [non-iterator-returned]
         return SecondBadIterator()

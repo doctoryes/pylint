@@ -1,33 +1,33 @@
 # pylint: disable=too-few-public-methods, useless-object-inheritance, unnecessary-pass
-"""Backend Base Classes for the schwelm user DB"""
+"""Backend Base Classes for the schwelm user DB."""
 
 __revision__ = "alpha"
 
 class Aaa(object):
-    """docstring"""
+    """docstring."""
     def __init__(self):
         self.__setattr__('a', 'b')
 
 
     def one_public(self):
-        """docstring"""
+        """docstring."""
         pass
 
     def another_public(self):
-        """docstring"""
+        """docstring."""
         pass
 
 class Bbb(Aaa):
-    """docstring"""
+    """docstring."""
     pass
 
 class Ccc(Aaa):
-    """docstring"""
+    """docstring."""
 
     class Ddd(Aaa):
-        """docstring"""
+        """docstring."""
         pass
 
     class Eee(Ddd):
-        """docstring"""
+        """docstring."""
         pass

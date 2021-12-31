@@ -6,4 +6,4 @@ with accept-no-param-doc = no and docstring-min-length = 3
 # Example of a function that is less than 'docstring-min-length' config option
 # No error message is emitted.
 def test_skip_docstring_min_length(x, y):
-    """function is too short and is missing parameter documentation"""
+    """function is too short and is missing parameter documentation."""

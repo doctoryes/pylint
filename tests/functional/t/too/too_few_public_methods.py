@@ -19,13 +19,13 @@ class Aaaa(object): # [too-few-public-methods]
 
 # Don't emit for these cases.
 class Klass(object):
-    """docstring"""
+    """docstring."""
 
     def meth1(self):
-        """first"""
+        """first."""
 
     def meth2(self):
-        """second"""
+        """second."""
 
 
 class EnoughPublicMethods(Klass):

@@ -26,7 +26,7 @@
 # Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
 
-"""Check format checker helper functions"""
+"""Check format checker helper functions."""
 
 import os
 import tempfile
@@ -108,8 +108,8 @@ class TestSuperfluousParentheses(CheckerTestCase):
                 self.checker._check_keyword_parentheses(_tokenize_str(code), offset)
 
     def testNoSuperfluousParensWalrusOperatorIf(self) -> None:
-        """Parenthesis change the meaning of assignment in the walrus operator
-        and so are not always superfluous:
+        """Parenthesis change the meaning of assignment in the walrus operator and so
+        are not always superfluous:
         """
         cases = [
             ("if (odd := is_odd(i))\n"),
@@ -120,7 +120,7 @@ class TestSuperfluousParentheses(CheckerTestCase):
                 self.checker.process_tokens(_tokenize_str(code))
 
     def testPositiveSuperfluousParensWalrusOperatorIf(self) -> None:
-        """Test positive superfluous parens cases with the walrus operator"""
+        """Test positive superfluous parens cases with the walrus operator."""
         cases = [
             (
                 MessageTest("superfluous-parens", line=1, args="if"),
@@ -162,10 +162,9 @@ class TestCheckSpace(CheckerTestCase):
     CHECKER_CLASS = FormatChecker
 
     def test_encoding_token(self) -> None:
-        """Make sure the encoding token doesn't change the checker's behavior
+        """Make sure the encoding token doesn't change the checker's behavior.
 
-        _tokenize_str doesn't produce an encoding token, but
-        reading a file does
+        _tokenize_str doesn't produce an encoding token, but reading a file does
         """
         with self.assertNoMessages():
             encoding_token = tokenize.TokenInfo(
@@ -178,8 +177,8 @@ class TestCheckSpace(CheckerTestCase):
 
 
 def test_disable_global_option_end_of_line() -> None:
-    """Test for issue with disabling tokenizer messages
-    that extend beyond the scope of the ast tokens
+    """Test for issue with disabling tokenizer messages that extend beyond the scope of
+    the ast tokens.
     """
     file_ = tempfile.NamedTemporaryFile("w", delete=False)
     with file_:

@@ -5,7 +5,7 @@ with accept-no-param-doc = no and the default value of no-docstring-rgx
 
 
 def _test_skip_no_docstring_rgx(x, y):
-    """Example of a function that matches the default 'no-docstring-rgx' config option
+    """Example of a function that matches the default 'no-docstring-rgx' config option.
 
     No error message is emitted.
     """

@@ -1,5 +1,5 @@
 """Since Python version 3.8, a class decorated with typing.final cannot be
-subclassed """
+subclassed."""
 
 # pylint: disable=no-init, useless-object-inheritance, missing-docstring, too-few-public-methods
 

@@ -1,11 +1,11 @@
 # pylint: disable=too-few-public-methods, useless-object-inheritance
-"""test attribute access on metaclass"""
+"""test attribute access on metaclass."""
 
 from __future__ import print_function
 
 
 class Meta(type):
-    """the meta class"""
+    """the meta class."""
     def __init__(cls, name, bases, dictionary):
         super(Meta, cls).__init__(name, bases, dictionary)
         print(cls, cls._meta_args)
@@ -13,7 +13,7 @@ class Meta(type):
 
 
 class Test(object):
-    """metaclassed class"""
+    """metaclassed class."""
     __metaclass__ = Meta
     _meta_args = ('foo', 'bar')
 

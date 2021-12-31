@@ -1,4 +1,4 @@
-"""Check unpacking non-sequences in assignments. """
+"""Check unpacking non-sequences in assignments."""
 
 # pylint: disable=too-few-public-methods, invalid-name, attribute-defined-outside-init, unused-variable
 # pylint: disable=using-constant-test, no-init, missing-docstring, wrong-import-order,wrong-import-position,no-else-return, useless-object-inheritance
@@ -11,7 +11,7 @@ __revision__ = 0
 # Working
 
 class Seq(object):
-    """ sequence """
+    """sequence."""
     def __init__(self):
         self.items = range(2)
 
@@ -22,40 +22,40 @@ class Seq(object):
         return len(self.items)
 
 class Iter(object):
-    """ Iterator """
+    """Iterator."""
     def __iter__(self):
         for number in range(2):
             yield number
 
 def good_unpacking():
-    """ returns should be unpackable """
+    """returns should be unpackable."""
     if True:
         return [1, 2]
     else:
         return (3, 4)
 
 def good_unpacking2():
-    """ returns should be unpackable """
+    """returns should be unpackable."""
     return good_unpacking()
 
 class MetaIter(type):
-    "metaclass that makes classes that use it iterables"
+    """metaclass that makes classes that use it iterables."""
     def __iter__(cls):
         return iter((1, 2))
 
 class IterClass(metaclass=MetaIter):
-    "class that is iterable (and unpackable)"
+    """class that is iterable (and unpackable)"""
 
 class AbstrClass(object):
-    "abstract class"
+    """abstract class."""
     pair = None
 
     def setup_pair(self):
-        "abstract method"
+        """abstract method."""
         raise NotImplementedError
 
     def __init__(self):
-        "error should not be emitted because setup_pair is abstract"
+        """error should not be emitted because setup_pair is abstract."""
         self.setup_pair()
         x, y = self.pair
 
@@ -73,7 +73,7 @@ a, b = IterClass
 
 # Not working
 class NonSeq(object):
-    """ does nothing """
+    """does nothing."""
 
 a, b = NonSeq() # [unpacking-non-sequence]
 a, b = ValueError # [unpacking-non-sequence]
@@ -84,10 +84,10 @@ a, b = nonseq() # [unpacking-non-sequence]
 a, b = nonseq_func # [unpacking-non-sequence]
 
 class ClassUnpacking(object):
-    """ Check unpacking as instance attributes. """
+    """Check unpacking as instance attributes."""
 
     def test(self):
-        """ test unpacking in instance attributes. """
+        """test unpacking in instance attributes."""
 
         self.a, self.b = 1, 2
         self.a, self.b = {1: 2, 2: 3}
@@ -101,21 +101,21 @@ class ClassUnpacking(object):
         self.a, c = nonseq_func # [unpacking-non-sequence]
 
 class TestBase(object):
-    'base class with `test` method implementation'
+    """base class with `test` method implementation."""
     @staticmethod
     def test(data):
-        'default implementation'
+        """default implementation."""
         return data
 
 class Test(TestBase):
-    'child class that overrides `test` method'
+    """child class that overrides `test` method."""
     def __init__(self):
         # no error should be emitted here as `test` is overridden in this class
         (self.aaa, self.bbb, self.ccc) = self.test(None)
 
     @staticmethod
     def test(data):
-        'overridden implementation'
+        """overridden implementation."""
         return (1, 2, 3)
 
 

@@ -4,14 +4,14 @@ __revision__ = None
 # pylint: disable=useless-object-inheritance
 
 class SomeClass(object):
-    """cds"""
+    """Cds."""
     doc = __doc__
 
     def __init__(self):
-        """only to make pylint happier"""
+        """only to make pylint happier."""
 
     def please(self):
-        """public method 1/2"""
+        """public method 1/2."""
 
     def besilent(self):
-        """public method 2/2"""
+        """public method 2/2."""

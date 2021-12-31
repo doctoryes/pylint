@@ -1,6 +1,4 @@
-"""
-	Pylint score:  -10
-"""
+"""Pylint score:  -10."""
 import nonexistent
 
 

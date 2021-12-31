@@ -1,4 +1,4 @@
-"""Tests for missing-class-docstring"""
+"""Tests for missing-class-docstring."""
 # pylint: disable=too-few-public-methods
 
 

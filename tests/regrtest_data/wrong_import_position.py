@@ -1,6 +1,4 @@
-"""Test that wrong-import-position is properly reset when
-other errors are disabled.
-"""
+"""Test that wrong-import-position is properly reset when other errors are disabled."""
 # pylint: disable=unused-import, too-few-public-methods
 
 

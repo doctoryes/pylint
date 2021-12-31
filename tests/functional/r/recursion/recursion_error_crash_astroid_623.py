@@ -1,4 +1,4 @@
-"""Test that a recursion error does not happen
+"""Test that a recursion error does not happen.
 
 https://github.com/PyCQA/astroid/issues/623
 """

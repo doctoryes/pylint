@@ -19,7 +19,7 @@ def double_with_docstring(arg):
 
 
 def double_with_docstring(arg):  # [function-redefined]
-    """Redefined function implementation"""
+    """Redefined function implementation."""
     return 2 * arg
 
 

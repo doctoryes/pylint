@@ -4,44 +4,44 @@
 from unknown import Missing
 
 class Aaaa:
-    """old style"""
+    """old style."""
     def hop(self):
-        """hop"""
+        """hop."""
         super(Aaaa, self).hop() # >=3.0:[no-member]
 
     def __init__(self):
         super(Aaaa, self).__init__()
 
 class NewAaaa(object):
-    """old style"""
+    """old style."""
     def hop(self):
-        """hop"""
+        """hop."""
         super(NewAaaa, self).hop() # [no-member]
 
     def __init__(self):
         super(Aaaa, self).__init__()  # [bad-super-call]
 
 class Py3kAaaa(NewAaaa):
-    """new style"""
+    """new style."""
     def __init__(self):
         super().__init__()  # <3.0:[missing-super-argument]
 
 class Py3kWrongSuper(Py3kAaaa):
-    """new style"""
+    """new style."""
     def __init__(self):
         super(NewAaaa, self).__init__()  # [bad-super-call]
 
 class WrongNameRegression(Py3kAaaa):
-    """ test a regression with the message """
+    """test a regression with the message."""
     def __init__(self):
         super(Missing, self).__init__()  # [bad-super-call]
 
 class Getattr(object):
-    """ crash """
+    """crash."""
     name = NewAaaa
 
 class CrashSuper(object):
-    """ test a crash with this checker """
+    """test a crash with this checker."""
     def __init__(self):
         super(Getattr.name, self).__init__()  # [bad-super-call]
 
@@ -50,6 +50,7 @@ class Empty(object):
 
 class SuperDifferentScope(object):
     """Don'emit bad-super-call when the super call is in another scope.
+
     For reference, see https://bitbucket.org/logilab/pylint/issue/403.
     """
     @staticmethod
@@ -115,11 +116,11 @@ except AttributeError:
 
 
 class SuperWithType(object):
-    """type(self) may lead to recursion loop in derived classes"""
+    """type(self) may lead to recursion loop in derived classes."""
     def __init__(self):
         super(type(self), self).__init__() # [bad-super-call]
 
 class SuperWithSelfClass(object):
-    """self.__class__ may lead to recursion loop in derived classes"""
+    """self.__class__ may lead to recursion loop in derived classes."""
     def __init__(self):
         super(self.__class__, self).__init__() # [bad-super-call]

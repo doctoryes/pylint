@@ -3,7 +3,7 @@ from enum import Enum, IntEnum, auto
 
 
 class Issue1932(IntEnum):
-    """https://github.com/PyCQA/pylint/issues/1932"""
+    """https://github.com/PyCQA/pylint/issues/1932."""
 
     FOO = 1
 
@@ -12,7 +12,7 @@ class Issue1932(IntEnum):
 
 
 class Issue2062(Enum):
-    """https://github.com/PyCQA/pylint/issues/2062"""
+    """https://github.com/PyCQA/pylint/issues/2062."""
 
     FOO = 1
     BAR = 2

@@ -1,4 +1,4 @@
-"""Checks import position rule"""
+"""Checks import position rule."""
 # pylint: disable=unused-import
 import os
 
@@ -6,7 +6,7 @@ try:
     import ast
 except ImportError:
     def method(items):
-        """docstring"""
+        """docstring."""
         value = 0
         for item in items:
             value += item

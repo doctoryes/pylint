@@ -1,4 +1,4 @@
-""" Tests for non-ascii-name checker. """
+"""Tests for non-ascii-name checker."""
 
 áéíóú = 4444 # [non-ascii-name]
 

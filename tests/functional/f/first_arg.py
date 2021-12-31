@@ -1,6 +1,5 @@
 # pylint: disable=missing-docstring, no-init, useless-object-inheritance
-"""check for methods first arguments
-"""
+"""check for methods first arguments."""
 
 __revision__ = 0
 

@@ -1,7 +1,7 @@
-""" Test for too many branches. """
+"""Test for too many branches."""
 # pylint: disable=using-constant-test
 def wrong(): # [too-many-branches]
-    """ Has too many branches. """
+    """Has too many branches."""
     if 1:
         pass
     elif 1:
@@ -30,11 +30,9 @@ def wrong(): # [too-many-branches]
         pass
 
 def good():
-    """ Too many branches only if we take
-    into consideration the nested functions.
-    """
+    """Too many branches only if we take into consideration the nested functions."""
     def nested_1():
-        """ empty """
+        """empty."""
         if 1:
             pass
         elif 2:

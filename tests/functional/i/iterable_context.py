@@ -1,7 +1,4 @@
-"""
-Checks that primitive values are not used in an
-iterating/mapping context.
-"""
+"""Checks that primitive values are not used in an iterating/mapping context."""
 # pylint: disable=missing-docstring,invalid-name,too-few-public-methods,no-init,no-self-use,import-error,unused-argument,bad-mcs-method-argument,wrong-import-position,no-else-return, useless-object-inheritance, unnecessary-comprehension,redundant-u-string-prefix
 from __future__ import print_function
 
@@ -73,7 +70,7 @@ class B(object):
         return 1
 
 class C(object):
-    "old-style iterator"
+    """old-style iterator."""
     def __getitem__(self, k):
         if k > 10:
             raise IndexError

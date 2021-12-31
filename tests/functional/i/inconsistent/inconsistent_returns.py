@@ -1,6 +1,6 @@
 #pylint: disable=missing-docstring, no-else-return, no-else-break, invalid-name, unused-variable, superfluous-parens, try-except-raise
 #pylint: disable=disallowed-name
-"""Testing inconsistent returns"""
+"""Testing inconsistent returns."""
 import math
 import sys
 
@@ -101,7 +101,7 @@ def explicit_returns7(arg):
         return 'above 0'
 
 def bug_1772():
-    """Don't check inconsistent return statements inside while loop"""
+    """Don't check inconsistent return statements inside while loop."""
     counter = 1
     while True:
         counter += 1
@@ -265,8 +265,8 @@ def bug_1794_inner_func_in_if_counter_example_3(var): # [inconsistent-return-sta
             return
 
 def bug_3468(bar):  # [inconsistent-return-statements]
-    """
-    In case of AttributeError the function returns implicitly None.
+    """In case of AttributeError the function returns implicitly None.
+
     There are one explicit return and one implicit.
     """
     try:
@@ -275,10 +275,8 @@ def bug_3468(bar):  # [inconsistent-return-statements]
         pass
 
 def bug_3468_variant(bar):  # [inconsistent-return-statements]
-    """
-    In case of AttributeError the function returns implicitly None
-    There are one explicit return and one implicit.
-    """
+    """In case of AttributeError the function returns implicitly None There are one
+    explicit return and one implicit."""
     try:
         return bar.baz
     except AttributeError:
@@ -289,8 +287,8 @@ def bug_3468_variant(bar):  # [inconsistent-return-statements]
         raise
 
 def bug_3468_counter_example(bar):
-    """
-    In case of AttributeError the function returns explicitly None.
+    """In case of AttributeError the function returns explicitly None.
+
     Thus all returns are explicit.
     """
     try:
@@ -300,8 +298,8 @@ def bug_3468_counter_example(bar):
     return None
 
 def bug_3468_counter_example_2(bar):
-    """
-    In case of AttributeError the function returns explicitly None.
+    """In case of AttributeError the function returns explicitly None.
+
     Thus all returns are explicit.
     """
     try:
@@ -338,18 +336,14 @@ def bug_pylint_3873_2():
 
 # https://github.com/PyCQA/pylint/issues/4019
 def bug_pylint_4019(x):
-    """
-    assert False is equivalent to a return
-    """
+    """assert False is equivalent to a return."""
     if x == 1:
         return 42
     assert False
 
 
 def bug_pylint_4019_wrong(x):  # [inconsistent-return-statements]
-    """
-    assert True is not equivalent to a return
-    """
+    """assert True is not equivalent to a return."""
     if x == 1:
         return 42
     assert True

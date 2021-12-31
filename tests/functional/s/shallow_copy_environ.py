@@ -1,4 +1,4 @@
-"""Tests for shallow-copy-environ"""
+"""Tests for shallow-copy-environ."""
 # pylint: disable=wrong-import-position, reimported, ungrouped-imports, import-error, wrong-import-order
 
 import copy

@@ -1,8 +1,8 @@
-""" docstring for file clientmodule.py """
+"""docstring for file clientmodule.py."""
 from data.suppliermodule_test import Interface, DoNothing, DoNothing2
 
 class Ancestor:
-    """ Ancestor method """
+    """Ancestor method."""
     __implements__ = (Interface,)
     cls_member = DoNothing()
 
@@ -12,7 +12,7 @@ class Ancestor:
         self.__value = value
 
     def get_value(self):
-        """ nice docstring ;-) """
+        """nice docstring ;-)"""
         return self.__value
 
     def set_value(self, value):

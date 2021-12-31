@@ -1,4 +1,4 @@
-"""Tests for the useless-with-lock message"""
+"""Tests for the useless-with-lock message."""
 # pylint: disable=missing-docstring
 import threading
 from threading import Lock, RLock, Condition, Semaphore, BoundedSemaphore

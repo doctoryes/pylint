@@ -6,74 +6,74 @@ class Aaaa(object): # [too-many-public-methods]
         pass
 
     def meth1(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth2(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth3(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth4(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth5(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth6(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth7(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth8(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth9(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth10(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth11(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth12(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth13(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth14(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth15(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth16(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth17(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth18(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth19(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth20(self):
-        """hehehe"""
+        """hehehe."""
 
     def meth21(self):
-        """hehehe"""
+        """hehehe."""
 
     def _dontcount(self):
-        """not public"""
+        """not public."""
 
 class BBB(Aaaa):
     """Don't emit for methods defined in the parent."""
     def meth1(self):
-        """trop"""
+        """trop."""
     def meth2(self):
-        """tzop"""
+        """tzop."""

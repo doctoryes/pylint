@@ -6,7 +6,7 @@ import logging as renamed_logging
 
 
 class Logger:
-    """Fake logger"""
+    """Fake logger."""
 
 
 logger = renamed_logging.getLogger(__name__)

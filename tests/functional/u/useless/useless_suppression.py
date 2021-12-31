@@ -1,4 +1,4 @@
-"""Tests for useless suppressions"""
+"""Tests for useless suppressions."""
 # pylint: enable=useless-suppression, line-too-long
 # pylint: disable=unused-import, wrong-import-order
 

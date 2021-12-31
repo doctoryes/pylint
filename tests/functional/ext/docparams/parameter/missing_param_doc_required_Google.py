@@ -11,8 +11,8 @@ https://google.github.io/styleguide/pyguide.html#doc-function-args
 
 
 def test_multi_line_parameters(param: int) -> None:
-    """Checks that multi line parameters lists are checked correctly
-    See https://github.com/PyCQA/pylint/issues/5452
+    """Checks that multi line parameters lists are checked correctly See
+    https://github.com/PyCQA/pylint/issues/5452.
 
     Args:
         param:
@@ -24,8 +24,8 @@ def test_multi_line_parameters(param: int) -> None:
 def test_missing_func_params_in_google_docstring(  # [missing-param-doc, missing-type-doc]
     x, y, z
 ):
-    """Example of a function with missing Google style parameter
-    documentation in the docstring
+    """Example of a function with missing Google style parameter documentation in the
+    docstring.
 
     Args:
         x: bla
@@ -36,22 +36,22 @@ def test_missing_func_params_in_google_docstring(  # [missing-param-doc, missing
 
 
 def test_missing_func_params_with_annotations_in_google_docstring(x: int, y: bool, z):
-    """Example of a function with missing Google style parameter
-    documentation in the docstring.
+    """Example of a function with missing Google style parameter documentation in the
+    docstring.
 
-        Args:
-            x: bla
-            y: blah blah
-            z (int): bar
+    Args:
+        x: bla
+        y: blah blah
+        z (int): bar
 
-        some other stuff
+    some other stuff
     """
 
 
 def test_missing_type_doc_google_docstring_exempt_kwonly_args(
     arg1: int, arg2: int, *, value1: str, value2: str
 ):
-    """Code to show failure in missing-type-doc
+    """Code to show failure in missing-type-doc.
 
     Args:
         arg1: First argument.
@@ -65,8 +65,8 @@ def test_missing_type_doc_google_docstring_exempt_kwonly_args(
 def test_default_arg_with_annotations_in_google_docstring(
     x: int, y: bool, z: int = 786
 ):
-    """Example of a function with missing Google style parameter
-        documentation in the docstring.
+    """Example of a function with missing Google style parameter documentation in the
+    docstring.
 
     Args:
         x: bla
@@ -80,8 +80,8 @@ def test_default_arg_with_annotations_in_google_docstring(
 def test_missing_func_params_with_partial_annotations_in_google_docstring(  # [missing-type-doc]
     x, y: bool, z
 ):
-    """Example of a function with missing Google style parameter
-    documentation in the docstring.
+    """Example of a function with missing Google style parameter documentation in the
+    docstring.
 
     Args:
         x: bla
@@ -95,17 +95,19 @@ def test_missing_func_params_with_partial_annotations_in_google_docstring(  # [m
 def test_non_builtin_annotations_in_google_docstring(
     bottomleft: Point, topright: Point
 ) -> float:
-    """Example of a function with missing Google style parameter
-    documentation in the docstring.
-        Args:
-            bottomleft: bottom left point of rectangle
-            topright: top right point of rectangle
+    """Example of a function with missing Google style parameter documentation in the
+    docstring.
+
+    Args:
+        bottomleft: bottom left point of rectangle
+        topright: top right point of rectangle
     """
 
 
 def test_non_builtin_annotations_for_returntype_in_google_docstring(bottomleft: Point, topright: Point) -> Point:
-    """Example of a function with missing Google style parameter
-    documentation in the docstring.
+    """Example of a function with missing Google style parameter documentation in the
+    docstring.
+
     Args:
         bottomleft: bottom left point of rectangle
         topright: top right point of rectangle
@@ -113,15 +115,15 @@ def test_non_builtin_annotations_for_returntype_in_google_docstring(bottomleft: 
 
 
 def test_func_params_and_keyword_params_in_google_docstring(this, other, that=True):
-    """Example of a function with Google style parameter split
-    in Args and Keyword Args in the docstring
+    """Example of a function with Google style parameter split in Args and Keyword Args
+    in the docstring.
 
-        Args:
-            this (str): Printed first
-            other (int): Other args
+    Args:
+        this (str): Printed first
+        other (int): Other args
 
-        Keyword Args:
-            that (bool): Printed second
+    Keyword Args:
+        that (bool): Printed second
     """
     print(this, that, other)
 
@@ -129,15 +131,15 @@ def test_func_params_and_keyword_params_in_google_docstring(this, other, that=Tr
 def test_func_params_and_wrong_keyword_params_in_google_docstring(  # [missing-param-doc, missing-type-doc, differing-param-doc, differing-type-doc]
     this, other, that=True
 ):
-    """Example of a function with Google style parameter split
-    in Args and Keyword Args in the docstring but with wrong keyword args
+    """Example of a function with Google style parameter split in Args and Keyword Args
+    in the docstring but with wrong keyword args.
 
-        Args:
-            this (str): Printed first
-            other (int): Other args
+    Args:
+        this (str): Printed first
+        other (int): Other args
 
-        Keyword Args:
-            these (bool): Printed second
+    Keyword Args:
+        these (bool): Printed second
     """
     print(this, that, other)
 
@@ -146,8 +148,8 @@ class Foo:
     def test_missing_method_params_in_google_docstring(  # [missing-param-doc, missing-type-doc]
         self, x, y
     ):
-        """Example of a class method with missing parameter documentation in
-        the Google style docstring
+        """Example of a class method with missing parameter documentation in the Google
+        style docstring.
 
         missing parameter documentation
 
@@ -157,8 +159,8 @@ class Foo:
 
 
 def test_existing_func_params_in_google_docstring(xarg, yarg, zarg, warg):
-    """Example of a function with correctly documented parameters and
-    return values (Google style)
+    """Example of a function with correctly documented parameters and return values
+    (Google style)
 
     Args:
         xarg (int): bla xarg
@@ -177,8 +179,8 @@ def test_existing_func_params_in_google_docstring(xarg, yarg, zarg, warg):
 def test_wrong_name_of_func_params_in_google_docstring_one(  # [missing-param-doc, missing-type-doc, differing-param-doc, differing-type-doc]
     xarg, yarg, zarg
 ):
-    """Example of functions with inconsistent parameter names in the
-    signature and in the Google style documentation
+    """Example of functions with inconsistent parameter names in the signature and in
+    the Google style documentation.
 
     Args:
         xarg1 (int): bla xarg
@@ -192,8 +194,8 @@ def test_wrong_name_of_func_params_in_google_docstring_one(  # [missing-param-do
 def test_wrong_name_of_func_params_in_google_docstring_two(  # [differing-param-doc, differing-type-doc]
     xarg, yarg
 ):
-    """Example of functions with inconsistent parameter names in the
-    signature and in the Google style documentation
+    """Example of functions with inconsistent parameter names in the signature and in
+    the Google style documentation.
 
     Args:
         yarg1 (float): bla yarg
@@ -204,9 +206,9 @@ def test_wrong_name_of_func_params_in_google_docstring_two(  # [differing-param-
 
 
 def test_see_sentence_for_func_params_in_google_docstring(xarg, yarg):
-    """Example for the usage of "For the other parameters, see" to avoid
-        too many repetitions, e.g. in functions or methods adhering to a
-        given interface (Google style)
+    """Example for the usage of "For the other parameters, see" to avoid too many
+    repetitions, e.g. in functions or methods adhering to a given interface (Google
+    style)
 
     Args:
         yarg (float): bla yarg
@@ -217,9 +219,8 @@ def test_see_sentence_for_func_params_in_google_docstring(xarg, yarg):
 
 
 class ClassFoo:  # [missing-param-doc, missing-type-doc]
-    """test_constr_params_in_class_google
-    Example of a class with missing constructor parameter documentation
-    (Google style)
+    """test_constr_params_in_class_google Example of a class with missing constructor
+    parameter documentation (Google style)
 
     Everything is completely analogous to functions.
 
@@ -235,9 +236,8 @@ class ClassFoo:  # [missing-param-doc, missing-type-doc]
 
 class ClassFoo:
     def __init__(self, x, y):  # [missing-param-doc, missing-type-doc]
-        """test_constr_params_in_init_google
-        Example of a class with missing constructor parameter documentation
-        (Google style)
+        """test_constr_params_in_init_google Example of a class with missing constructor
+        parameter documentation (Google style)
 
         Args:
             y: bla
@@ -247,10 +247,9 @@ class ClassFoo:
 
 
 class ClassFoo:  # [multiple-constructor-doc,missing-param-doc, missing-type-doc]
-    """test_constr_params_in_class_and_init_google
-    Example of a class with missing constructor parameter documentation
-    in both the init docstring and the class docstring
-    (Google style)
+    """test_constr_params_in_class_and_init_google Example of a class with missing
+    constructor parameter documentation in both the init docstring and the class
+    docstring (Google style)
 
     Everything is completely analogous to functions.
 
@@ -261,7 +260,7 @@ class ClassFoo:  # [multiple-constructor-doc,missing-param-doc, missing-type-doc
     """
 
     def __init__(self, x, y):  # [missing-param-doc, missing-type-doc]
-        """docstring foo
+        """docstring foo.
 
         Args:
             y: bla
@@ -271,7 +270,7 @@ class ClassFoo:  # [multiple-constructor-doc,missing-param-doc, missing-type-doc
 
 
 def test_warns_missing_args_google(named_arg, *args):  # [missing-param-doc]
-    """The docstring
+    """The docstring.
 
     Args:
         named_arg (object): Returned
@@ -284,7 +283,7 @@ def test_warns_missing_args_google(named_arg, *args):  # [missing-param-doc]
 
 
 def test_warns_missing_kwargs_google(named_arg, **kwargs):  # [missing-param-doc]
-    """The docstring
+    """The docstring.
 
     Args:
         named_arg (object): Returned
@@ -297,7 +296,7 @@ def test_warns_missing_kwargs_google(named_arg, **kwargs):  # [missing-param-doc
 
 
 def test_finds_args_without_type_google(named_arg, *args):
-    """The docstring
+    """The docstring.
 
     Args:
         named_arg (object): Returned
@@ -311,7 +310,7 @@ def test_finds_args_without_type_google(named_arg, *args):
 
 
 def test_finds_kwargs_without_type_google(named_arg, **kwargs):
-    """The docstring
+    """The docstring.
 
     Args:
         named_arg (object): Returned
@@ -325,7 +324,7 @@ def test_finds_kwargs_without_type_google(named_arg, **kwargs):
 
 
 def test_finds_args_with_xref_type_google(named_arg, **kwargs):
-    """The docstring
+    """The docstring.
 
     Args:
         named_arg (`example.value`): Returned
@@ -369,7 +368,7 @@ def test_finds_multiple_complex_types_google(
     named_arg_nine,
     named_arg_ten,
 ):
-    """The google docstring
+    """The google docstring.
 
     Args:
         named_arg_one (dict(str, str)): Returned

@@ -1,4 +1,4 @@
-"""Errors for invalid sequence indices"""
+"""Errors for invalid sequence indices."""
 # pylint: disable=too-few-public-methods, no-self-use, import-error, missing-docstring, useless-object-inheritance, unnecessary-pass
 import six
 from unknown import Unknown
@@ -9,134 +9,134 @@ TESTSTR = '123'
 
 # getitem tests with bad indices
 def function1():
-    """list index is a function"""
+    """list index is a function."""
     return TESTLIST[id] # [invalid-sequence-index]
 
 def function2():
-    """list index is None"""
+    """list index is None."""
     return TESTLIST[None] # [invalid-sequence-index]
 
 def function3():
-    """list index is a float expression"""
+    """list index is a float expression."""
     return TESTLIST[float(0)] # [invalid-sequence-index]
 
 def function4():
-    """list index is a str constant"""
+    """list index is a str constant."""
     return TESTLIST['0'] # [invalid-sequence-index]
 
 def function5():
     """list index does not implement __index__"""
     class NonIndexType(object):
-        """Class without __index__ method"""
+        """Class without __index__ method."""
         pass
 
     return TESTLIST[NonIndexType()] # [invalid-sequence-index]
 
 def function6():
-    """Tuple index is None"""
+    """Tuple index is None."""
     return TESTTUPLE[None] # [invalid-sequence-index]
 
 def function7():
-    """String index is None"""
+    """String index is None."""
     return TESTSTR[None] # [invalid-sequence-index]
 
 def function8():
-    """Index of subclass of tuple is None"""
+    """Index of subclass of tuple is None."""
     class TupleTest(tuple):
-        """Subclass of tuple"""
+        """Subclass of tuple."""
         pass
     return TupleTest()[None] # [invalid-sequence-index]
 
 # getitem tests with good indices
 def function9():
-    """list index is an int constant"""
+    """list index is an int constant."""
     return TESTLIST[0]  # no error
 
 def function10():
-    """list index is an integer expression"""
+    """list index is an integer expression."""
     return TESTLIST[int(0.0)] # no error
 
 def function11():
-    """list index is a slice"""
+    """list index is a slice."""
     return TESTLIST[slice(1, 2, 3)] # no error
 
 def function12():
     """list index implements __index__"""
     class IndexType(object):
-        """Class with __index__ method"""
+        """Class with __index__ method."""
         def __index__(self):
-            """Allow objects of this class to be used as slice indices"""
+            """Allow objects of this class to be used as slice indices."""
             return 0
 
     return TESTLIST[IndexType()] # no error
 
 def function13():
-    """list index implements __index__ in a superclass"""
+    """list index implements __index__ in a superclass."""
     class IndexType(object):
-        """Class with __index__ method"""
+        """Class with __index__ method."""
         def __index__(self):
-            """Allow objects of this class to be used as slice indices"""
+            """Allow objects of this class to be used as slice indices."""
             return 0
 
     class IndexSubType(IndexType):
-        """Class with __index__ in parent"""
+        """Class with __index__ in parent."""
         pass
 
     return TESTLIST[IndexSubType()] # no error
 
 def function14():
-    """Tuple index is an int constant"""
+    """Tuple index is an int constant."""
     return TESTTUPLE[0]
 
 def function15():
-    """String index is an int constant"""
+    """String index is an int constant."""
     return TESTSTR[0]
 
 def function16():
-    """Index of subclass of tuple is an int constant"""
+    """Index of subclass of tuple is an int constant."""
     class TupleTest(tuple):
-        """Subclass of tuple"""
+        """Subclass of tuple."""
         pass
     return TupleTest()[0] # no error
 
 def function17():
-    """Index of subclass of tuple with custom __getitem__ is None"""
+    """Index of subclass of tuple with custom __getitem__ is None."""
     class TupleTest(tuple):
         """Subclass of tuple with custom __getitem__"""
         def __getitem__(self, index):
-            """Allow non-integer indices"""
+            """Allow non-integer indices."""
             return 0
     return TupleTest()[None] # no error
 
 def function18():
-    """Index of subclass of tuple with __getitem__ in superclass is None"""
+    """Index of subclass of tuple with __getitem__ in superclass is None."""
     class TupleTest(tuple):
         """Subclass of tuple with custom __getitem__"""
         def __getitem__(self, index):
-            """Allow non-integer indices"""
+            """Allow non-integer indices."""
             return 0
 
     class SubTupleTest(TupleTest):
-        """Subclass of a subclass of tuple"""
+        """Subclass of a subclass of tuple."""
         pass
 
     return SubTupleTest()[None] # no error
 
 # Test with set and delete statements
 def function19():
-    """Set with None and integer indices"""
+    """Set with None and integer indices."""
     TESTLIST[None] = 0 # [invalid-sequence-index]
     TESTLIST[0] = 0 # no error
 
 def function20():
-    """Delete with None and integer indices"""
+    """Delete with None and integer indices."""
     del TESTLIST[None] # [invalid-sequence-index]
     del TESTLIST[0] # no error
 
 def function21():
-    """Set and delete on a subclass of list"""
+    """Set and delete on a subclass of list."""
     class ListTest(list):
-        """Inherit all list get/set/del handlers"""
+        """Inherit all list get/set/del handlers."""
         pass
     test = ListTest()
 
@@ -151,7 +151,7 @@ def function21():
 def function22():
     """Get, set, and delete on a subclass of list that overrides __setitem__"""
     class ListTest(list):
-        """Override setitem but not get or del"""
+        """Override setitem but not get or del."""
         def __setitem__(self, key, value):
             pass
     test = ListTest()
@@ -169,7 +169,7 @@ def function22():
 def function23():
     """Get, set, and delete on a subclass of list that overrides __delitem__"""
     class ListTest(list):
-        """Override delitem but not get or set"""
+        """Override delitem but not get or set."""
         def __delitem__(self, key):
             pass
     test = ListTest()
@@ -187,7 +187,7 @@ def function23():
 def function24():
     """Get, set, and delete on a subclass of list that overrides __getitem__"""
     class ListTest(list):
-        """Override gelitem but not del or set"""
+        """Override gelitem but not del or set."""
         def __getitem__(self, key):
             pass
     test = ListTest()
@@ -204,7 +204,7 @@ def function24():
 
 # Teest ExtSlice usage
 def function25():
-    """Extended slice used with a list"""
+    """Extended slice used with a list."""
     return TESTLIST[..., 0] # [invalid-sequence-index]
 
 def function26():

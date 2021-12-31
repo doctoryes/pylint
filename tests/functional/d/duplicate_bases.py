@@ -11,8 +11,8 @@ class Alpha(str):
 
 
 class NotDuplicates(Alpha, str):
-    """The error should not be emitted for this case, since the
-    other same base comes from the ancestors."""
+    """The error should not be emitted for this case, since the other same base comes
+    from the ancestors."""
 
 
 print(Duplicates.__mro__)

@@ -31,19 +31,18 @@ class Dummy(object):
 DUMMY = Dummy()
 
 def function():
-    """Function docstring
-    """
+    """Function docstring."""
     pass
 
 function()
 
 class Klass(object):
-    """A klass which contains a function"""
+    """A klass which contains a function."""
     def func(self):
-        """A klass method"""
+        """A klass method."""
         inner = None
         print(inner)
 
     class InnerKlass(object):
-        """An inner klass"""
+        """An inner klass."""
         pass

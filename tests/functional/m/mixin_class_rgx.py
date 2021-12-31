@@ -1,4 +1,4 @@
-"""Tests for the mixin-class-rgx option"""
+"""Tests for the mixin-class-rgx option."""
 # pylint: disable=too-few-public-methods
 
 
@@ -6,21 +6,21 @@
 
 
 class AsyncManagerMixedin:
-    """Class that does not match the option pattern"""
+    """Class that does not match the option pattern."""
 
     def __aenter__(self):
         pass
 
 
 class AsyncManagerMixin:
-    """Class that does match the option pattern"""
+    """Class that does match the option pattern."""
 
     def __aenter__(self):
         pass
 
 
 async def check_not_async_context_manager():
-    """Function calling the classes for not-async-context-manager"""
+    """Function calling the classes for not-async-context-manager."""
     async with AsyncManagerMixedin:  # [not-async-context-manager]
         pass
     async with AsyncManagerMixin():
@@ -31,7 +31,7 @@ async def check_not_async_context_manager():
 
 
 class OutsideInitMixedin:
-    """Class that does not match the option pattern"""
+    """Class that does not match the option pattern."""
 
     def set_attribute(self):
         """Set an attribute outside of __init__"""
@@ -39,7 +39,7 @@ class OutsideInitMixedin:
 
 
 class OutsideInitMixin:
-    """Class that does match the option pattern"""
+    """Class that does match the option pattern."""
 
     def set_attribute(self):
         """Set an attribute outside of __init__"""
@@ -50,11 +50,11 @@ class OutsideInitMixin:
 
 
 class NoMemberMixedin:
-    """Class that does not match the option pattern"""
+    """Class that does not match the option pattern."""
 
 MY_CLASS = OutsideInitMixedin().method() # [no-member]
 
 class NoMemberMixin:
-    """Class that does match the option pattern"""
+    """Class that does match the option pattern."""
 
 MY_OTHER_CLASS = NoMemberMixin().method()

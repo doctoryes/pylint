@@ -1,4 +1,4 @@
-""" Checks that reversed() receive proper argument """
+"""Checks that reversed() receive proper argument."""
 # pylint: disable=missing-docstring, useless-object-inheritance
 # pylint: disable=too-few-public-methods,no-self-use
 from collections import deque, OrderedDict
@@ -6,12 +6,12 @@ from enum import IntEnum
 
 
 class GoodReversed(object):
-    """ Implements __reversed__ """
+    """Implements __reversed__"""
     def __reversed__(self):
         return [1, 2, 3]
 
 class SecondGoodReversed(object):
-    """ Implements __len__ and __getitem__ """
+    """Implements __len__ and __getitem__"""
     def __len__(self):
         return 3
 
@@ -19,23 +19,22 @@ class SecondGoodReversed(object):
         return index
 
 class BadReversed(object):
-    """ implements only len() """
+    """implements only len()"""
     def __len__(self):
         return 3
 
 class SecondBadReversed(object):
-    """ implements only __getitem__ """
+    """implements only __getitem__"""
     def __getitem__(self, index):
         return index
 
 def uninferable(seq):
-    """ This can't be inferred at this moment,
-    make sure we don't have a false positive.
-    """
+    """This can't be inferred at this moment, make sure we don't have a false
+    positive."""
     return reversed(seq)
 
 def test(path):
-    """ test function """
+    """test function."""
     seq = reversed() # No argument given
     seq = reversed(None) # [bad-reversed-sequence]
     seq = reversed([1, 2, 3])
@@ -65,7 +64,7 @@ def test_dict_ancestor_and_reversed():
 
 
 def test_dont_emit_for_reversing_enums():
-    """Don't emit when reversing enum classes"""
+    """Don't emit when reversing enum classes."""
     class Color(IntEnum):
         RED = 1
         GREEN = 2

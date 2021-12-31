@@ -1,9 +1,9 @@
-"""Test that boolean conditions can be simplified"""
+"""Test that boolean conditions can be simplified."""
 # pylint: disable=pointless-statement
 
 
 def func(_):
-    """Pointless function"""
+    """Pointless function."""
 
 
 CONSTANT = 100

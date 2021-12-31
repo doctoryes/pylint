@@ -1,4 +1,5 @@
-"""Test to see if a f-string would be possible and consider-using-f-string should be raised"""
+"""Test to see if a f-string would be possible and consider-using-f-string should be
+raised."""
 # pylint: disable=unused-variable, invalid-name, missing-function-docstring, pointless-statement
 # pylint: disable=expression-not-assigned, repeated-keyword, too-many-locals
 
@@ -55,7 +56,7 @@ def print_bad():
 
 
 def statement_good():
-    "String {}, {} or {}".format(*PARAM_LIST)
+    """String {}, {} or {}""".format(*PARAM_LIST)
     "String {}, {}, {} or {}".format(*PARAM_LIST_SINGLE, *PARAM_LIST)
     "String {Param}, {}, {} or {}".format(Param=PARAM_1, *PARAM_LIST)
     "String {Param} {Param}".format(Param=PARAM_1)
@@ -74,7 +75,7 @@ def statement_good():
     "%s" % "\n".join(i for i in "string")
 
 def statement_bad():
-    "String %f" % PARAM_1  # [consider-using-f-string]
+    """String %f.""" % PARAM_1  # [consider-using-f-string]
     "String {}".format(PARAM_1)  # [consider-using-f-string]
     "String {Param_1}".format(Param_1=PARAM_1)  # [consider-using-f-string]
     "{} {}".format(PARAM_1, PARAM_2)  # [consider-using-f-string]

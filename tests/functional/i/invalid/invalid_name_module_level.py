@@ -1,4 +1,4 @@
-"""Tests for invalid name for names declared at module level"""
+"""Tests for invalid name for names declared at module level."""
 # pylint: disable=missing-class-docstring, too-few-public-methods, missing-function-docstring
 
 import collections

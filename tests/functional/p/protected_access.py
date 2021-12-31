@@ -1,4 +1,4 @@
-"""Tests for protected_access"""
+"""Tests for protected_access."""
 # pylint: disable=missing-class-docstring, too-few-public-methods, pointless-statement
 # pylint: disable=missing-function-docstring, invalid-metaclass, no-member
 # pylint: disable=no-self-argument, no-self-use, undefined-variable, unused-variable

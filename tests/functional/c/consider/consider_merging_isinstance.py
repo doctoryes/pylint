@@ -1,9 +1,9 @@
-"""Checks use of consider-merging-isinstance"""
+"""Checks use of consider-merging-isinstance."""
 # pylint:disable=line-too-long, simplifiable-condition
 
 
 def isinstances():
-    "Examples of isinstances"
+    """Examples of isinstances."""
     var = range(10)
 
     # merged

@@ -1,4 +1,7 @@
-"""Check that raise ... from .. uses a proper exception context """
+"""Check that raise ...
+
+from .. uses a proper exception context
+"""
 
 # pylint: disable=unreachable, import-error, multiple-imports
 
@@ -7,10 +10,10 @@ import socket, unknown
 __revision__ = 0
 
 class ExceptionSubclass(Exception):
-    """ subclass """
+    """subclass."""
 
 def test():
-    """ docstring """
+    """docstring."""
     raise IndexError from 1 # [bad-exception-context]
     raise IndexError from None
     raise IndexError from ZeroDivisionError
@@ -24,7 +27,7 @@ def test():
     raise IndexError() from unknown
 
 def function():
-    """Function to be passed as exception"""
+    """Function to be passed as exception."""
 
 try:
     pass

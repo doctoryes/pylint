@@ -1,4 +1,4 @@
-"""Tests for missing-yield-doc and missing-yield-type-doc for Numpy style docstrings"""
+"""Tests for missing-yield-doc and missing-yield-type-doc for Numpy style docstrings."""
 # pylint: disable=missing-function-docstring, unused-argument, function-redefined
 # pylint: disable=invalid-name, undefined-variable
 

@@ -2,17 +2,17 @@
 
 
 def function_3_args(first_argument, second_argument, third_argument):
-    """three arguments function"""
+    """three arguments function."""
     return first_argument, second_argument, third_argument
 
 
 def function_default_arg(one=1, two=2):
-    """function with default value"""
+    """function with default value."""
     return two, one
 
 
 def args_out_of_order():
-    """Tests for arguments-out-of-order"""
+    """Tests for arguments-out-of-order."""
     first_argument = 1
     second_argument = 2
     third_argument = 3

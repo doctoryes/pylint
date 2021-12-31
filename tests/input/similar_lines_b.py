@@ -1,7 +1,8 @@
-""" The sister file of similar_lines_a, another file designed to have lines of
-similarity when compared to its sister file
+"""The sister file of similar_lines_a, another file designed to have lines of similarity
+when compared to its sister file.
 
-As with the sister file, we use lorm-ipsum to generate 'random' code. """
+As with the sister file, we use lorm-ipsum to generate 'random' code.
+"""
 # Copyright (c) 2020 Frank Harrison <frank@doublethefish.com>
 
 

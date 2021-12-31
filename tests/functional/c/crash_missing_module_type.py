@@ -1,16 +1,16 @@
-""" Test for a crash found in
-https://bitbucket.org/logilab/astroid/issue/45/attributeerror-module-object-has-no#comment-11944673
-"""
+"""Test for a crash found in
+https://bitbucket.org/logilab/astroid/issue/45/attributeerror-module-object- has-
+no#comment-11944673."""
 # pylint: disable=no-init, invalid-name, too-few-public-methods, redefined-outer-name, useless-object-inheritance
 def decor(trop):
-    """ decorator """
+    """decorator."""
     return trop
 
 class Foo(object):
-    """ Class """
+    """Class."""
     @decor
     def prop(self):
-        """ method """
+        """method."""
         return self
 
 if __name__ == '__main__':

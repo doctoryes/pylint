@@ -1,4 +1,4 @@
-"""test no crash on __file__ global"""
+"""test no crash on __file__ global."""
 
 def func():
     """override __file__"""

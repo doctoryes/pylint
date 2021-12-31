@@ -1,4 +1,4 @@
-"""Tests for multiple-statements"""
+"""Tests for multiple-statements."""
 # pylint: disable=using-constant-test, missing-class-docstring, missing-function-docstring, bare-except
 # pylint: disable=unused-argument, function-redefined
 

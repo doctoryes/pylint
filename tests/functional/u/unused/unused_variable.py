@@ -72,7 +72,7 @@ PATH = OS = collections = deque = None
 
 
 def function(matches):
-    """"yo"""
+    """"yo."""
     aaaa = 1  # [unused-variable]
     index = -1
     for match in matches:
@@ -81,7 +81,7 @@ def function(matches):
 
 from astroid import nodes
 def visit_if(self, node: nodes.If) -> None:
-    """increments the branches counter"""
+    """increments the branches counter."""
     branches = 1
     # don't double count If nodes coming from some 'elif'
     if node.orelse and len(node.orelse) > 1:
@@ -91,9 +91,7 @@ def visit_if(self, node: nodes.If) -> None:
 
 
 def test_global():
-    """ Test various assignments of global
-    variables through imports.
-    """
+    """Test various assignments of global variables through imports."""
     global PATH, OS, collections, deque  # [global-variable-not-assigned, global-variable-not-assigned]
     from os import path as PATH
     import os as OS
@@ -159,7 +157,7 @@ def func4():
 
 
 def main(lst):
-    """https://github.com/PyCQA/astroid/pull/1111#issuecomment-890367609"""
+    """https://github.com/PyCQA/astroid/pull/1111#issuecomment-890367609."""
     try:
         raise ValueError
     except ValueError as e:  # [unused-variable]

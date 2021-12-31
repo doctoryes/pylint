@@ -25,15 +25,15 @@ except:
 
 
 class AAAException(Exception):
-    """AAAException"""
+    """AAAException."""
     pass
 
 class BBBException(AAAException):
-    """BBBException"""
+    """BBBException."""
     pass
 
 def ccc():
-    """try-except-raise test function"""
+    """try-except-raise test function."""
 
     try:
         raise BBBException("asdf")
@@ -44,7 +44,7 @@ def ccc():
 
 
 def ddd():
-    """try-except-raise test function"""
+    """try-except-raise test function."""
 
     try:
         raise BBBException("asdf")

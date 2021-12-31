@@ -6,83 +6,82 @@ from typing import Callable
 
 __revision__ = ''
 class AAAA(object):
-    """docstring"""
+    """docstring."""
     def __init__(self):
         pass
     def method1(self):
-        """docstring"""
+        """docstring."""
 
     def method2(self):
-        """docstring"""
+        """docstring."""
 
     def method2(self): # [function-redefined]
-        """docstring"""
+        """docstring."""
 
 class AAAA(object): # [function-redefined]
-    """docstring"""
+    """docstring."""
     def __init__(self):
         pass
     def yeah(self):
-        """hehehe"""
+        """hehehe."""
     def yoo(self):
-        """yoo"""
+        """yoo."""
 def func1():
-    """docstring"""
+    """docstring."""
 
 def func2():
-    """docstring"""
+    """docstring."""
 
 def func2(): # [function-redefined]
-    """docstring"""
+    """docstring."""
     __revision__ = 1 # [redefined-outer-name]
     return __revision__
 
 if __revision__:
     def exclusive_func():
-        "docstring"
+        """docstring."""
 else:
     def exclusive_func():
-        "docstring"
+        """docstring."""
 
 try:
     def exclusive_func2():
-        "docstring"
+        """docstring."""
 except TypeError:
     def exclusive_func2():
-        "docstring"
+        """docstring."""
 else:
     def exclusive_func2(): # [function-redefined]
-        "this one redefine the one defined line 42"
+        """this one redefine the one defined line 42."""
 
 
 def with_inner_function_1():
-    """docstring"""
+    """docstring."""
     def callback():
-        """callback docstring"""
+        """callback docstring."""
         pass
     return callback
 
 def with_inner_function_2():
-    """docstring"""
+    """docstring."""
     def callback():
-        """does not redefine callback returned by with_inner_function_1"""
+        """does not redefine callback returned by with_inner_function_1."""
         pass
     return callback
 
 def some_func():
-    """Don't emit if we defined a variable with the same name as a
-    __future__ directive.
-    """
+    """Don't emit if we defined a variable with the same name as a __future__
+    directive."""
     division = 2
     return division
 
 def dummy_func():
-    """First dummy function"""
+    """First dummy function."""
     pass
 
 def dummy_func():
-    """Second dummy function, don't emit function-redefined message
-    because of the dummy name"""
+    """Second dummy function, don't emit function-redefined message because of the dummy
+    name."""
     pass
 
 from math import ceil
@@ -99,7 +98,7 @@ def _():
 
 # pylint: disable=too-few-public-methods
 class ObjectProxy:
-    """ABC"""
+    """ABC."""
 
     # We actually *redefine* these attributes, but these shouldn't
     # be considered actual redefinitions. Issue #2451

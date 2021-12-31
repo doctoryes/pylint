@@ -1,23 +1,23 @@
-''' Test for inheritance '''
+"""Test for inheritance."""
 from __future__ import print_function
 __revision__ = 1
 # pylint: disable=too-few-public-methods, using-constant-test, useless-object-inheritance
 class AAAA(object):
-    ''' class AAAA '''
+    """class AAAA."""
 
     def __init__(self):
         pass
 
     def method1(self):
-        ''' method 1 '''
+        """method 1."""
         print(self)
 
     def method2(self):
-        ''' method 2 '''
+        """method 2."""
         print(self)
 
 class BBBB(AAAA):
-    ''' class BBBB '''
+    """class BBBB."""
 
     def __init__(self):
         AAAA.__init__(self)
@@ -27,7 +27,7 @@ class BBBB(AAAA):
         AAAA.method1(self)
 
 class CCCC(BBBB):
-    ''' class CCCC '''
+    """class CCCC."""
 
     def __init__(self):
         BBBB.__init__(self)

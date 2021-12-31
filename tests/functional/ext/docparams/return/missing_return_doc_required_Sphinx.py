@@ -6,7 +6,7 @@ with accept-no-returns-doc = no"""
 
 
 def my_func(self):  # [missing-return-type-doc]
-    """Warn partial sphinx returns
+    """Warn partial sphinx returns.
 
     :returns: Always False
     """
@@ -14,7 +14,7 @@ def my_func(self):  # [missing-return-type-doc]
 
 
 def my_func(self) -> bool:
-    """Sphinx missing return type with annotations
+    """Sphinx missing return type with annotations.
 
     :returns: Always False
     """
@@ -22,7 +22,7 @@ def my_func(self) -> bool:
 
 
 def my_func(self):  # [missing-return-doc]
-    """Warn partial sphinx returns type
+    """Warn partial sphinx returns type.
 
     :rtype: bool
     """
@@ -41,7 +41,7 @@ def warn_missing_sphinx_returns(  # [missing-return-type-doc, missing-return-doc
 
 
 def my_func(self):  # [missing-return-doc]
-    """warns_sphinx_return_list_of_custom_class_without_description
+    """warns_sphinx_return_list_of_custom_class_without_description.
 
     :rtype: list(:class:`mymodule.Class`)
     """
@@ -49,10 +49,8 @@ def my_func(self):  # [missing-return-doc]
 
 
 class Foo:
-    """test_finds_missing_property_return_type_sphinx
-    Example of a property having missing return documentation in
-    a Sphinx style docstring
-    """
+    """test_finds_missing_property_return_type_sphinx Example of a property having
+    missing return documentation in a Sphinx style docstring."""
 
     @property
     def foo(self):  # [missing-return-type-doc]
@@ -65,9 +63,8 @@ class Foo:
 
 
 class Foo:
-    """Example of a class function trying to use `type` as return
-    documentation in a Sphinx style docstring
-    """
+    """Example of a class function trying to use `type` as return documentation in a
+    Sphinx style docstring."""
 
     def test_ignores_non_property_return_type_sphinx(  # [missing-return-doc, missing-return-type-doc]
         self,

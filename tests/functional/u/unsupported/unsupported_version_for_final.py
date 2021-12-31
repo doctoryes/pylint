@@ -1,4 +1,4 @@
-"""Tests for the use of typing.final whenever the py-version is set < 3.8"""
+"""Tests for the use of typing.final whenever the py-version is set < 3.8."""
 # pylint: disable=missing-class-docstring, no-member, too-few-public-methods, missing-function-docstring, no-name-in-module, reimported
 
 import typing

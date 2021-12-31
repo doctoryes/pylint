@@ -8,47 +8,45 @@ import abc
 
 class Abstract(object):
     def aaaa(self):
-        """should be overridden in concrete class"""
+        """should be overridden in concrete class."""
         raise NotImplementedError()
 
     def bbbb(self):
-        """should be overridden in concrete class"""
+        """should be overridden in concrete class."""
         raise NotImplementedError()
 
 
 class AbstractB(Abstract):
     """Abstract class.
 
-    this class is checking that it does not output an error msg for
-    unimplemeted methods in abstract classes
+    this class is checking that it does not output an error msg for unimplemeted methods
+    in abstract classes
     """
     def cccc(self):
-        """should be overridden in concrete class"""
+        """should be overridden in concrete class."""
         raise NotImplementedError()
 
 class AbstractC(AbstractB, abc.ABC):
-    """
-    Abstract class.
+    """Abstract class.
 
-    Should not trigger a warning for unimplemented
-    abstract methods, because of explicit abc.ABC inheritance.
+    Should not trigger a warning for unimplemented abstract methods, because of explicit
+    abc.ABC inheritance.
     """
 
 
 class AbstractD(AbstractB, metaclass=abc.ABCMeta):
-    """
-    Abstract class.
+    """Abstract class.
 
-    Should not trigger a warning for unimplemented
-    abstract methods, because of explicit metaclass.
+    Should not trigger a warning for unimplemented abstract methods, because of explicit
+    metaclass.
     """
 
 
 class Concrete(Abstract): # [abstract-method]
-    """Concrete class"""
+    """Concrete class."""
 
     def aaaa(self):
-        """overridden form Abstract"""
+        """overridden form Abstract."""
 
 
 class Structure(object, metaclass=abc.ABCMeta):

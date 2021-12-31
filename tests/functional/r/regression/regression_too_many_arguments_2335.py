@@ -1,4 +1,5 @@
-"""Test that `abc.ABCMeta.__new__` does not trigger too-many-function-arguments when referred
+"""Test that `abc.ABCMeta.__new__` does not trigger too-many-function-arguments when
+referred.
 
 https://github.com/PyCQA/pylint/issues/2335
 """

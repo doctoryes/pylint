@@ -1,6 +1,6 @@
 # pylint: disable=wildcard-import,unused-import,invalid-name,import-error
 # pylint: disable=bare-except,broad-except,wrong-import-order,ungrouped-imports,wrong-import-position
-"""check nonexistent names imported are reported"""
+"""check nonexistent names imported are reported."""
 from __future__ import print_function
 import collections.tutu  # [no-name-in-module]
 from collections import toto  # [no-name-in-module]

@@ -1,4 +1,4 @@
-"""https://github.com/PyCQA/pylint/issues/85"""
+"""https://github.com/PyCQA/pylint/issues/85."""
 def main():
     """When evaluating finally blocks, assume try statements fail."""
     try:

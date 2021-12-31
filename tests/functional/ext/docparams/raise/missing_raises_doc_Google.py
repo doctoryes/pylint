@@ -1,4 +1,5 @@
-"""Tests for missing-raises-doc and missing-raises-type-doc for Google style docstrings"""
+"""Tests for missing-raises-doc and missing-raises-type-doc for Google style
+docstrings."""
 # pylint: disable=function-redefined, invalid-name, undefined-variable, missing-function-docstring
 # pylint: disable=unused-argument, import-outside-toplevel, import-error, try-except-raise, too-few-public-methods
 
@@ -47,9 +48,8 @@ def test_find_valid_missing_google_attr_raises(self):  # [missing-raises-doc]
 
 
 def test_find_invalid_missing_google_attr_raises(self):
-    """This is a google docstring.
-    pylint allows this to pass since the comparison between Raises and
-    raise are based on the class name, not the qualified name.
+    """This is a google docstring. pylint allows this to pass since the comparison
+    between Raises and raise are based on the class name, not the qualified name.
 
     Raises:
         bogusmodule.error: Sometimes
@@ -60,9 +60,8 @@ def test_find_invalid_missing_google_attr_raises(self):
 
 
 def test_google_raises_local_reference(self):
-    """This is a google docstring.
-    pylint allows this to pass since the comparison between Raises and
-    raise are based on the class name, not the qualified name.
+    """This is a google docstring. pylint allows this to pass since the comparison
+    between Raises and raise are based on the class name, not the qualified name.
 
     Raises:
         .LocalException: Always
@@ -139,10 +138,8 @@ def test_ignores_caught_google_raises(self):
 
 
 class Foo:
-    """test_finds_missing_raises_from_setter_google
-    Example of a setter having missing raises documentation in
-    the Google style docstring of the property
-    """
+    """test_finds_missing_raises_from_setter_google Example of a setter having missing
+    raises documentation in the Google style docstring of the property."""
 
     @property
     def foo_method(self):  # [missing-raises-doc]
@@ -164,10 +161,8 @@ class Foo:
 
 
 class Foo:
-    """test_finds_missing_raises_from_setter_google_2
-    Example of a setter having missing raises documentation in
-    its own Google style docstring of the property.
-    """
+    """test_finds_missing_raises_from_setter_google_2 Example of a setter having missing
+    raises documentation in its own Google style docstring of the property."""
 
     @property
     def foo_method(self):

@@ -3,7 +3,7 @@
 
 
 class ClassLevelAttributeTest(object):
-    """ test attribute docstrings. """
+    """test attribute docstrings."""
 
     some_variable: int = 42
     """Data docstring"""
@@ -12,7 +12,7 @@ class ClassLevelAttributeTest(object):
     """Data docstring"""
 
     def func(self):
-        """Some Empty Docstring"""
+        """Some Empty Docstring."""
 
     # +1: [pointless-string-statement]
     """useless"""

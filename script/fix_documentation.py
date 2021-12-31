@@ -1,4 +1,7 @@
-"""Small script to fix various issues with the documentation. Used by pre-commit."""
+"""Small script to fix various issues with the documentation.
+
+Used by pre-commit.
+"""
 import argparse
 import re
 import sys
@@ -23,7 +26,7 @@ def fix_inline_code_blocks(file_content: str) -> str:
 
 
 def changelog_insert_empty_lines(file_content: str, subtitle_text: str) -> str:
-    """Insert up to two empty lines before `What's New` entry in ChangeLog"""
+    """Insert up to two empty lines before `What's New` entry in ChangeLog."""
     lines = file_content.split("\n")
     subtitle_count = 0
     for i, line in enumerate(lines):

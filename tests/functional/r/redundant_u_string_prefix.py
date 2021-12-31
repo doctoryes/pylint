@@ -1,4 +1,4 @@
-""""Checks for redundant u-prefixes for strings"""
+""""Checks for redundant u-prefixes for strings."""
 # pylint: disable=missing-function-docstring
 
 def print_good():

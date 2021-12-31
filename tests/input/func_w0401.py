@@ -1,5 +1,4 @@
-"""test cyclic import
-"""
+"""test cyclic import."""
 
 from __future__ import print_function
 

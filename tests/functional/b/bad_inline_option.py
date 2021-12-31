@@ -1,4 +1,4 @@
-"""errors-only is not usable as an inline option"""
+"""errors-only is not usable as an inline option."""
 # +1: [bad-inline-option]
 # pylint: disable missing-docstring
 

@@ -17,38 +17,38 @@ def fix_contant(value):
 
 
 def other():
-    """global behaviour test"""
+    """global behaviour test."""
     global HOP  # [global-variable-not-assigned]
     print(HOP)  # [undefined-variable]
 
 
 def define_constant():
-    """ok but somevar is not defined at the module scope"""
+    """ok but somevar is not defined at the module scope."""
     global SOMEVAR  # [global-variable-undefined]
     SOMEVAR = 2
 
 
 def global_with_import():
-    """should only warn for global-statement"""
+    """should only warn for global-statement."""
     global sys  # [global-statement]
     import sys  # pylint: disable=import-outside-toplevel
 
 
 def global_no_assign():
-    """Not assigning anything to the global makes 'global' superfluous"""
+    """Not assigning anything to the global makes 'global' superfluous."""
     global CONSTANT  # [global-variable-not-assigned]
     print(CONSTANT)
 
 
 def global_operator_assign():
-    """Operator assigns should only throw a global statement error"""
+    """Operator assigns should only throw a global statement error."""
     global CONSTANT  # [global-statement]
     print(CONSTANT)
     CONSTANT += 1
 
 
 def global_function_assign():
-    """Function assigns should only throw a global statement error"""
+    """Function assigns should only throw a global statement error."""
     global CONSTANT  # [global-statement]
 
     def CONSTANT():
@@ -58,7 +58,7 @@ def global_function_assign():
 
 
 def override_func():
-    """Overriding a function should only throw a global statement error"""
+    """Overriding a function should only throw a global statement error."""
     global FUNC # [global-statement]
 
     def FUNC():
@@ -67,7 +67,7 @@ def override_func():
     FUNC()
 
 def func():
-    """Overriding a global with an import should only throw a global statement error"""
+    """Overriding a global with an import should only throw a global statement error."""
     global sys  # [global-statement]
 
     import sys

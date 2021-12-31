@@ -1,4 +1,4 @@
-"""Check invalid value returned by __len__ """
+"""Check invalid value returned by __len__"""
 
 # pylint: disable=too-few-public-methods,missing-docstring,no-self-use,import-error, useless-object-inheritance
 import sys
@@ -33,39 +33,39 @@ class ThirdGoodLen(object):
 
 
 class FirstBadLen(object):
-    """ __len__ returns a negative integer """
+    """__len__ returns a negative integer."""
 
     def __len__(self):  # [invalid-length-returned]
         return -1
 
 
 class SecondBadLen(object):
-    """ __len__ returns non-int """
+    """__len__ returns non-int."""
 
     def __len__(self):  # [invalid-length-returned]
         return 3.0
 
 
 class ThirdBadLen(object):
-    """ __len__ returns node which does not have 'value' in AST """
+    """__len__ returns node which does not have 'value' in AST."""
 
     def __len__(self):  # [invalid-length-returned]
         return lambda: 3
 
 
 class NonRegression(object):
-    """ __len__ returns nothing """
+    """__len__ returns nothing."""
 
     def __len__(self):  # [invalid-length-returned]
         print(3.0)
 
 
 class AmbigousLen(object):
-    """ Uninferable return value """
+    """Uninferable return value."""
     __len__ = lambda self: Missing
 
 
 class AnotherAmbiguousLen(object):
-    """Potential uninferable return value"""
+    """Potential uninferable return value."""
     def __len__(self):
         return int(Missing)

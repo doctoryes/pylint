@@ -1,4 +1,4 @@
-"""Tests for logging-too-many-args"""
+"""Tests for logging-too-many-args."""
 import logging
 
 logging.error("constant string", 1, 2)  # [logging-too-many-args]

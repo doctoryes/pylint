@@ -1,5 +1,5 @@
 # pylint: disable=missing-docstring,too-few-public-methods,useless-object-inheritance
-"""#3291"""
+"""#3291."""
 from __future__ import print_function
 
 class Myarray(object):

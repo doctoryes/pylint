@@ -1,4 +1,4 @@
-"""Tests for logging-format-interpolation with logging-format-style=new"""
+"""Tests for logging-format-interpolation with logging-format-style=new."""
 
 import logging
 

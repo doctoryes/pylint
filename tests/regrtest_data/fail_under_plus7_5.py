@@ -1,6 +1,4 @@
-""""
-    pylint score:  +7.50
-"""
+"""" pylint score:  +7.50."""
 
 import os
 

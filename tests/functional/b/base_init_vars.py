@@ -4,8 +4,7 @@
 
 
 class BaseClass(object):
-    """A simple base class
-    """
+    """A simple base class."""
 
     def __init__(self):
         self.base_var = {}
@@ -16,16 +15,14 @@ class BaseClass(object):
         """ye"""
         return with_
 class MyClass(BaseClass):
-    """Inherits from BaseClass
-    """
+    """Inherits from BaseClass."""
 
     def __init__(self):
         BaseClass.__init__(self)
         self.var = {}
 
     def met(self):
-        """Checks that base_var is not seen as defined outsite '__init__'
-        """
+        """Checks that base_var is not seen as defined outsite '__init__'."""
         self.var[1] = 'one'
         self.base_var[1] = 'one'
         return self.base_var, self.var

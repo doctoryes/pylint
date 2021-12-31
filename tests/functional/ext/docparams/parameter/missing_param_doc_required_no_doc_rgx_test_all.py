@@ -6,14 +6,12 @@ with accept-no-param-doc = no and no-docstring-rgx = ^$
 
 
 class MyClass:
-    """test_all_docstring_rgx
-    Function that matches "check all functions" 'no-docstring-rgx' config option
-    No error message is emitted.
-    """
+    """test_all_docstring_rgx Function that matches "check all functions" 'no-
+    docstring-rgx' config option No error message is emitted."""
 
     def __init__(self, my_param: int) -> None:
-        """
-        My init docstring
+        """My init docstring.
+
         :param my_param: My first param
         """
 
@@ -23,6 +21,4 @@ class MyClass:
 # An error message is emitted.
 class MyClass:
     def __init__(self, my_param: int) -> None:  # [missing-param-doc]
-        """
-        My init docstring
-        """
+        """My init docstring."""

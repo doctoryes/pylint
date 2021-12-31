@@ -1,5 +1,5 @@
 # pylint: disable=too-few-public-methods, invalid-name
-"""Test typing with a protected member"""
+"""Test typing with a protected member."""
 from __future__ import annotations
 
 
@@ -13,7 +13,7 @@ class MyClass:
             self.data = 1
 
         def return_data(self) -> int:
-            """Return data"""
+            """Return data."""
             return self.data
 
     def return_private_class(self) -> MyClass._Inner_Class:

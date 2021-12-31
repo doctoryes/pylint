@@ -1,7 +1,5 @@
-"""Check that instantiating a class with
-`abc.ABCMeta` as metaclass fails if it defines
-abstract methods.
-"""
+"""Check that instantiating a class with `abc.ABCMeta` as metaclass fails if it defines
+abstract methods."""
 
 # pylint: disable=too-few-public-methods, missing-docstring
 # pylint: disable=abstract-method, import-error, useless-object-inheritance
@@ -16,23 +14,23 @@ class GoodClass(object, metaclass=abc.ABCMeta):
 
 class SecondGoodClass(object, metaclass=abc.ABCMeta):
     def test(self):
-        """ do nothing. """
+        """do nothing."""
 
 class ThirdGoodClass(object, metaclass=abc.ABCMeta):
-    """ This should not raise the warning. """
+    """This should not raise the warning."""
     def test(self):
         raise NotImplementedError()
 
 class BadClass(object, metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def test(self):
-        """ do nothing. """
+        """do nothing."""
 
 class SecondBadClass(object, metaclass=abc.ABCMeta):
     @property
     @abc.abstractmethod
     def test(self):
-        """ do nothing. """
+        """do nothing."""
 
 class ThirdBadClass(SecondBadClass):
     pass
@@ -89,14 +87,13 @@ class SomeMetaclass(metaclass=abc.ABCMeta):
         pass
 
 class FourthGoodClass(SomeMetaclass):
-    """Don't consider this abstract if some attributes are
-    there, but can't be inferred.
-    """
+    """Don't consider this abstract if some attributes are there, but can't be
+    inferred."""
     prop = Bala # missing
 
 
 def main():
-    """ do nothing """
+    """do nothing."""
     GoodClass()
     SecondGoodClass()
     ThirdGoodClass()
@@ -129,15 +126,13 @@ def main2():
 
 
 class BadClassTwo(abc.ABC):
-    """
-    Check that instantiating a class with `abc.ABCMeta` as ancestor fails if it
-    defines abstract methods.
-    """
+    """Check that instantiating a class with `abc.ABCMeta` as ancestor fails if it
+    defines abstract methods."""
     @abc.abstractmethod
     def test(self):
         pass
 
 
 def main_two():
-    """ do nothing """
+    """do nothing."""
     BadClassTwo() # [abstract-class-instantiated]

@@ -1,4 +1,4 @@
-"""Checks import order rule"""
+"""Checks import order rule."""
 # pylint: disable=unused-import,wrong-import-position,wrong-import-order,using-constant-test
 # pylint: disable=import-error
 import six

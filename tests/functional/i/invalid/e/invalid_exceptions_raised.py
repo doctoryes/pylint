@@ -1,5 +1,5 @@
 # pylint:disable=too-few-public-methods,no-init,import-error,missing-docstring, not-callable, useless-object-inheritance,import-outside-toplevel
-"""test pb with exceptions and old/new style classes"""
+"""test pb with exceptions and old/new style classes."""
 
 
 class ValidException(Exception):
@@ -13,7 +13,7 @@ class NewStyleClass(object):
 
 
 def good_case():
-    """raise"""
+    """raise."""
     raise ValidException('hop')
 
 def good_case1():
@@ -32,47 +32,47 @@ def good_case3():
     raise io.BlockingIOError
 
 def bad_case0():
-    """raise"""
+    """raise."""
     # +2:<3.0:[nonstandard-exception]
     # +1:>=3.0:[raising-non-exception]
     raise OldStyleClass('hop')
 
 def bad_case1():
-    """raise"""
+    """raise."""
     raise NewStyleClass()  # [raising-non-exception]
 
 def bad_case2():
-    """raise"""
+    """raise."""
     # +2:<3.0:[nonstandard-exception]
     # +1:>=3.0:[raising-non-exception]
     raise OldStyleClass('hop')
 
 def bad_case3():
-    """raise"""
+    """raise."""
     raise NewStyleClass  # [raising-non-exception]
 
 def bad_case4():
-    """raise"""
+    """raise."""
     raise NotImplemented('hop')  # [notimplemented-raised]
 
 def bad_case5():
-    """raise"""
+    """raise."""
     raise 1  # [raising-bad-type]
 
 def bad_case6():
-    """raise"""
+    """raise."""
     raise None  # [raising-bad-type]
 
 def bad_case7():
-    """raise list"""
+    """raise list."""
     raise list # [raising-non-exception]
 
 def bad_case8():
-    """raise tuple"""
+    """raise tuple."""
     raise tuple # [raising-non-exception]
 
 def bad_case9():
-    """raise dict"""
+    """raise dict."""
     raise dict # [raising-non-exception]
 
 def unknown_bases():
@@ -84,7 +84,7 @@ def unknown_bases():
 
 
 def exception_instance_regression():
-    """Exceptions have a particular class type"""
+    """Exceptions have a particular class type."""
     try:
         int("9a")
     except ValueError as exc:
@@ -93,7 +93,7 @@ def exception_instance_regression():
 
 def reusing_same_name_picks_the_latest_raised_value():
     class Error(Exception):
-        """some error"""
+        """some error."""
 
     exceptions = tuple([ValueError, TypeError])
     try:
@@ -106,5 +106,5 @@ def reusing_same_name_picks_the_latest_raised_value():
 
 
 def bad_case10():
-    """raise string"""
+    """raise string."""
     raise "string"  # [raising-bad-type]

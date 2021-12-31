@@ -1,32 +1,32 @@
 # pylint: disable=C0302,bare-except, useless-object-inheritance
-"""pylint option block-disable"""
+"""pylint option block-disable."""
 from __future__ import print_function
 
 class Foo(object):
-    """block-disable test"""
+    """block-disable test."""
 
     def __init__(self):
         self._test = "42"
 
     def meth1(self, arg):
-        """this issues a message"""
+        """this issues a message."""
         print(self)
 
     def meth2(self, arg):
-        """and this one not"""
+        """and this one not."""
         # pylint: disable=W0613
         print(self._test\
               + "foo")
 
     def meth3(self):
-        """test one line disabling"""
+        """test one line disabling."""
         # no error
         print(self.bla) # pylint: disable=E1101
         # error
         print(self.blop)
 
     def meth4(self):
-        """test re-enabling"""
+        """test re-enabling."""
         # pylint: disable=E1101
         # no error
         print(self.bla)
@@ -36,7 +36,7 @@ class Foo(object):
         print(self.blip)
 
     def meth5(self):
-        """test IF sub-block re-enabling"""
+        """test IF sub-block re-enabling."""
         # pylint: disable=E1101
         # no error
         print(self.bla)
@@ -51,7 +51,7 @@ class Foo(object):
         print(self.blip)
 
     def meth6(self):
-        """test TRY/EXCEPT sub-block re-enabling"""
+        """test TRY/EXCEPT sub-block re-enabling."""
         # pylint: disable=E1101
         # no error
         print(self.bla)
@@ -66,7 +66,7 @@ class Foo(object):
         print(self.blip)
 
     def meth7(self):
-        """test one line block opening disabling"""
+        """test one line block opening disabling."""
         if self.blop: # pylint: disable=E1101
             # error
             print(self.blip)
@@ -78,7 +78,7 @@ class Foo(object):
 
 
     def meth8(self):
-        """test late disabling"""
+        """test late disabling."""
         # error
         print(self.blip)
         # pylint: disable=E1101
@@ -87,7 +87,7 @@ class Foo(object):
         print(self.blop)
 
     def meth9(self):
-        """test re-enabling right after a block with whitespace"""
+        """test re-enabling right after a block with whitespace."""
         eris = 5
 
         if eris: # pylint: disable=using-constant-test
@@ -102,7 +102,7 @@ class Foo(object):
         print(self.blip)
 
     def meth10(self):
-        """Test double disable"""
+        """Test double disable."""
         # pylint: disable=E1101
         # no error
         print(self.bla)
@@ -111,8 +111,7 @@ class Foo(object):
 
 
 class ClassLevelMessage(object):
-    """shouldn't display to much attributes/not enough methods messages
-    """
+    """shouldn't display to much attributes/not enough methods messages."""
     # pylint: disable=R0902,R0903
 
     def __init__(self):
@@ -128,8 +127,7 @@ class ClassLevelMessage(object):
         self.attr0 = 1
 
     def too_complex_but_thats_ok(self, attr1, attr2):
-        """THIS Method has too much branches and returns but i don't care
-        """
+        """THIS Method has too much branches and returns but i don't care."""
         # pylint: disable=R0912,R0911
         try:
             attr3 = attr1+attr2

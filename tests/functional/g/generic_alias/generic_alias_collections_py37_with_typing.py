@@ -1,7 +1,7 @@
 """Test generic alias support for stdlib types (added in PY39).
 
-Raise [unsubscriptable-object] error for PY37 and PY38.
-Make sure `import typing` doesn't change anything.
+Raise [unsubscriptable-object] error for PY37 and PY38. Make sure `import typing`
+doesn't change anything.
 """
 # flake8: noqa
 # pylint: disable=missing-docstring,pointless-statement,unused-import

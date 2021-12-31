@@ -69,7 +69,7 @@ class MyCls:
 
 
 class Bla:
-    """Regression test for issue 4638"""
+    """Regression test for issue 4638."""
 
     def __init__(self):
         type(self).__a()
@@ -90,7 +90,7 @@ class Bla:
 
 
 class Klass:
-    """Regression test for 4644"""
+    """Regression test for 4644."""
 
     __seventyseven = 77
     __ninetyone = 91
@@ -107,7 +107,7 @@ print(k.ninetyfive)
 # https://github.com/PyCQA/pylint/issues/4657
 # Mutation of class member with cls should not fire a false-positive
 class FalsePositive4657:
-    """False positivie tests for 4657"""
+    """False positivie tests for 4657."""
     __attr_a = None
     __attr_b = 'b'
 
@@ -167,14 +167,14 @@ class FalsePositive4668:
 # https://github.com/PyCQA/pylint/issues/4673
 # Nested functions shouldn't cause a false positive if they are properly used
 class FalsePositive4673:
-    """ The testing class """
+    """The testing class."""
 
     def __init__(self, in_thing):
         self.thing = False
         self.do_thing(in_thing)
 
     def do_thing(self, in_thing):
-        """ Checks the false-positive condition, sets a property. """
+        """Checks the false-positive condition, sets a property."""
         def __false_positive(in_thing):
             print(in_thing)
 
@@ -185,7 +185,7 @@ class FalsePositive4673:
         self.thing = True
 
     def undo_thing(self):
-        """ Unsets a property. """
+        """Unsets a property."""
         self.thing = False
 
     def complicated_example(self, flag):
@@ -281,7 +281,7 @@ class FalsePositive4849:
 
 
 class Pony:
-    """https://github.com/PyCQA/pylint/issues/4837"""
+    """https://github.com/PyCQA/pylint/issues/4837."""
     __defaults = {}
     __defaults_set = False
 

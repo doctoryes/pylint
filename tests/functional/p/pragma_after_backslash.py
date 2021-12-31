@@ -2,9 +2,9 @@
 # pylint: disable=too-few-public-methods
 
 class Foo:
-    """block-disable test"""
+    """block-disable test."""
 
     def meth3(self):
-        """test one line disabling"""
+        """test one line disabling."""
         print(self.bla) \
            # pylint: disable=no-member

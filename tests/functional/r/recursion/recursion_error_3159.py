@@ -1,4 +1,4 @@
-"""Check that we do not crash with a recursion error
+"""Check that we do not crash with a recursion error.
 
 https://github.com/PyCQA/pylint/issues/3159
 """

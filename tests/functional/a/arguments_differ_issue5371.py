@@ -1,10 +1,10 @@
-"""https://github.com/PyCQA/pylint/issues/5371"""
+"""https://github.com/PyCQA/pylint/issues/5371."""
 from enum import Enum
 
 
 class MyEnum(Enum):
-    """
-    Enum._generate_next_value_() in the stdlib currently lacks a
+    """Enum._generate_next_value_() in the stdlib currently lacks a.
+
     @staticmethod decorator.
     """
 

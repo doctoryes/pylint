@@ -23,5 +23,5 @@ from os import open
 
 # Test non-default redefining-builtins-modules setting in function
 def test():
-    """Function importing a function"""
+    """Function importing a function."""
     from os import open

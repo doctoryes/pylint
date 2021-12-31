@@ -1,11 +1,11 @@
 # pylint: disable=no-else-raise,unsupported-membership-test,using-constant-test
 
-"""Checks use of "else if" triggers a refactor message"""
+"""Checks use of "else if" triggers a refactor message."""
 from typing import Union, Sequence, Any, Mapping
 
 
 def my_function():
-    """docstring"""
+    """docstring."""
     myint = 2
     if myint > 5:
         pass

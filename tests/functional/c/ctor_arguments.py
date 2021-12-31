@@ -7,15 +7,15 @@ Based on tests/functional/a/arguments.py
 
 class Class1Arg(object):
     def __init__(self, first_argument):
-        """one argument function"""
+        """one argument function."""
 
 class Class3Arg(object):
     def __init__(self, first_argument, second_argument, third_argument):
-        """three arguments function"""
+        """three arguments function."""
 
 class ClassDefaultArg(object):
     def __init__(self, one=1, two=2):
-        """function with default value"""
+        """function with default value."""
 
 class Subclass1Arg(Class1Arg):
     pass

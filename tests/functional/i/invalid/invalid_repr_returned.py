@@ -1,4 +1,4 @@
-"""Check invalid value returned by __repr__ """
+"""Check invalid value returned by __repr__"""
 
 # pylint: disable=too-few-public-methods,missing-docstring,no-self-use,import-error, useless-object-inheritance
 import six
@@ -31,34 +31,34 @@ class ThirdGoodRepr(object):
 
 
 class FirstBadRepr(object):
-    """ __repr__ returns bytes """
+    """__repr__ returns bytes."""
 
     def __repr__(self):  # [invalid-repr-returned]
         return b"123"
 
 
 class SecondBadRepr(object):
-    """ __repr__ returns int """
+    """__repr__ returns int."""
 
     def __repr__(self):  # [invalid-repr-returned]
         return 1
 
 
 class ThirdBadRepr(object):
-    """ __repr__ returns node which does not have 'value' in AST """
+    """__repr__ returns node which does not have 'value' in AST."""
 
     def __repr__(self):  # [invalid-repr-returned]
         return lambda: "some repr"
 
 
 class AmbiguousRepr(object):
-    """ Uninferable return value """
+    """Uninferable return value."""
 
     __repr__ = lambda self: Missing
 
 
 class AnotherAmbiguousRepr(object):
-    """Potential uninferable return value"""
+    """Potential uninferable return value."""
 
     def __repr__(self):
         return str(Missing)

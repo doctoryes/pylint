@@ -1,4 +1,4 @@
-"""Test for old ternary constructs"""
+"""Test for old ternary constructs."""
 from UNINFERABLE import condition, true_value, false_value, some_callable  # pylint: disable=import-error
 
 SOME_VALUE1 = true_value if condition else false_value
@@ -6,12 +6,12 @@ SOME_VALUE2 = condition and true_value or false_value  # [consider-using-ternary
 SOME_VALUE3 = condition
 
 def func1():
-    """Ternary return value correct"""
+    """Ternary return value correct."""
     return true_value if condition else false_value
 
 
 def func2():
-    """Ternary return value incorrect"""
+    """Ternary return value incorrect."""
     return condition and true_value or false_value  # [consider-using-ternary]
 
 
@@ -28,12 +28,12 @@ IS_LEAP_YEAR = YEAR % 4 == 0 and YEAR % 100 != 0 or YEAR % 400 == 0
 
 
 def func4():
-    """"Using a Name as a condition but still emits"""
+    """"Using a Name as a condition but still emits."""
     truth_value = 42
     return condition and truth_value or false_value # [consider-using-ternary]
 
 
 def func5():
-    """"Using a Name that infers to False as a condition does not emit"""
+    """"Using a Name that infers to False as a condition does not emit."""
     falsy_value = False
     return condition and falsy_value or false_value # [simplify-boolean-expression]

@@ -1,4 +1,4 @@
-"""test string format error"""
+"""test string format error."""
 # pylint: disable=unsupported-binary-operation,line-too-long, consider-using-f-string
 from __future__ import print_function
 
@@ -6,7 +6,7 @@ PARG_1 = PARG_2 = PARG_3 = 1
 
 
 def pprint():
-    """Test string format"""
+    """Test string format."""
     print("%s %s" % {'PARG_1': 1, 'PARG_2': 2})  # [too-few-format-args]
     print("%s" % (PARG_1, PARG_2))  # [too-many-format-args]
     print("%(PARG_1)d %d" % {'PARG_1': 1, 'PARG_2': 2})  # [mixed-format-string]

@@ -1,7 +1,5 @@
 # pylint: disable=too-few-public-methods, useless-object-inheritance
-"""
-Simple test case for an annoying behavior in pylint.
-"""
+"""Simple test case for an annoying behavior in pylint."""
 
 __revision__ = 'pouet'
 
@@ -13,7 +11,7 @@ class Test(object):
 
     @property
     def myattr(self):
-        """Getter for myattr"""
+        """Getter for myattr."""
         return self._thing
 
     @myattr.setter

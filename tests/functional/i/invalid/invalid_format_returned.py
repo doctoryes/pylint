@@ -1,4 +1,4 @@
-"""Check invalid value returned by __format__ """
+"""Check invalid value returned by __format__"""
 
 # pylint: disable=too-few-public-methods,missing-docstring,no-self-use,import-error, useless-object-inheritance
 import six
@@ -31,34 +31,34 @@ class ThirdGoodFormat(object):
 
 
 class FirstBadFormat(object):
-    """ __format__ returns bytes """
+    """__format__ returns bytes."""
 
     def __format__(self, format_spec):  # [invalid-format-returned]
         return b"123"
 
 
 class SecondBadFormat(object):
-    """ __format__ returns int """
+    """__format__ returns int."""
 
     def __format__(self, format_spec):  # [invalid-format-returned]
         return 1
 
 
 class ThirdBadFormat(object):
-    """ __format__ returns node which does not have 'value' in AST """
+    """__format__ returns node which does not have 'value' in AST."""
 
     def __format__(self, format_spec):  # [invalid-format-returned]
         return lambda: "some format"
 
 
 class AmbiguousFormat(object):
-    """ Uninferable return value """
+    """Uninferable return value."""
 
     __format__ = lambda self, format_spec: Missing
 
 
 class AnotherAmbiguousFormat(object):
-    """Potential uninferable return value"""
+    """Potential uninferable return value."""
 
     def __format__(self, format_spec):
         return str(Missing)

@@ -1,4 +1,4 @@
-"""Tests for missing-raises-doc and missing-raises-type-doc for Numpy style docstrings
+"""Tests for missing-raises-doc and missing-raises-type-doc for Numpy style docstrings.
 
 Styleguide:
 https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard
@@ -122,9 +122,8 @@ def test_find_valid_missing_numpy_attr_raises(self):  # [missing-raises-doc]
 
 
 def test_find_invalid_missing_numpy_attr_raises(self):
-    """This is a numpy docstring.
-     pylint allows this to pass since the comparison between Raises and
-    raise are based on the class name, not the qualified name.
+    """This is a numpy docstring. pylint allows this to pass since the comparison
+    between Raises and raise are based on the class name, not the qualified name.
 
     Raises
     ------
@@ -137,10 +136,8 @@ def test_find_invalid_missing_numpy_attr_raises(self):
 
 
 class Foo:
-    """test_finds_missing_raises_from_setter_numpy
-    Example of a setter having missing raises documentation in
-    the Numpy style docstring of the property
-    """
+    """test_finds_missing_raises_from_setter_numpy Example of a setter having missing
+    raises documentation in the Numpy style docstring of the property."""
 
     @property
     def foo(self):  # [missing-raises-doc]
@@ -164,10 +161,8 @@ class Foo:
 
 
 class Foo:
-    """test_finds_missing_raises_from_setter_numpy_2
-    Example of a setter having missing raises documentation in
-    its own Numpy style docstring of the property
-    """
+    """test_finds_missing_raises_from_setter_numpy_2 Example of a setter having missing
+    raises documentation in its own Numpy style docstring of the property."""
 
     @property
     def foo(self):
@@ -197,10 +192,8 @@ class Foo:
 
 
 class Foo:
-    """test_finds_property_return_type_numpy
-    Example of a property having return documentation in
-    a numpy style docstring
-    """
+    """test_finds_property_return_type_numpy Example of a property having return
+    documentation in a numpy style docstring."""
 
     @property
     def foo(self):

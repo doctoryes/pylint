@@ -1,43 +1,42 @@
 # pylint: disable=too-few-public-methods,import-error,missing-docstring,wrong-import-position,useless-super-delegation, useless-object-inheritance, unnecessary-pass
-"""test for __init__ not called
-"""
+"""test for __init__ not called."""
 from __future__ import print_function
 
 class AAAA:
-    """ancestor 1"""
+    """ancestor 1."""
 
     def __init__(self):
         print('init', self)
 
 class BBBB:
-    """ancestor 2"""
+    """ancestor 2."""
 
     def __init__(self):
         print('init', self)
 
 class CCCC:
-    """ancestor 3"""
+    """ancestor 3."""
 
 
 class ZZZZ(AAAA, BBBB, CCCC):
-    """derived class"""
+    """derived class."""
 
     def __init__(self):  # [super-init-not-called]
         AAAA.__init__(self)
 
 class NewStyleA(object):
-    """new style class"""
+    """new style class."""
     def __init__(self):
         super().__init__()
         print('init', self)
 
 class NewStyleB(NewStyleA):
-    """derived new style class"""
+    """derived new style class."""
     def __init__(self):
         super().__init__()
 
 class NoInit(object):
-    """No __init__ defined"""
+    """No __init__ defined."""
 
 class Init(NoInit):
     """Don't complain for not calling the super __init__"""

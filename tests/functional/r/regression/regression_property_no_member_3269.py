@@ -1,21 +1,21 @@
-"""Calling a super property"""
+"""Calling a super property."""
 # pylint: disable=too-few-public-methods,invalid-name
 
 class A:
-    """A parent class"""
+    """A parent class."""
 
     @property
     def test(self):
-        """A property"""
+        """A property."""
         return "test"
 
 
 class B:
-    """A child class"""
+    """A child class."""
 
     @property
     def test(self):
-        """Overriding implementation of prop which calls the parent"""
+        """Overriding implementation of prop which calls the parent."""
         return A.test.fget(self) + " overridden"
 
 

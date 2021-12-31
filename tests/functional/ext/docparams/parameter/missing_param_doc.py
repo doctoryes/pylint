@@ -5,8 +5,9 @@ with accept-no-param-doc = yes
 
 
 def test_tolerate_no_param_documentation_at_all(x, y):
-    """Example of a function with no parameter documentation at all
+    """Example of a function with no parameter documentation at all.
 
     No error message is emitted.
 
-    missing parameter documentation"""
+    missing parameter documentation
+    """

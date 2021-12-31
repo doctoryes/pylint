@@ -17,10 +17,8 @@ def parser_error_name(msg) -> NoReturn:  # pylint: disable=unused-argument
     sys.exit(3)
 
 def bug_pylint_4122(s):
-    """
-    Every returns is consistent because parser_error has type hints
-    indicating it never returns
-    """
+    """Every returns is consistent because parser_error has type hints indicating it
+    never returns."""
     try:
         n = int(s)
         if n < 1:
@@ -30,9 +28,8 @@ def bug_pylint_4122(s):
         parser_error('parser error')
 
 def bug_pylint_4122_wrong(s):  # [inconsistent-return-statements]
-    """
-    Every returns is not consistent because parser_error_nortype has no type hints
-    """
+    """Every returns is not consistent because parser_error_nortype has no type
+    hints."""
     try:
         n = int(s)
         if n < 1:
@@ -42,10 +39,8 @@ def bug_pylint_4122_wrong(s):  # [inconsistent-return-statements]
         parser_error_nortype('parser error')
 
 def bug_pylint_4122_bis(s):
-    """
-    Every returns is consistent because parser_error has type hints
-    indicating it never returns
-    """
+    """Every returns is consistent because parser_error has type hints indicating it
+    never returns."""
     try:
         n = int(s)
         if n < 1:

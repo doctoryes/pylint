@@ -1,16 +1,15 @@
-"""Checks class methods are declared with a decorator if within the class
-scope and if classmethod's argument is a member of the class
-"""
+"""Checks class methods are declared with a decorator if within the class scope and if
+classmethod's argument is a member of the class."""
 
 # pylint: disable=too-few-public-methods, using-constant-test, no-self-argument, useless-object-inheritance
 
 class MyClass(object):
-    """Some class"""
+    """Some class."""
     def __init__(self):
         pass
 
     def cmethod(cls):
-        """class method-to-be"""
+        """class method-to-be."""
     cmethod = classmethod(cmethod)  # [no-classmethod-decorator]
 
     if True:
@@ -18,18 +17,18 @@ class MyClass(object):
 
     @classmethod
     def my_second_method(cls):
-        """correct class method definition"""
+        """correct class method definition."""
 
     def other_method(cls):
-        """some method"""
+        """some method."""
     cmethod2 = classmethod(other_method)  # [no-classmethod-decorator]
 
 def helloworld():
-    """says hello"""
+    """says hello."""
 
 
 MyClass.new_class_method = classmethod(helloworld)
 
 class MyOtherClass(object):
-    """Some other class"""
+    """Some other class."""
     _make = classmethod(tuple.__new__)

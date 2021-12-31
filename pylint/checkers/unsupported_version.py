@@ -5,8 +5,8 @@
 # Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
 
-"""Checker for features used that are not supported by all python versions
-indicated by the py-version setting.
+"""Checker for features used that are not supported by all python versions indicated by
+the py-version setting.
 """
 
 
@@ -28,8 +28,8 @@ if TYPE_CHECKING:
 
 
 class UnsupportedVersionChecker(BaseChecker):
-    """Checker for features that are not supported by all python versions
-    indicated by the py-version setting.
+    """Checker for features that are not supported by all python versions indicated by
+    the py-version setting.
     """
 
     __implements__ = (IAstroidChecker,)
@@ -57,18 +57,18 @@ class UnsupportedVersionChecker(BaseChecker):
 
     @check_messages("using-f-string-in-unsupported-version")
     def visit_joinedstr(self, node: nodes.JoinedStr) -> None:
-        """Check f-strings"""
+        """Check f-strings."""
         if not self._py36_plus:
             self.add_message("using-f-string-in-unsupported-version", node=node)
 
     @check_messages("using-final-decorator-in-unsupported-version")
     def visit_decorators(self, node: nodes.Decorators) -> None:
-        """Check decorators"""
+        """Check decorators."""
         self._check_typing_final(node)
 
     def _check_typing_final(self, node: nodes.Decorators) -> None:
-        """Add a message when the `typing.final` decorator is used and the
-        py-version is lower than 3.8
+        """Add a message when the `typing.final` decorator is used and the py- version
+        is lower than 3.8.
         """
         if self._py38_plus:
             return

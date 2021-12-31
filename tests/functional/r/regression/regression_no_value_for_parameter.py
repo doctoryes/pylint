@@ -23,12 +23,12 @@ def func(*, key=None):
 
 
 def varargs_good(*parts):
-    """All good"""
+    """All good."""
     return os.path.join(*parts)
 
 
 def varargs_no_expr(*parts):
-    """False positives below this line"""
+    """False positives below this line."""
     ret = os.path.join(*parts)
     if ret:
         return ret

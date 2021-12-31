@@ -76,7 +76,7 @@ class OutputLine(NamedTuple):
 
     @classmethod
     def from_msg(cls, msg: Message, check_endline: bool = True) -> "OutputLine":
-        """Create an OutputLine from a Pylint Message"""
+        """Create an OutputLine from a Pylint Message."""
         column = cls._get_column(msg.column)
         end_line = cls._get_py38_none_value(msg.end_line, check_endline)
         end_column = cls._get_py38_none_value(msg.end_column, check_endline)
@@ -93,8 +93,9 @@ class OutputLine(NamedTuple):
 
     @staticmethod
     def _get_column(column: str) -> int:
-        """Handle column numbers except for python < 3.8. The ast parser in those versions doesn't
-        return them.
+        """Handle column numbers except for python < 3.8.
+
+        The ast parser in those versions doesn't return them.
         """
         if not PY38_PLUS:
             # We check the column only for the new better ast parser introduced in python 3.8
@@ -103,8 +104,8 @@ class OutputLine(NamedTuple):
 
     @staticmethod
     def _get_py38_none_value(value: T, check_endline: bool) -> Optional[T]:
-        """Used to make end_line and end_column None as indicated by our version compared to
-        `min_pyver_end_position`.
+        """Used to make end_line and end_column None as indicated by our version
+        compared to `min_pyver_end_position`.
         """
         if not check_endline:
             return None  # pragma: no cover
@@ -114,8 +115,8 @@ class OutputLine(NamedTuple):
     def from_csv(
         cls, row: Union[Sequence[str], str], check_endline: bool = True
     ) -> "OutputLine":
-        """Create an OutputLine from a comma separated list (the functional tests expected
-        output .txt files).
+        """Create an OutputLine from a comma separated list (the functional tests
+        expected output .txt files).
         """
         try:
             if isinstance(row, Sequence):
@@ -165,9 +166,7 @@ class OutputLine(NamedTuple):
             raise MalformedOutputLineException(row, e) from e
 
     def to_csv(self) -> Tuple[str, str, str, str, str, str, str, str]:
-        """Convert an OutputLine to a tuple of string to be written by a
-        csv-writer.
-        """
+        """Convert an OutputLine to a tuple of string to be written by a csv- writer."""
         return (
             str(self.symbol),
             str(self.lineno),
@@ -181,7 +180,7 @@ class OutputLine(NamedTuple):
 
     @staticmethod
     def _value_to_optional_int(value: Optional[str]) -> Optional[int]:
-        """Checks if a (stringified) value should be None or a Python integer"""
+        """Checks if a (stringified) value should be None or a Python integer."""
         if value == "None" or not value:
             return None
         return int(value)

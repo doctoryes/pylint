@@ -102,9 +102,8 @@ def test_globals():
 class FooClass(object):
     """A test case for property names.
 
-    Since by default, the regex for attributes is the same as the one
-    for method names, we check the warning messages to contain the
-    string 'attribute'.
+    Since by default, the regex for attributes is the same as the one for method names,
+    we check the warning messages to contain the string 'attribute'.
     """
     @property
     def PROPERTY_NAME(self):  # [invalid-name]
@@ -123,18 +122,18 @@ class FooClass(object):
         pass
 
     def _nice_and_long_descriptive_private_method_name(self):
-        """private method with long name"""
+        """private method with long name."""
         pass
 
 
 def good_public_function_name(good_arg_name):
-    """This is a perfect public function"""
+    """This is a perfect public function."""
     good_variable_name = 1
     return good_variable_name + good_arg_name
 
 
 def _private_scope_function_with_long_descriptive_name():
-    """Private scope function are cool with long descriptive names"""
+    """Private scope function are cool with long descriptive names."""
     return 12
 
 LONG_CONSTANT_NAME_IN_PUBLIC_SCOPE_ARE_OKAY = True
@@ -143,7 +142,7 @@ good_name_for_funcs = lambda: None
 good_name_for_lists = [1, 2, 3]
 
 class _AnExceptionalExceptionThatOccursVeryVeryRarely(Exception):
-    """A very exceptional exception with a nice descriptive name"""
+    """A very exceptional exception with a nice descriptive name."""
     pass
 
 class FooEnum(Enum):

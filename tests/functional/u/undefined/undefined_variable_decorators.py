@@ -1,4 +1,4 @@
-"""Tests for undefined-variable related to decorators"""
+"""Tests for undefined-variable related to decorators."""
 # pylint: disable=missing-function-docstring, missing-class-docstring, too-few-public-methods
 # pylint: disable=unnecessary-comprehension
 

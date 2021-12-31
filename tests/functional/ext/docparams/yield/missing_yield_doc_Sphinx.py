@@ -1,4 +1,5 @@
-"""Tests for missing-yield-doc and missing-yield-type-doc for Sphinx style docstrings"""
+"""Tests for missing-yield-doc and missing-yield-type-doc for Sphinx style
+docstrings."""
 # pylint: disable=missing-function-docstring, unused-argument, function-redefined
 # pylint: disable=invalid-name, undefined-variable
 import typing

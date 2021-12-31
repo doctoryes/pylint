@@ -9,11 +9,11 @@ https://www.logilab.net/elo/ticket/5626 - name resolution bug inside classes
 from __future__ import print_function
 
 class Test(object):
-    """test class"""
+    """test class."""
     ident = lambda x: x
 
     @ident(ident)
     def method(self, val=ident(7), func=ident):
-        """hop"""
+        """hop."""
         print(self)
         return func(val)

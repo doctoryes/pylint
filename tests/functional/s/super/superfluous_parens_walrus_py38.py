@@ -1,4 +1,5 @@
-"""Test the superfluous-parens warning with python 3.8 functionality (walrus operator)"""
+"""Test the superfluous-parens warning with python 3.8 functionality (walrus
+operator)"""
 # pylint: disable=missing-function-docstring, invalid-name, missing-class-docstring, import-error
 import numpy
 

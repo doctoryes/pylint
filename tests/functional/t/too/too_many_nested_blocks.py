@@ -1,4 +1,4 @@
-"""Checks the maximum block level is smaller than 6 in function definitions"""
+"""Checks the maximum block level is smaller than 6 in function definitions."""
 
 #pylint: disable=using-constant-test, missing-docstring, too-many-return-statements,no-else-return
 

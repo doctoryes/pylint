@@ -1,5 +1,5 @@
 # pylint:disable=pointless-string-statement, redundant-u-string-prefix
-"""Test for backslash escapes in byte vs unicode strings"""
+"""Test for backslash escapes in byte vs unicode strings."""
 
 # Would be valid in Unicode, but probably not what you want otherwise
 BAD_UNICODE = b'\u0042'  # [anomalous-unicode-escape-in-string]

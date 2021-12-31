@@ -9,8 +9,8 @@ with accept-no-param-doc = no
 def test_missing_func_params_in_numpy_docstring(  # [missing-param-doc, missing-type-doc]
     x, y, z
 ):
-    """Example of a function with missing NumPy style parameter
-        documentation in the docstring
+    """Example of a function with missing NumPy style parameter documentation in the
+    docstring.
 
     Parameters
     ----------
@@ -27,8 +27,8 @@ class Foo:
     def test_missing_method_params_in_numpy_docstring(  # [missing-param-doc, missing-type-doc]
         self, x, y
     ):
-        """Example of a class method with missing parameter documentation in
-        the Numpy style docstring
+        """Example of a class method with missing parameter documentation in the Numpy
+        style docstring.
 
         missing parameter documentation
 
@@ -40,8 +40,8 @@ class Foo:
 
 
 def test_existing_func_params_in_numpy_docstring(xarg, yarg, zarg, warg):
-    """Example of a function with correctly documented parameters and
-    return values (Numpy style)
+    """Example of a function with correctly documented parameters and return values
+    (Numpy style)
 
     Parameters
     ----------
@@ -66,8 +66,8 @@ def test_existing_func_params_in_numpy_docstring(xarg, yarg, zarg, warg):
 def test_wrong_name_of_func_params_in_numpy_docstring(  # [missing-param-doc, missing-type-doc, differing-param-doc, differing-type-doc]
     xarg, yarg, zarg
 ):
-    """Example of functions with inconsistent parameter names in the
-    signature and in the Numpy style documentation
+    """Example of functions with inconsistent parameter names in the signature and in
+    the Numpy style documentation.
 
     Parameters
     ----------
@@ -85,8 +85,8 @@ def test_wrong_name_of_func_params_in_numpy_docstring(  # [missing-param-doc, mi
 def test_wrong_name_of_func_params_in_numpy_docstring_two(  # [differing-param-doc, differing-type-doc]
     xarg, yarg
 ):
-    """Example of functions with inconsistent parameter names in the
-    signature and in the Numpy style documentation
+    """Example of functions with inconsistent parameter names in the signature and in
+    the Numpy style documentation.
 
     Parameters
     ----------
@@ -99,9 +99,9 @@ def test_wrong_name_of_func_params_in_numpy_docstring_two(  # [differing-param-d
 
 
 def test_see_sentence_for_func_params_in_numpy_docstring(xarg, yarg):
-    """Example for the usage of "For the other parameters, see" to avoid
-    too many repetitions, e.g. in functions or methods adhering to a
-    given interface (Numpy style)
+    """Example for the usage of "For the other parameters, see" to avoid too many
+    repetitions, e.g. in functions or methods adhering to a given interface (Numpy
+    style)
 
     Parameters
     ----------
@@ -114,9 +114,8 @@ def test_see_sentence_for_func_params_in_numpy_docstring(xarg, yarg):
 
 
 class ClassFoo:  # [missing-param-doc, missing-type-doc]
-    """test_constr_params_in_class_numpy
-    Example of a class with missing constructor parameter documentation
-    (Numpy style)
+    """test_constr_params_in_class_numpy Example of a class with missing constructor
+    parameter documentation (Numpy style)
 
     Everything is completely analogous to functions.
 
@@ -133,9 +132,8 @@ class ClassFoo:  # [missing-param-doc, missing-type-doc]
 
 
 class ClassFoo:
-    """test_constr_params_and_attributes_in_class_numpy
-    Example of a class with correct constructor parameter documentation
-    and an attributes section (Numpy style)
+    """test_constr_params_and_attributes_in_class_numpy Example of a class with correct
+    constructor parameter documentation and an attributes section (Numpy style)
 
     Parameters
     ----------
@@ -154,9 +152,8 @@ class ClassFoo:
 
 class ClassFoo:
     def __init__(self, x, y):  # [missing-param-doc, missing-type-doc]
-        """test_constr_params_in_init_numpy
-        Example of a class with missing constructor parameter documentation
-        (Numpy style)
+        """test_constr_params_in_init_numpy Example of a class with missing constructor
+        parameter documentation (Numpy style)
 
         Everything is completely analogous to functions.
 
@@ -170,10 +167,9 @@ class ClassFoo:
 
 
 class ClassFoo:  # [multiple-constructor-doc, missing-param-doc, missing-type-doc]
-    """test_constr_params_in_class_and_init_numpy
-    Example of a class with missing constructor parameter documentation
-    in both the init docstring and the class docstring
-    (Numpy style)
+    """test_constr_params_in_class_and_init_numpy Example of a class with missing
+    constructor parameter documentation in both the init docstring and the class
+    docstring (Numpy style)
 
     Everything is completely analogous to functions.
 
@@ -186,7 +182,7 @@ class ClassFoo:  # [multiple-constructor-doc, missing-param-doc, missing-type-do
     """
 
     def __init__(self, x, y):  # [missing-param-doc, missing-type-doc]
-        """docstring foo
+        """docstring foo.
 
         Parameters
         ----------
@@ -198,7 +194,7 @@ class ClassFoo:  # [multiple-constructor-doc, missing-param-doc, missing-type-do
 
 
 def test_warns_missing_args_numpy(named_arg, *args):  # [missing-param-doc]
-    """The docstring
+    """The docstring.
 
     Args
     ----
@@ -215,7 +211,7 @@ def test_warns_missing_args_numpy(named_arg, *args):  # [missing-param-doc]
 
 
 def test_warns_missing_kwargs_numpy(named_arg, **kwargs):  # [missing-param-doc]
-    """The docstring
+    """The docstring.
 
     Args
     ----
@@ -234,7 +230,7 @@ def test_warns_missing_kwargs_numpy(named_arg, **kwargs):  # [missing-param-doc]
 def test_finds_args_without_type_numpy(  # [missing-type-doc]
     named_arg, typed_arg: bool, untyped_arg, *args
 ):
-    """The docstring
+    """The docstring.
 
     Args
     ----
@@ -257,7 +253,7 @@ def test_finds_args_without_type_numpy(  # [missing-type-doc]
 
 
 def test_finds_args_with_xref_type_numpy(named_arg, *args):
-    """The docstring
+    """The docstring.
 
     Args
     ----
@@ -276,7 +272,7 @@ def test_finds_args_with_xref_type_numpy(named_arg, *args):
 
 
 def test_finds_kwargs_without_type_numpy(named_arg, **kwargs):
-    """The docstring
+    """The docstring.
 
     Args
     ----
@@ -304,7 +300,7 @@ def my_func(
     named_arg_seven,
     named_arg_eight,
 ):
-    """The docstring
+    """The docstring.
 
     Args
     ----

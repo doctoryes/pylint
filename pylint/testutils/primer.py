@@ -8,7 +8,7 @@ PRIMER_DIRECTORY_PATH = Path(".pylint_primer_tests")
 
 
 class PackageToLint:
-    """Represents data about a package to be tested during primer tests"""
+    """Represents data about a package to be tested during primer tests."""
 
     url: str
     """URL of the repository to clone"""
@@ -52,13 +52,13 @@ class PackageToLint:
 
     @property
     def clone_directory(self) -> Path:
-        """Directory to clone repository into"""
+        """Directory to clone repository into."""
         clone_name = "/".join(self.url.split("/")[-2:]).replace(".git", "")
         return PRIMER_DIRECTORY_PATH / clone_name
 
     @property
     def paths_to_lint(self) -> List[str]:
-        """The paths we need to lint"""
+        """The paths we need to lint."""
         return [str(self.clone_directory / path) for path in self.directories]
 
     @property
@@ -70,13 +70,12 @@ class PackageToLint:
         return self.paths_to_lint + options + self.pylint_additional_args
 
     def lazy_clone(self) -> None:  # pragma: no cover
-        """Concatenates the target directory and clones the file
+        """Concatenates the target directory and clones the file.
 
-        Not expected to be tested as the primer won't work if it doesn't.
-        It's tested in the continuous integration primers, only the coverage
-        is not calculated on everything. If lazy clone breaks for local use
-        we'll probably notice because we'll have a fatal when launching the
-        primer locally.
+        Not expected to be tested as the primer won't work if it doesn't. It's tested in
+        the continuous integration primers, only the coverage is not calculated on
+        everything. If lazy clone breaks for local use we'll probably notice because
+        we'll have a fatal when launching the primer locally.
         """
         logging.info("Lazy cloning %s", self.url)
         if not self.clone_directory.exists():

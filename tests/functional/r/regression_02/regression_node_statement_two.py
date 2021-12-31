@@ -1,4 +1,5 @@
 """Test to see we don't crash on this code in pandas.
+
 See: https://github.com/pandas-dev/pandas/blob/master/pandas/core/indexes/period.py
 Reported in https://github.com/PyCQA/pylint/issues/5382
 """

@@ -8,8 +8,8 @@ with accept-no-param-doc = no"""
 def test_missing_func_params_in_sphinx_docstring(  # [missing-param-doc, missing-type-doc]
     x, y, z
 ):
-    """Example of a function with missing Sphinx parameter documentation in
-    the docstring
+    """Example of a function with missing Sphinx parameter documentation in the
+    docstring.
 
     :param x: bla
 
@@ -22,8 +22,8 @@ class Foo:
     def test_missing_method_params_in_sphinx_docstring(  # [missing-param-doc, missing-type-doc]
         self, x, y
     ):
-        """Example of a class method with missing parameter documentation in
-        the Sphinx style docstring
+        """Example of a class method with missing parameter documentation in the Sphinx
+        style docstring.
 
         missing parameter documentation
 
@@ -33,8 +33,8 @@ class Foo:
 
 
 def test_existing_func_params_in_sphinx_docstring(xarg, yarg, zarg, warg):
-    """Example of a function with correctly documented parameters and
-    return values (Sphinx style)
+    """Example of a function with correctly documented parameters and return values
+    (Sphinx style)
 
     :param xarg: bla xarg
     :type xarg: int
@@ -55,8 +55,8 @@ def test_existing_func_params_in_sphinx_docstring(xarg, yarg, zarg, warg):
 def test_wrong_name_of_func_params_in_sphinx_docstring(  # [missing-param-doc, missing-type-doc, differing-param-doc, differing-type-doc]
     xarg, yarg, zarg
 ):
-    """Example of functions with inconsistent parameter names in the
-        signature and in the Sphinx style documentation
+    """Example of functions with inconsistent parameter names in the signature and in
+    the Sphinx style documentation.
 
     :param xarg1: bla xarg
     :type xarg: int
@@ -72,8 +72,8 @@ def test_wrong_name_of_func_params_in_sphinx_docstring(  # [missing-param-doc, m
 def test_wrong_name_of_func_params_in_sphinx_docstring_two(  # [differing-param-doc, differing-type-doc]
     xarg, yarg, zarg
 ):
-    """Example of functions with inconsistent parameter names in the
-        signature and in the Sphinx style documentation
+    """Example of functions with inconsistent parameter names in the signature and in
+    the Sphinx style documentation.
 
     :param yarg1: bla yarg
     :type yarg1: float
@@ -84,9 +84,9 @@ def test_wrong_name_of_func_params_in_sphinx_docstring_two(  # [differing-param-
 
 
 def test_see_sentence_for_func_params_in_sphinx_docstring(xarg, yarg) -> None:
-    """Example for the usage of "For the other parameters, see" to avoid
-        too many repetitions, e.g. in functions or methods adhering to a
-        given interface (Sphinx style)
+    """Example for the usage of "For the other parameters, see" to avoid too many
+    repetitions, e.g. in functions or methods adhering to a given interface (Sphinx
+    style)
 
     :param yarg: bla yarg
     :type yarg: float
@@ -97,9 +97,8 @@ def test_see_sentence_for_func_params_in_sphinx_docstring(xarg, yarg) -> None:
 
 
 class ClassFoo:  # [missing-param-doc, missing-type-doc]
-    """test_constr_params_in_class_sphinx
-    Example of a class with missing constructor parameter documentation
-    (Sphinx style)
+    """test_constr_params_in_class_sphinx Example of a class with missing constructor
+    parameter documentation (Sphinx style)
 
     Everything is completely analogous to functions.
 
@@ -114,9 +113,8 @@ class ClassFoo:  # [missing-param-doc, missing-type-doc]
 
 class ClassFoo:
     def __init__(self, x, y):  # [missing-param-doc, missing-type-doc]
-        """test_constr_params_in_init_sphinx
-        Example of a class with missing constructor parameter documentation
-        (Sphinx style)
+        """test_constr_params_in_init_sphinx Example of a class with missing constructor
+        parameter documentation (Sphinx style)
 
         Everything is completely analogous to functions.
 
@@ -129,10 +127,9 @@ class ClassFoo:
 
 
 class ClassFoo:  # [multiple-constructor-doc, missing-param-doc, missing-type-doc]
-    """test_constr_params_in_class_and_init_sphinx
-    Example of a class with missing constructor parameter documentation
-    in both the init docstring and the class docstring
-    (Sphinx style)
+    """test_constr_params_in_class_and_init_sphinx Example of a class with missing
+    constructor parameter documentation in both the init docstring and the class
+    docstring (Sphinx style)
 
     Everything is completely analogous to functions.
 
@@ -142,7 +139,7 @@ class ClassFoo:  # [multiple-constructor-doc, missing-param-doc, missing-type-do
     """
 
     def __init__(self, x, y):  # [missing-param-doc, missing-type-doc]
-        """docstring foo
+        """docstring foo.
 
         :param y: bla
 
@@ -154,7 +151,7 @@ class ClassFoo:  # [multiple-constructor-doc, missing-param-doc, missing-type-do
 def test_warns_missing_args_sphinx(  # [missing-param-doc, inconsistent-return-statements]
     named_arg, *args
 ):
-    """The docstring
+    """The docstring.
 
     :param named_arg: Returned
     :type named_arg: object
@@ -169,7 +166,7 @@ def test_warns_missing_args_sphinx(  # [missing-param-doc, inconsistent-return-s
 def test_warns_missing_kwargs_sphinx(  # [missing-param-doc, inconsistent-return-statements]
     named_arg, **kwargs
 ):
-    """The docstring
+    """The docstring.
 
     :param named_arg: Returned
     :type named_arg: object
@@ -184,7 +181,7 @@ def test_warns_missing_kwargs_sphinx(  # [missing-param-doc, inconsistent-return
 def test_finds_args_without_type_sphinx(  # [missing-param-doc, inconsistent-return-statements]
     named_arg, *args
 ):
-    """The docstring
+    """The docstring.
 
     :param named_arg: Returned
     :type named_arg: object
@@ -201,7 +198,7 @@ def test_finds_args_without_type_sphinx(  # [missing-param-doc, inconsistent-ret
 def test_finds_kwargs_without_type_sphinx(  # [missing-param-doc, inconsistent-return-statements]
     named_arg, **kwargs
 ):
-    """The docstring
+    """The docstring.
 
     :param named_arg: Returned
     :type named_arg: object
@@ -254,10 +251,8 @@ def test_finds_kwargs_without_type_sphinx(  # [inconsistent-return-statements]
 
 
 class Foo:
-    """test_finds_missing_raises_from_setter_sphinx
-    Example of a setter having missing raises documentation in
-    the Sphinx style docstring of the property
-    """
+    """test_finds_missing_raises_from_setter_sphinx Example of a setter having missing
+    raises documentation in the Sphinx style docstring of the property."""
 
     @property
     def foo(self):  # [missing-raises-doc]
@@ -273,10 +268,8 @@ class Foo:
 
 
 class Foo:
-    """test_finds_missing_raises_in_setter_sphinx
-    Example of a setter having missing raises documentation in
-    its own Sphinx style docstring
-    """
+    """test_finds_missing_raises_in_setter_sphinx Example of a setter having missing
+    raises documentation in its own Sphinx style docstring."""
 
     @property
     def foo(self):
@@ -298,10 +291,8 @@ class Foo:
 
 
 class Foo:
-    """test_finds_property_return_type_sphinx
-    Example of a property having return documentation in
-    a Sphinx style docstring
-    """
+    """test_finds_property_return_type_sphinx Example of a property having return
+    documentation in a Sphinx style docstring."""
 
     @property
     def foo(self):
@@ -313,10 +304,8 @@ class Foo:
 
 
 class Foo:
-    """test_finds_annotation_property_return_type_sphinx
-    Example of a property having missing return documentation in
-    a Sphinx style docstring
-    """
+    """test_finds_annotation_property_return_type_sphinx Example of a property having
+    missing return documentation in a Sphinx style docstring."""
 
     @property
     def foo(self) -> int:
@@ -332,8 +321,8 @@ class Foo:
     def test_useless_docs_ignored_argument_names_sphinx(  # [useless-type-doc, useless-param-doc]
         self, arg, _, _ignored
     ):
-        """Example of a method documenting the return type that an
-        implementation should return.
+        """Example of a method documenting the return type that an implementation should
+        return.
 
         :param arg: An argument.
         :type arg: int
@@ -347,7 +336,7 @@ class Foo:
 
 
 def test_finds_multiple_types_sphinx_one(named_arg):
-    """The Sphinx docstring
+    """The Sphinx docstring.
 
     :param named_arg: Returned
     :type named_arg: dict(str, str)
@@ -359,7 +348,7 @@ def test_finds_multiple_types_sphinx_one(named_arg):
 
 
 def test_finds_multiple_types_sphinx_two(named_arg):
-    """The Sphinx docstring
+    """The Sphinx docstring.
 
     :param named_arg: Returned
     :type named_arg: dict[str, str]
@@ -371,7 +360,7 @@ def test_finds_multiple_types_sphinx_two(named_arg):
 
 
 def test_finds_multiple_types_sphinx_three(named_arg):
-    """The Sphinx docstring
+    """The Sphinx docstring.
 
     :param named_arg: Returned
     :type named_arg: int or str
@@ -383,7 +372,7 @@ def test_finds_multiple_types_sphinx_three(named_arg):
 
 
 def test_finds_multiple_types_sphinx_four(named_arg):
-    """The Sphinx docstring
+    """The Sphinx docstring.
 
     :param named_arg: Returned
     :type named_arg: tuple(int or str)
@@ -395,7 +384,7 @@ def test_finds_multiple_types_sphinx_four(named_arg):
 
 
 def test_finds_multiple_types_sphinx_five(named_arg):
-    """The Sphinx docstring
+    """The Sphinx docstring.
 
     :param named_arg: Returned
     :type named_arg: tuple(int) or list(int)
@@ -407,7 +396,7 @@ def test_finds_multiple_types_sphinx_five(named_arg):
 
 
 def test_finds_multiple_types_sphinx_six(named_arg):
-    """The Sphinx docstring
+    """The Sphinx docstring.
 
     :param named_arg: Returned
     :type named_arg: tuple(int or str) or list(int or str)
@@ -419,7 +408,7 @@ def test_finds_multiple_types_sphinx_six(named_arg):
 
 
 def test_finds_compact_container_types_sphinx_one(named_arg):
-    """The Sphinx docstring
+    """The Sphinx docstring.
 
     :param dict(str,str) named_arg: Returned
 
@@ -430,7 +419,7 @@ def test_finds_compact_container_types_sphinx_one(named_arg):
 
 
 def test_finds_compact_container_types_sphinx_two(named_arg):
-    """The Sphinx docstring
+    """The Sphinx docstring.
 
     :param dict[str,str] named_arg: Returned
 
@@ -441,7 +430,7 @@ def test_finds_compact_container_types_sphinx_two(named_arg):
 
 
 def test_finds_compact_container_types_sphinx_three(named_arg):
-    """The Sphinx docstring
+    """The Sphinx docstring.
 
     :param tuple(int) named_arg: Returned
 
@@ -452,7 +441,7 @@ def test_finds_compact_container_types_sphinx_three(named_arg):
 
 
 def test_finds_compact_container_types_sphinx_four(named_arg):
-    """The Sphinx docstring
+    """The Sphinx docstring.
 
     :param list[tokenize.TokenInfo] named_arg: Returned
 

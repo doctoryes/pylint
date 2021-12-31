@@ -1,4 +1,4 @@
-"""Check invalid value returned by __bytes__ """
+"""Check invalid value returned by __bytes__"""
 
 # pylint: disable=too-few-public-methods,missing-docstring,no-self-use,import-error, useless-object-inheritance
 import six
@@ -31,34 +31,34 @@ class ThirdGoodBytes(object):
 
 
 class FirstBadBytes(object):
-    """ __bytes__ returns bytes """
+    """__bytes__ returns bytes."""
 
     def __bytes__(self):  # [invalid-bytes-returned]
         return "123"
 
 
 class SecondBadBytes(object):
-    """ __bytes__ returns int """
+    """__bytes__ returns int."""
 
     def __bytes__(self):  # [invalid-bytes-returned]
         return 1
 
 
 class ThirdBadBytes(object):
-    """ __bytes__ returns node which does not have 'value' in AST """
+    """__bytes__ returns node which does not have 'value' in AST."""
 
     def __bytes__(self):  # [invalid-bytes-returned]
         return lambda: b"some bytes"
 
 
 class AmbiguousBytes(object):
-    """ Uninferable return value """
+    """Uninferable return value."""
 
     __bytes__ = lambda self: Missing
 
 
 class AnotherAmbiguousBytes(object):
-    """Potential uninferable return value"""
+    """Potential uninferable return value."""
 
     def __bytes__(self):
         return bytes(Missing)

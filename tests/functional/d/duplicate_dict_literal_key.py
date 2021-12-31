@@ -1,11 +1,11 @@
-"""Check multiple key definition"""
+"""Check multiple key definition."""
 # pylint: disable=pointless-statement, redundant-u-string-prefix
 
 from enum import Enum
 
 
 class MyEnum(Enum):
-    """ Sample Enum for testing duplicate keys"""
+    """Sample Enum for testing duplicate keys."""
     KEY = "key"
 
 

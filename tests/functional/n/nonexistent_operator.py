@@ -1,4 +1,4 @@
-"""check operator use"""
+"""check operator use."""
 # pylint: disable=invalid-name, pointless-statement
 a = 1
 a += 5

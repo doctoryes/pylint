@@ -1,7 +1,7 @@
 """Test linting.
 
-This is only intended to test pylint support for python 3.8's
-positional-only arguments (PEP 570).
+This is only intended to test pylint support for python 3.8's positional-only arguments
+(PEP 570).
 """
 
 

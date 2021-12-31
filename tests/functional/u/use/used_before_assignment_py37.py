@@ -1,11 +1,11 @@
-"""Tests for used-before-assignment with functions added in python 3.7"""
+"""Tests for used-before-assignment with functions added in python 3.7."""
 # pylint: disable=missing-function-docstring
 from __future__ import annotations
 from typing import List
 
 
 class MyClass:
-    """With the future import only default values can't refer to the base class"""
+    """With the future import only default values can't refer to the base class."""
 
     def correct_typing_method(self, other: MyClass) -> bool:
         return self == other

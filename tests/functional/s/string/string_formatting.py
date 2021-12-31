@@ -1,4 +1,4 @@
-"""Test for Python 3 string formatting error"""
+"""Test for Python 3 string formatting error."""
 
 # pylint: disable=too-few-public-methods, import-error, unused-argument, line-too-long,
 # pylint: disable=useless-object-inheritance, consider-using-f-string
@@ -9,35 +9,35 @@ from missing import Missing
 
 
 class Custom(object):
-    """ Has a __getattr__ """
+    """Has a __getattr__"""
     def __getattr__(self, _):
         return self
 
 
 class Test(object):
-    """ test format attribute access """
+    """test format attribute access."""
     custom = Custom()
     ids = [1, 2, 3, [4, 5, 6]]
 
 
 class Getitem(object):
-    """ test custom getitem for lookup access """
+    """test custom getitem for lookup access."""
     def __getitem__(self, index):
         return 42
 
 
 class ReturnYes(object):
-    """ can't be properly inferred """
+    """can't be properly inferred."""
     missing = Missing()
 
 
 def log(message, message_type="error"):
-    """ Test """
+    """Test."""
     return message
 
 
 def print_good():
-    """ Good format strings """
+    """Good format strings."""
     "{0} {1}".format(1, 2)
     "{0!r:20}".format("Hello")
     "{!r:20}".format("Hello")
@@ -64,7 +64,7 @@ def print_good():
 
 
 def pprint_bad():
-    """Test string format """
+    """Test string format."""
     "{{}}".format(1) # [format-string-without-interpolation]
     "{} {".format() # [bad-format-string]
     "{} }".format() # [bad-format-string]
@@ -105,18 +105,14 @@ def pprint_bad():
 
 
 def good_issue288(*args, **kwargs):
-    """ Test that using kwargs does not emit a false
-    positive.
-    """
+    """Test that using kwargs does not emit a false positive."""
     'Hello John Doe {0[0]}'.format(args)
     'Hello {0[name]}'.format(kwargs)
 
 
 def good_issue287():
-    """ Test that the string format checker skips
-    format nodes which don't have a string as a parent
-    (but a subscript, name etc).
-    """
+    """Test that the string format checker skips format nodes which don't have a string
+    as a parent (but a subscript, name etc)."""
     name = 'qwerty'
     ret = {'comment': ''}
     ret['comment'] = 'MySQL grant {0} is set to be revoked'
@@ -125,7 +121,7 @@ def good_issue287():
 
 
 def nested_issue294():
-    """ Test nested format fields. """
+    """Test nested format fields."""
     '{0:>{1}}'.format(42, 24)
     '{0:{a[1]}} {a}'.format(1, a=[1, 2])
     '{:>{}}'.format(42, 24)
@@ -136,41 +132,34 @@ def nested_issue294():
 
 
 def issue310():
-    """ Test a regression using duplicate manual position arguments. """
+    """Test a regression using duplicate manual position arguments."""
     '{0} {1} {0}'.format(1, 2)
     '{0} {1} {0}'.format(1) # [too-few-format-args]
 
 
 def issue322():
-    """ Test a regression using mixed manual position arguments
-    and attribute access arguments.
-    """
+    """Test a regression using mixed manual position arguments and attribute access
+    arguments."""
     '{0}{1[FOO]}'.format(123, {'FOO': 456})
     '{0}{1[FOO]}'.format(123, {'FOO': 456}, 321) # [too-many-format-args]
     '{0}{1[FOO]}'.format(123) # [too-few-format-args]
 
 
 def issue338():
-    """
-    Check that using a namedtuple subclass doesn't crash when
-    trying to infer EmptyNodes (resulted after mocking the
-    members of namedtuples).
-    """
+    """Check that using a namedtuple subclass doesn't crash when trying to infer
+    EmptyNodes (resulted after mocking the members of namedtuples)."""
     from collections import namedtuple # pylint: disable=import-outside-toplevel
 
     class Crash(namedtuple("C", "foo bar")):
-        """ Looking for attributes in __str__ will crash,
-        because EmptyNodes can't be inferred.
-        """
+        """Looking for attributes in __str__ will crash, because EmptyNodes can't be
+        inferred."""
         def __str__(self):
             return "{0.foo}: {0.bar}".format(self)
     return Crash
 
 
 def issue351():
-    """
-    Check that the format method can be assigned to a variable, ie:
-    """
+    """Check that the format method can be assigned to a variable, ie:"""
     fmt = 'test {} {}'.format
     fmt('arg1') # [too-few-format-args]
     fmt('arg1', 'arg2')
@@ -178,11 +167,9 @@ def issue351():
 
 
 def issue373():
-    """
-    Ignore any object coming from an argument.
-    """
+    """Ignore any object coming from an argument."""
     class SomeClass(object):
-        """ empty docstring. """
+        """empty docstring."""
         def __init__(self, opts=None):
             self.opts = opts
 
@@ -198,10 +185,8 @@ def issue373():
 
 
 def issue_463():
-    """
-    Mix positional arguments, `{0}`, with positional
-    arguments with attribute access, `{0.__x__}`.
-    """
+    """Mix positional arguments, `{0}`, with positional arguments with attribute access,
+    `{0.__x__}`."""
     data = "{0.__class__.__name__}: {0}".format(42)
     data2 = "{0[0]}: {0}".format([1])
     return (data, data2)
@@ -214,7 +199,7 @@ def avoid_empty_attribute():
 
 
 def invalid_format_index_on_inference_ambiguity():
-    """Test inference bug for invalid-format-index"""
+    """Test inference bug for invalid-format-index."""
     if len(sys.argv) > 1:
         options = [["Woof!"]]
     else:

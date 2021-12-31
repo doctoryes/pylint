@@ -8,11 +8,7 @@ with accept-no-param-doc = no and no-docstring-rgx = ^(?!__init__$)_
 # Check that __init__ is checked correctly, but other private methods aren't
 class MyClass:
     def __init__(self, my_param: int) -> None:  # [missing-param-doc]
-        """
-        My init docstring
-        """
+        """My init docstring."""
 
     def _private_method(self, my_param: int) -> None:
-        """
-        My private method
-        """
+        """My private method."""

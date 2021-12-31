@@ -2,7 +2,7 @@
 # pylint: disable=wrong-import-order, useless-object-inheritance,unnecessary-lambda, consider-using-f-string
 
 def decorator(fun):
-    """Decorator"""
+    """Decorator."""
     return fun
 
 
@@ -16,7 +16,7 @@ class DemoClass(object):
 
     @classmethod
     def class_method(cls, arg):
-        """class method"""
+        """class method."""
         return arg + arg
 
     def method(self, arg):
@@ -30,15 +30,15 @@ class DemoClass(object):
 
 
 def function_1_arg(first_argument):
-    """one argument function"""
+    """one argument function."""
     return first_argument
 
 def function_3_args(first_argument, second_argument, third_argument):
-    """three arguments function"""
+    """three arguments function."""
     return first_argument, second_argument, third_argument
 
 def function_default_arg(one=1, two=2):
-    """function with default value"""
+    """function with default value."""
     return two, one
 
 
@@ -84,15 +84,15 @@ def method_tests():
 import sys
 
 class Text(object):
-    """ Regression """
+    """Regression."""
 
     if sys.version_info > (3,):
         def __new__(cls):
-            """ empty """
+            """empty."""
             return object.__new__(cls)
     else:
         def __new__(cls):
-            """ empty """
+            """empty."""
             return object.__new__(cls)
 
 Text()
@@ -125,7 +125,7 @@ class TypeCheckConstructor(object):
 
 
 class Test(object):
-    """ lambda needs Test instance as first argument """
+    """lambda needs Test instance as first argument."""
     lam = lambda self, icon: (self, icon)
 
     def test(self):
@@ -229,7 +229,7 @@ def mutation_decorator(fun):
 
 
 def other_mutation_decorator(fun):
-    """Another decorator that changes a function's signature"""
+    """Another decorator that changes a function's signature."""
     def wrapper(*args, do_something=True, **kwargs):
         if do_something:
             return fun(*args, **kwargs)

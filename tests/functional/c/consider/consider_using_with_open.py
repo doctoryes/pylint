@@ -1,10 +1,11 @@
 # pylint: disable=missing-function-docstring, missing-module-docstring, invalid-name, import-outside-toplevel, no-self-use
 # pylint: disable=missing-class-docstring, too-few-public-methods, unused-variable, multiple-statements, line-too-long
-"""
-The functional test for the standard ``open()`` function has to be moved in a separate file,
-because PyPy has to be excluded for the tests as the ``open()`` function is uninferable in PyPy.
-However, all remaining checks for consider-using-with work in PyPy, so we do not want to exclude
-PyPy from ALL functional tests.
+"""The functional test for the standard ``open()`` function has to be moved in a
+separate file, because PyPy has to be excluded for the tests as the ``open()`` function
+is uninferable in PyPy.
+
+However, all remaining checks for consider-using-with work in PyPy, so we do not want to
+exclude PyPy from ALL functional tests.
 """
 from contextlib import contextmanager
 from pathlib import Path
@@ -72,9 +73,8 @@ def test_suppress_on_return():
 
 
 class TestControlFlow:
-    """
-    The message is triggered if a context manager is assigned to a variable, which name is later
-    reassigned without the variable being used inside a ``with`` first.
+    """The message is triggered if a context manager is assigned to a variable, which
+    name is later reassigned without the variable being used inside a ``with`` first.
     E.g. the following would trigger the message:
 
         a = open("foo")  # <-- would trigger here

@@ -1,4 +1,4 @@
-"""Tests for logging-not-lazy"""
+"""Tests for logging-not-lazy."""
 # pylint: disable=missing-docstring,no-member,deprecated-method,invalid-name, consider-using-f-string
 
 # Muck up the names in an effort to confuse...

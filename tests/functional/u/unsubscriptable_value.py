@@ -1,7 +1,5 @@
-"""
-Checks that value used in a subscript supports subscription
-(i.e. defines __getitem__ method).
-"""
+"""Checks that value used in a subscript supports subscription (i.e. defines __getitem__
+method)."""
 # pylint: disable=missing-docstring,pointless-statement,expression-not-assigned,wrong-import-position, unnecessary-comprehension
 # pylint: disable=too-few-public-methods,import-error,invalid-name,wrong-import-order, useless-object-inheritance, redundant-u-string-prefix
 import six
@@ -115,13 +113,13 @@ class ClassMixin(object):
 
 
 def return_an_int(param):
-    """Returns an int"""
+    """Returns an int."""
     if param == 0:
         return 1
     return 0
 
 
 def test_one(param):
-    """Should complain about var_one[0], but doesn't"""
+    """Should complain about var_one[0], but doesn't."""
     var_one = return_an_int(param)
     return var_one[0]  # [unsubscriptable-object]

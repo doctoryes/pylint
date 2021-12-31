@@ -1,4 +1,4 @@
-"""Tests for missing-function-docstring and the no-docstring-rgx option"""
+"""Tests for missing-function-docstring and the no-docstring-rgx option."""
 # pylint: disable=unused-argument, missing-class-docstring, too-few-public-methods
 
 

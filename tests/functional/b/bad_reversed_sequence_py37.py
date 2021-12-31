@@ -1,4 +1,4 @@
-""" Dictionaries are reversible starting on python 3.8"""
+"""Dictionaries are reversible starting on python 3.8."""
 
 # pylint: disable=missing-docstring
 

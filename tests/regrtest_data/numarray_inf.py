@@ -1,4 +1,4 @@
-"""#3216"""
+"""#3216."""
 
 import numarray as na
 import numarray.random_array as nar

@@ -1,1 +1,1 @@
-"""package.subpackage.module"""
+"""package.subpackage.module."""

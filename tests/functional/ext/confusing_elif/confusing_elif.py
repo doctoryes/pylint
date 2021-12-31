@@ -2,11 +2,10 @@
 
 
 def triggered_if_if_block_ends_with_elif(machine, old_conf, new_conf):
-    """Example code that will trigger the message
+    """Example code that will trigger the message.
 
-    Given an if-elif construct
-    When the body of the if ends with an elif
-    Then the message confusing-consecutive-elif must be triggered.
+    Given an if-elif construct When the body of the if ends with an elif Then the
+    message confusing-consecutive-elif must be triggered.
     """
     if old_conf:
         if not new_conf:
@@ -19,11 +18,11 @@ def triggered_if_if_block_ends_with_elif(machine, old_conf, new_conf):
 
 
 def not_triggered_if_indented_block_ends_with_else(machine, old_conf, new_conf):
-    """Example code must not trigger the message, because the inner block ends with else.
+    """Example code must not trigger the message, because the inner block ends with
+    else.
 
-    Given an if-elif construct
-    When the body of the if ends with an else
-    Then no message shall be triggered.
+    Given an if-elif construct When the body of the if ends with an else Then no message
+    shall be triggered.
     """
     if old_conf:
         if not new_conf:
@@ -38,8 +37,7 @@ def not_triggered_if_indented_block_ends_with_else(machine, old_conf, new_conf):
 
 
 def not_triggered_if_indentend_block_ends_with_call(machine, old_conf, new_conf):
-    """
-    Example code must not trigger the message,
+    """Example code must not trigger the message,
 
     Given an if-elif construct
     When the body of the if ends with a function call
@@ -61,10 +59,9 @@ def not_triggered_if_indentend_block_ends_with_call(machine, old_conf, new_conf)
 
 
 def triggered_if_elif_block_ends_with_elif(machine, old_conf, new_conf, new_new_conf):
-    """Example code that will trigger the message
+    """Example code that will trigger the message.
 
-    Given an if-elif-elif construct
-    When the body of the first elif ends with an elif
+    Given an if-elif-elif construct When the body of the first elif ends with an elif
     Then the message confusing-consecutive-elif must be triggered.
     """
     if old_conf:
@@ -80,11 +77,10 @@ def triggered_if_elif_block_ends_with_elif(machine, old_conf, new_conf, new_new_
 
 
 def triggered_if_block_ends_with_if(machine, old_conf, new_conf, new_new_conf):
-    """Example code that will trigger the message
+    """Example code that will trigger the message.
 
-    Given an if-elif construct
-    When the body of the if ends with an if
-    Then the message confusing-consecutive-elif must be triggered.
+    Given an if-elif construct When the body of the if ends with an if Then the message
+    confusing-consecutive-elif must be triggered.
     """
     if old_conf:
         if new_new_conf:
@@ -94,12 +90,10 @@ def triggered_if_block_ends_with_if(machine, old_conf, new_conf, new_new_conf):
 
 
 def not_triggered_if_indented_block_ends_with_ifexp(machine, old_conf, new_conf):
-    """
-    Example code must not trigger the message,
+    """Example code must not trigger the message,
 
-    Given an if-elif construct
-    When the body of the if ends with an if expression
-    Then no message shall be triggered.
+    Given an if-elif construct When the body of the if ends with an if expression Then
+    no message shall be triggered.
     """
     if old_conf:
         if not new_conf:
@@ -110,11 +104,10 @@ def not_triggered_if_indented_block_ends_with_ifexp(machine, old_conf, new_conf)
 
 
 def not_triggered_if_outer_block_does_not_have_elif(machine, old_conf, new_conf):
-    """Example code must not trigger the message
+    """Example code must not trigger the message.
 
-    Given an if construct without an elif
-    When the body of the if ends with an if
-    Then no message shall be triggered.
+    Given an if construct without an elif When the body of the if ends with an if Then
+    no message shall be triggered.
     """
     if old_conf:
         if not new_conf:
@@ -127,11 +120,10 @@ def not_triggered_if_outer_block_does_not_have_elif(machine, old_conf, new_conf)
 
 
 def not_triggered_if_outer_block_continues_with_if(machine, old_conf, new_conf, new_new_conf):
-    """Example code that will trigger the message
+    """Example code that will trigger the message.
 
-    Given an if construct which continues with a new if construct
-    When the body of the first if ends with an if expression
-    Then no message shall be triggered.
+    Given an if construct which continues with a new if construct When the body of the
+    first if ends with an if expression Then no message shall be triggered.
     """
     if old_conf:
         if new_new_conf:

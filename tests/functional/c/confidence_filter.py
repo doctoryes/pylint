@@ -3,7 +3,7 @@ from __future__ import print_function
 # pylint: disable=useless-object-inheritance
 
 class Client(object):
-    """use provider class"""
+    """use provider class."""
 
     def __init__(self):
         self.set_later = 0

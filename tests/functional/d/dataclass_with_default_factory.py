@@ -21,7 +21,7 @@ print(TEST.test[0])
 
 @dc.dataclass  # Note the use of dc instead of dataclasses
 class Test2:
-    """Test dataclass that uses a renamed import of dataclasses"""
+    """Test dataclass that uses a renamed import of dataclasses."""
     int_prop: int = dc.field(default=10)
     list_prop: list = dc.field(default_factory=list)
     dict_prop: dict = dc.field(default_factory=dict)
@@ -46,5 +46,5 @@ Test2.int_prop["key"] = "value"  # [unsupported-assignment-operation]
 
 @dc.dataclass
 class TEST3:
-    """Test dataclass that puts call to field() in another function call"""
+    """Test dataclass that puts call to field() in another function call."""
     attribute: int = cast(int, field(default_factory=dict))

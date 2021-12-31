@@ -1,6 +1,5 @@
-"""Test for the regression on inference of self referential __len__
-Reported in https://github.com/PyCQA/pylint/issues/5244
-"""
+"""Test for the regression on inference of self referential __len__ Reported in
+https://github.com/PyCQA/pylint/issues/5244."""
 # pylint: disable=missing-class-docstring, missing-function-docstring, no-self-use
 
 

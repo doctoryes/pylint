@@ -1,82 +1,81 @@
-"""Test warnings about access to undefined variables
-for various Python 3 constructs. """
+"""Test warnings about access to undefined variables for various Python 3 constructs."""
 # pylint: disable=too-few-public-methods, no-init, no-self-use, import-error
 # pylint: disable=wrong-import-position, invalid-metaclass, useless-object-inheritance
 class Undefined:
-    """ test various annotation problems. """
+    """test various annotation problems."""
 
     def test(self)->Undefined: # [undefined-variable]
-        """ used Undefined, which is Undefined in this scope. """
+        """used Undefined, which is Undefined in this scope."""
 
     Undefined = True
 
     def test1(self)->Undefined:
-        """ This Undefined exists at local scope. """
+        """This Undefined exists at local scope."""
 
     def test2(self):
-        """ This should not emit. """
+        """This should not emit."""
         def func()->Undefined:
-            """ empty """
+            """empty."""
             return 2
         return func
 
 
 class Undefined1:
-    """ Other annotation problems. """
+    """Other annotation problems."""
 
     Undef = 42
     ABC = 42
 
     class InnerScope:
-        """ Test inner scope definition. """
+        """Test inner scope definition."""
 
         def test_undefined(self)->Undef: # [undefined-variable]
-            """ Looking at a higher scope is impossible. """
+            """Looking at a higher scope is impossible."""
 
         def test1(self)->ABC: # [undefined-variable]
-            """ Triggers undefined-variable. """
+            """Triggers undefined-variable."""
 
 
 class FalsePositive342(object):
     # pylint: disable=line-too-long
-    """ Fix some false positives found in
-    https://bitbucket.org/logilab/pylint/issue/342/spurious-undefined-variable-for-class
-    """
+    """Fix some false positives found in
+    https://bitbucket.org/logilab/pylint/issue/342/spurious-undefined-variable- for-
+    class."""
 
     top = 42
 
     def test_good(self, bac: top):
-        """ top is defined at this moment. """
+        """top is defined at this moment."""
 
     def test_bad(self, bac: trop): # [undefined-variable]
-        """ trop is undefined at this moment. """
+        """trop is undefined at this moment."""
 
     def test_bad1(self, *args: trop1): # [undefined-variable]
-        """ trop1 is undefined at this moment. """
+        """trop1 is undefined at this moment."""
 
     def test_bad2(self, **bac: trop2): # [undefined-variable]
-        """ trop2 is undefined at this moment. """
+        """trop2 is undefined at this moment."""
 
 import abc
 from abc import ABCMeta
 
 class Bad(metaclass=ABCMet): # [undefined-variable]
-    """ Notice the typo """
+    """Notice the typo."""
 
 class SecondBad(metaclass=ab.ABCMeta): # [undefined-variable]
-    """ Notice the `ab` module. """
+    """Notice the `ab` module."""
 
 class Good(metaclass=int):
-    """ int is not a proper metaclass, but it is defined. """
+    """int is not a proper metaclass, but it is defined."""
 
 class SecondGood(metaclass=Good):
-    """ empty """
+    """empty."""
 
 class ThirdGood(metaclass=ABCMeta):
-    """ empty """
+    """empty."""
 
 class FourthGood(ThirdGood):
-    """ This should not trigger anything. """
+    """This should not trigger anything."""
 
 class FifthGood(metaclass=abc.Metaclass):
     """Metaclasses can come from imported modules."""

@@ -1,4 +1,4 @@
-"""Emit a message for accessing first/last element of string.split"""
+"""Emit a message for accessing first/last element of string.split."""
 # pylint: disable=line-too-long,missing-docstring,unsubscriptable-object,too-few-public-methods,invalid-name,redefined-builtin
 
 # Test subscripting .split()

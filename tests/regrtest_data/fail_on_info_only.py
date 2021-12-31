@@ -1,6 +1,4 @@
-"""
-    Pylint score:  -1.67
-"""
+"""Pylint score:  -1.67."""
 # pylint: disable=broad-except
 
 def loop():

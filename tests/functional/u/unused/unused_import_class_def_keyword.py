@@ -1,7 +1,6 @@
-"""
-Test false-positive for unused-import on class keyword arguments
+"""Test false-positive for unused-import on class keyword arguments.
 
-    https://github.com/PyCQA/pylint/issues/3202
+https://github.com/PyCQA/pylint/issues/3202
 """
 # pylint: disable=missing-docstring,too-few-public-methods,invalid-name,import-error
 

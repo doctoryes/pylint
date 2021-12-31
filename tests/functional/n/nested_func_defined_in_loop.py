@@ -1,7 +1,7 @@
 """Check a nested function defined in a loop."""
 
 def example(args):
-    """The check"""
+    """The check."""
     for i in args:
         def nested():
             print(i)  # [cell-var-from-loop]

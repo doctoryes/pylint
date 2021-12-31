@@ -1,4 +1,4 @@
-'''Assert check example'''
+"""Assert check example."""
 
 # pylint: disable=comparison-with-itself
 assert (1 == 1, 2 == 2), "no error"

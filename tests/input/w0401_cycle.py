@@ -1,5 +1,4 @@
-"""w0401 dependency
-"""
+"""w0401 dependency."""
 
 from __future__ import print_function
 

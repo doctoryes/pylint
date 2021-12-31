@@ -1,4 +1,4 @@
-"""Tests for missing-yield-doc and missing-yield-type-doc"""
+"""Tests for missing-yield-doc and missing-yield-type-doc."""
 # pylint: disable=missing-function-docstring, unused-argument, function-redefined
 
 # Ignore no docstring

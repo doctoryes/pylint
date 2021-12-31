@@ -1,4 +1,4 @@
-"""Regression test for https://github.com/PyCQA/pylint/issues/4899"""
+"""Regression test for https://github.com/PyCQA/pylint/issues/4899."""
 
 # pylint: disable=missing-docstring,too-few-public-methods
 
@@ -25,7 +25,7 @@ class Case:
         self.items.append(item)
 
     def find_item(self, description: str) -> Item:
-        """Find an item by description"""
+        """Find an item by description."""
 
         return next(
             (item for item in self.items if item.description == description), None

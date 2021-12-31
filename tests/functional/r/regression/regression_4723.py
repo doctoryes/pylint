@@ -1,5 +1,7 @@
 """Latest version of astroid (2.6.3) causes RuntimeError:
-generator raised StopIteration #4723"""
+
+generator raised StopIteration #4723
+"""
 # pylint: disable=invalid-name,missing-docstring,too-few-public-methods
 
 import contextlib

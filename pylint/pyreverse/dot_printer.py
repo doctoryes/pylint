@@ -51,7 +51,7 @@ class DotPrinter(Printer):
         super().__init__(title, layout, use_automatic_namespace)
 
     def _open_graph(self) -> None:
-        """Emit the header lines"""
+        """Emit the header lines."""
         self.emit(f'digraph "{self.title}" {{')
         if self.layout:
             self.emit(f"rankdir={self.layout.value}")
@@ -67,7 +67,10 @@ class DotPrinter(Printer):
         type_: NodeType,
         properties: Optional[NodeProperties] = None,
     ) -> None:
-        """Create a new node. Nodes can be classes, packages, participants etc."""
+        """Create a new node.
+
+        Nodes can be classes, packages, participants etc.
+        """
         if properties is None:
             properties = NodeProperties(label=name)
         shape = SHAPES[type_]

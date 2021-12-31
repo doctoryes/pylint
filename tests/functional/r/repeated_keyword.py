@@ -1,4 +1,4 @@
-"""Check that a keyword is not repeated in a function call
+"""Check that a keyword is not repeated in a function call.
 
 This is somehow related to redundant-keyword, but it's not the same.
 """

@@ -11,10 +11,10 @@ def correct():
 REVISION = correct()
 
 class Correct(object):
-    """callable object"""
+    """callable object."""
 
 class MetaCorrect(object):
-    """callable object"""
+    """callable object."""
     def __call__(self):
         return self
 
@@ -35,32 +35,32 @@ INCORRECT = INT() # [not-callable]
 # getter, but it doesn't infer properly when having a getter
 # and a setter.
 class MyProperty(property):
-    """ test subclasses """
+    """test subclasses."""
 
 class PropertyTest(object):
-    """ class """
+    """class."""
 
     def __init__(self):
         self.attr = 4
 
     @property
     def test(self):
-        """ Get the attribute """
+        """Get the attribute."""
         return self.attr
 
     @test.setter
     def test(self, value):
-        """ Set the attribute """
+        """Set the attribute."""
         self.attr = value
 
     @MyProperty
     def custom(self):
-        """ Get the attribute """
+        """Get the attribute."""
         return self.attr
 
     @custom.setter
     def custom(self, value):
-        """ Set the attribute """
+        """Set the attribute."""
         self.attr = value
 
 PROP = PropertyTest()

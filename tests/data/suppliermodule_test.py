@@ -1,4 +1,4 @@
-""" file suppliermodule.py """
+"""file suppliermodule.py."""
 from typing import Optional
 
 class Interface:

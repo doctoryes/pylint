@@ -1,18 +1,18 @@
 # pylint: disable=invalid-name,too-many-public-methods,attribute-defined-outside-init
 # pylint: disable= useless-object-inheritance,too-few-public-methods
-"""This module demonstrates a possible problem of pyLint with calling __init__ s
-from inherited classes.
+"""This module demonstrates a possible problem of pyLint with calling __init__ s from
+inherited classes.
+
 Initializations done there are not considered, which results in Error E0203 for
-self.cookedq."""
+self.cookedq.
+"""
 
 from __future__ import print_function
 
 import telnetlib
 
 class SeeTelnet(telnetlib.Telnet):
-    """
-    Extension of telnetlib.
-    """
+    """Extension of telnetlib."""
 
     def __init__(self, host=None, port=0):
         """
@@ -38,17 +38,17 @@ class SeeTelnet(telnetlib.Telnet):
                 maxLength = len(match)
 
 class Base(object):
-    """bla bla"""
+    """bla bla."""
     dougloup_papa = None
 
     def __init__(self):
         self._var = False
 
 class Derived(Base):
-    """derived blabla"""
+    """derived blabla."""
     dougloup_moi = None
     def Work(self):
-        """do something"""
+        """do something."""
         # E0203 - Access to member '_var' before its definition
         if self._var:
             print("True")
@@ -67,7 +67,7 @@ class Derived(Base):
 
 
 class QoSALConnection(object):
-    """blabla"""
+    """blabla."""
 
     _the_instance = None
 
@@ -80,18 +80,16 @@ class QoSALConnection(object):
         pass
 
 class DefinedOutsideInit(object):
-    """use_attr is seen as the method defining attr because its in
-    first position
-    """
+    """use_attr is seen as the method defining attr because its in first position."""
     def __init__(self):
         self.reset()
 
     def use_attr(self):
-        """use and set members"""
+        """use and set members."""
         if self.attr:
             print('hop')
         self.attr = 10
 
     def reset(self):
-        """reset members"""
+        """reset members."""
         self.attr = 4

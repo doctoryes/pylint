@@ -1,4 +1,4 @@
-"""Tests that onjects used in a with statement implement context manager protocol"""
+"""Tests that onjects used in a with statement implement context manager protocol."""
 
 # pylint: disable=too-few-public-methods, invalid-name, import-error, missing-docstring
 # pylint: disable=no-init,wrong-import-position, useless-object-inheritance

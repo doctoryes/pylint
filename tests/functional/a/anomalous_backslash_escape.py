@@ -1,4 +1,4 @@
-"""Test for anomalous backslash escapes in strings"""
+"""Test for anomalous backslash escapes in strings."""
 
 
 BAD_ESCAPE = '\z'  # [anomalous-backslash-in-string]

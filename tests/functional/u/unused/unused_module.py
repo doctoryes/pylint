@@ -1,4 +1,5 @@
 """Regression test for unused-module.
+
 Reported in https://bitbucket.org/logilab/pylint/issue/78/
 """
 
@@ -8,6 +9,6 @@ path += ["stuff"]
 
 
 def func():
-    """A function"""
+    """A function."""
     other = 1
     return len(other)

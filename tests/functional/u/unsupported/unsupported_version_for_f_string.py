@@ -1,4 +1,4 @@
-"""Tests for the use of f-strings whenever the py-version is set < 3.6"""
+"""Tests for the use of f-strings whenever the py-version is set < 3.6."""
 # pylint: disable=f-string-without-interpolation
 
 VAR = f"a simple f-string"  # [using-f-string-in-unsupported-version]

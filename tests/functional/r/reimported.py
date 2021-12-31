@@ -30,7 +30,7 @@ import sys  # [reimported]  #pylint: disable=ungrouped-imports,wrong-import-orde
 __revision__ = 0
 
 def no_reimport():
-    """docstring"""
+    """docstring."""
     import os  #pylint: disable=import-outside-toplevel
     print(os)
 

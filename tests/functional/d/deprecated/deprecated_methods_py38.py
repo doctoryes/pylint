@@ -1,4 +1,4 @@
-""" Functional tests for method deprecation. """
+"""Functional tests for method deprecation."""
 # pylint: disable=missing-docstring, super-init-not-called, not-callable
 import base64
 import inspect

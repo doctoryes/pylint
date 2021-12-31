@@ -1,4 +1,4 @@
-"""Checks import order rule"""
+"""Checks import order rule."""
 # pylint: disable=unused-import,ungrouped-imports,import-error,no-name-in-module,relative-beyond-top-level
 from __future__ import absolute_import
 try:

@@ -3,23 +3,23 @@
 # pylint: disable=redefined-outer-name,useless-object-inheritance,using-constant-test,unused-argument
 # pylint: disable=broad-except, not-context-manager, no-method-argument, no-self-use, unspecified-encoding
 
-"""Checks use of "too-complex" check"""
+"""Checks use of "too-complex" check."""
 
 
 def f1():  # [too-complex]
-    """McCabe rating: 1"""
+    """McCabe rating: 1."""
     pass
 
 
 def f2(n):  # [too-complex]
-    """McCabe rating: 1"""
+    """McCabe rating: 1."""
     k = n + 4
     s = k + n
     return s
 
 
 def f3(n):  # [too-complex]
-    """McCabe rating: 3"""
+    """McCabe rating: 3."""
     if n > 3:
         return "bigger than three"
     elif n > 4:
@@ -29,13 +29,13 @@ def f3(n):  # [too-complex]
 
 
 def f4():  # [too-complex]
-    """McCabe rating: 2"""
+    """McCabe rating: 2."""
     for i in range(10):
         print(i)
 
 
 def f5(mylist):  # [too-complex]
-    """McCabe rating: 2"""
+    """McCabe rating: 2."""
     for i in mylist:
         print(i)
     else:
@@ -43,7 +43,7 @@ def f5(mylist):  # [too-complex]
 
 
 def f6(n):  # [too-complex]
-    """McCabe rating: 2"""
+    """McCabe rating: 2."""
     if n > 4:
         return f(n - 1)
     else:
@@ -51,13 +51,13 @@ def f6(n):  # [too-complex]
 
 
 def f7():  # [too-complex]
-    """McCabe rating: 3"""
+    """McCabe rating: 3."""
 
     def b():
-        """McCabe rating: 2"""
+        """McCabe rating: 2."""
 
         def c():
-            """McCabe rating: 1"""
+            """McCabe rating: 1."""
             pass
 
         c()
@@ -66,7 +66,7 @@ def f7():  # [too-complex]
 
 
 def f8():  # [too-complex]
-    """McCabe rating: 4"""
+    """McCabe rating: 4."""
     try:
         print(1)
     except TypeA:
@@ -78,7 +78,7 @@ def f8():  # [too-complex]
 
 
 def f9():  # [too-complex]
-    """McCabe rating: 9"""
+    """McCabe rating: 9."""
     myint = 2
     if myint > 5:
         pass
@@ -104,7 +104,7 @@ def f9():  # [too-complex]
 
 
 def f10():  # [too-complex]
-    """McCabe rating: 11"""
+    """McCabe rating: 11."""
     myint = 2
     if myint == 5:
         return myint
@@ -131,16 +131,16 @@ def f10():  # [too-complex]
 
 
 class MyClass1(object):
-    """Class of example to test mccabe"""
+    """Class of example to test mccabe."""
 
     _name = "MyClass"  # To force a tail.node=None
 
     def method1():  # [too-complex]
-        """McCabe rating: 1"""
+        """McCabe rating: 1."""
         pass
 
     def method2(self, param1):  # [too-complex, too-many-branches]
-        """McCabe rating: 18"""
+        """McCabe rating: 18."""
         if not param1:
             pass
         pass
@@ -205,7 +205,7 @@ for count in range(10): # [too-complex]
 
 
 def method3(self):  # [too-complex]
-    """McCabe rating: 2"""
+    """McCabe rating: 2."""
     try:
         if True:
             pass
