@@ -68,7 +68,7 @@
 # Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
 
-"""basic checker for Python code"""
+"""Basic checker for Python code"""
 import collections
 import itertools
 import re
@@ -266,7 +266,7 @@ def in_loop(node: nodes.NodeNG) -> bool:
 
 
 def in_nested_list(nested_list, obj):
-    """return true if the object is an element of <nested_list> or of a nested
+    """Return true if the object is an element of <nested_list> or of a nested
     list
     """
     for elmt in nested_list:
@@ -401,7 +401,7 @@ def report_by_type_stats(
     stats: LinterStats,
     old_stats: Optional[LinterStats],
 ):
-    """make a report of
+    """Make a report of
 
     * percentage of different types documented
     * percentage of different types with a bad name
@@ -438,7 +438,7 @@ def report_by_type_stats(
 
 
 def redefined_by_decorator(node):
-    """return True if the object is a method redefined via decorator.
+    """Return True if the object is a method redefined via decorator.
 
     For example:
         @property
@@ -843,7 +843,7 @@ class BasicErrorChecker(_BasicChecker):
             )
 
     def _check_in_loop(self, node, node_name):
-        """check that a node is inside a for or while loop"""
+        """Check that a node is inside a for or while loop"""
         for parent in node.node_ancestors():
             if isinstance(parent, (nodes.For, nodes.While)):
                 if node not in parent.orelse:
@@ -861,7 +861,7 @@ class BasicErrorChecker(_BasicChecker):
         self.add_message("not-in-loop", node=node, args=node_name)
 
     def _check_redefinition(self, redeftype, node):
-        """check for redefinition of a function / method / class name"""
+        """Check for redefinition of a function / method / class name"""
         parent_frame = node.parent.frame()
 
         # Ignore function stubs created for type information
@@ -938,7 +938,7 @@ class BasicErrorChecker(_BasicChecker):
 
 
 class BasicChecker(_BasicChecker):
-    """checks for :
+    """Checks for :
     * doc strings
     * number of arguments, local variables, branches, returns and statements in
     functions, methods
@@ -1088,7 +1088,7 @@ class BasicChecker(_BasicChecker):
         self._tryfinallys = None
 
     def open(self):
-        """initialize visit variables and statistics"""
+        """Initialize visit variables and statistics"""
         py_version = get_global_option(self, "py-version")
         self._py38_plus = py_version >= (3, 8)
         self._tryfinallys = []
@@ -1162,11 +1162,11 @@ class BasicChecker(_BasicChecker):
             self.add_message("using-constant-test", node=node)
 
     def visit_module(self, _: nodes.Module) -> None:
-        """check module name, docstring and required arguments"""
+        """Check module name, docstring and required arguments"""
         self.linter.stats.node_count["module"] += 1
 
     def visit_classdef(self, _: nodes.ClassDef) -> None:
-        """check module name, docstring and redefinition
+        """Check module name, docstring and redefinition
         increment branch counter
         """
         self.linter.stats.node_count["klass"] += 1
@@ -1305,7 +1305,7 @@ class BasicChecker(_BasicChecker):
 
     @utils.check_messages("dangerous-default-value")
     def visit_functiondef(self, node: nodes.FunctionDef) -> None:
-        """check function name, docstring, arguments, redefinition,
+        """Check function name, docstring, arguments, redefinition,
         variable names, max locals
         """
         if node.is_method():
@@ -1369,7 +1369,7 @@ class BasicChecker(_BasicChecker):
 
     @utils.check_messages("unreachable")
     def visit_continue(self, node: nodes.Continue) -> None:
-        """check is the node has a right sibling (if so, that's some unreachable
+        """Check is the node has a right sibling (if so, that's some unreachable
         code)
         """
         self._check_unreachable(node)
@@ -1388,7 +1388,7 @@ class BasicChecker(_BasicChecker):
 
     @utils.check_messages("unreachable")
     def visit_raise(self, node: nodes.Raise) -> None:
-        """check if the node has a right sibling (if so, that's some unreachable
+        """Check if the node has a right sibling (if so, that's some unreachable
         code)
         """
         self._check_unreachable(node)
@@ -1418,7 +1418,7 @@ class BasicChecker(_BasicChecker):
         "eval-used", "exec-used", "bad-reversed-sequence", "misplaced-format-function"
     )
     def visit_call(self, node: nodes.Call) -> None:
-        """visit a Call node -> check if this is not a disallowed builtin
+        """Visit a Call node -> check if this is not a disallowed builtin
         call and check for * or ** use
         """
         self._check_misplaced_format_function(node)
@@ -1436,7 +1436,7 @@ class BasicChecker(_BasicChecker):
 
     @utils.check_messages("assert-on-tuple", "assert-on-string-literal")
     def visit_assert(self, node: nodes.Assert) -> None:
-        """check whether assert is used on a tuple or string literal."""
+        """Check whether assert is used on a tuple or string literal."""
         if (
             node.fail is None
             and isinstance(node.test, nodes.Tuple)
@@ -1453,7 +1453,7 @@ class BasicChecker(_BasicChecker):
 
     @utils.check_messages("duplicate-key")
     def visit_dict(self, node: nodes.Dict) -> None:
-        """check duplicate key in dictionary"""
+        """Check duplicate key in dictionary"""
         keys = set()
         for k, _ in node.items:
             if isinstance(k, nodes.Const):
@@ -1467,15 +1467,15 @@ class BasicChecker(_BasicChecker):
             keys.add(key)
 
     def visit_tryfinally(self, node: nodes.TryFinally) -> None:
-        """update try...finally flag"""
+        """Update try...finally flag"""
         self._tryfinallys.append(node)
 
     def leave_tryfinally(self, _: nodes.TryFinally) -> None:
-        """update try...finally flag"""
+        """Update try...finally flag"""
         self._tryfinallys.pop()
 
     def _check_unreachable(self, node):
-        """check unreachable code"""
+        """Check unreachable code"""
         unreach_stmt = node.next_sibling()
         if unreach_stmt is not None:
             if (
@@ -1491,7 +1491,7 @@ class BasicChecker(_BasicChecker):
             self.add_message("unreachable", node=unreach_stmt)
 
     def _check_not_in_finally(self, node, node_name, breaker_classes=()):
-        """check that a node is not inside a 'finally' clause of a
+        """Check that a node is not inside a 'finally' clause of a
         'try...finally' statement.
         If we find a parent which type is in breaker_classes before
         a 'try...finally' block we skip the whole check.
@@ -1510,7 +1510,7 @@ class BasicChecker(_BasicChecker):
             _parent = _node.parent
 
     def _check_reversed(self, node):
-        """check that the argument to `reversed` is a sequence"""
+        """Check that the argument to `reversed` is a sequence"""
         try:
             argument = utils.safe_infer(utils.get_argument_from_call(node, position=0))
         except utils.NoSuchArgumentError:
@@ -1967,7 +1967,7 @@ class NameChecker(_BasicChecker):
         "disallowed-name", "invalid-name", "assign-to-new-keyword", "non-ascii-name"
     )
     def visit_assignname(self, node: nodes.AssignName) -> None:
-        """check module level assigned names"""
+        """Check module level assigned names"""
         self._check_assign_to_new_keyword_violation(node.name, node)
         frame = node.frame()
         assign_type = node.assign_type()
@@ -2006,7 +2006,7 @@ class NameChecker(_BasicChecker):
                     self._check_name("class_attribute", node.name, node)
 
     def _recursive_check_names(self, args):
-        """check names in a possibly recursive list <arg>"""
+        """Check names in a possibly recursive list <arg>"""
         for arg in args:
             if isinstance(arg, nodes.AssignName):
                 self._check_name("argument", arg.name, arg)
@@ -2054,7 +2054,7 @@ class NameChecker(_BasicChecker):
         )
 
     def _check_name(self, node_type, name, node, confidence=interfaces.HIGH):
-        """check for a name using the type's regexp"""
+        """Check for a name using the type's regexp"""
         non_ascii_match = self._non_ascii_rgx_compiled.match(name)
         if non_ascii_match is not None:
             self._raise_name_warning(
@@ -2273,7 +2273,7 @@ class DocStringChecker(_BasicChecker):
 
 
 class PassChecker(_BasicChecker):
-    """check if the pass statement is really necessary"""
+    """Check if the pass statement is really necessary"""
 
     msgs = {
         "W0107": (

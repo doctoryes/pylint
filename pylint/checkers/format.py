@@ -237,7 +237,7 @@ class TokenWrapper:
 
 
 class FormatChecker(BaseTokenChecker):
-    """checks for :
+    """Checks for :
     * unauthorized constructions
     * strict indentation
     * line length
@@ -348,7 +348,7 @@ class FormatChecker(BaseTokenChecker):
         self._bracket_stack = [None]
 
     def new_line(self, tokens, line_end, line_start):
-        """a new line has been encountered, process it if necessary"""
+        """A new line has been encountered, process it if necessary"""
         if _last_token_on_line_is(tokens, line_end, ";"):
             self.add_message("unnecessary-semicolon", line=tokens.start_line(line_end))
 
@@ -471,7 +471,7 @@ class FormatChecker(BaseTokenChecker):
         return dispatch
 
     def process_tokens(self, tokens):
-        """process tokens and search for :
+        """Process tokens and search for :
 
         _ too long lines (i.e. longer than <max_chars>)
         _ optionally bad construct (if given, bad_construct must be a compiled
@@ -590,7 +590,7 @@ class FormatChecker(BaseTokenChecker):
 
     @check_messages("multiple-statements")
     def visit_default(self, node: nodes.NodeNG) -> None:
-        """check the node line number and check it if not yet done"""
+        """Check the node line number and check it if not yet done"""
         if not node.is_statement:
             return
         if not node.root().pure_python:
@@ -788,7 +788,7 @@ class FormatChecker(BaseTokenChecker):
             self.check_line_length(line, lineno + offset, checker_off)
 
     def check_indent_level(self, string, expected, line_num):
-        """return the indent level of the string"""
+        """Return the indent level of the string"""
         indent = self.config.indent_string
         if indent == "\\t":  # \t is not interpreted in the configuration file
             indent = "\t"

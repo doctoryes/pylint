@@ -93,7 +93,7 @@ ANSI_COLORS = {
 
 
 def _get_ansi_code(msg_style: MessageStyle) -> str:
-    """return ansi escape code corresponding to color and style
+    """Return ansi escape code corresponding to color and style
 
     :param msg_style: the message style
 
@@ -218,7 +218,7 @@ class TextReporter(BaseReporter):
         self.writeln(self._fixed_template.format(**self_dict))
 
     def handle_message(self, msg: Message) -> None:
-        """manage message of different type and in the context of path"""
+        """Manage message of different type and in the context of path"""
         if msg.module not in self._modules:
             if msg.module:
                 self.writeln(f"************* Module {msg.module}")
@@ -228,13 +228,13 @@ class TextReporter(BaseReporter):
         self.write_message(msg)
 
     def _display(self, layout: "Section") -> None:
-        """launch layouts display"""
+        """Launch layouts display"""
         print(file=self.out)
         TextWriter().format(layout, self.out)
 
 
 class ParseableTextReporter(TextReporter):
-    """a reporter very similar to TextReporter, but display messages in a form
+    """A reporter very similar to TextReporter, but display messages in a form
     recognized by most text editors :
 
     <filename>:<linenum>:<msg>
@@ -328,7 +328,7 @@ class ColorizedTextReporter(TextReporter):
         return self.color_mapping.get(msg_id[0]) or MessageStyle(None)
 
     def handle_message(self, msg: Message) -> None:
-        """manage message of different types, and colorize output
+        """Manage message of different types, and colorize output
         using ansi escape codes
         """
         if msg.module not in self._modules:

@@ -83,7 +83,7 @@ class OptionsManagerMixIn:
         self._optik_option_attrs = set(self.cmdline_parser.option_class.ATTRS)
 
     def register_options_provider(self, provider, own_group=True):
-        """register an options provider"""
+        """Register an options provider"""
         assert provider.priority <= 0, "provider's priority can't be >= 0"
         for i, options_provider in enumerate(self.options_providers):
             if provider.priority > options_provider.priority:
@@ -142,7 +142,7 @@ class OptionsManagerMixIn:
         self._maxlevel = max(self._maxlevel, option.level or 0)
 
     def optik_option(self, provider, opt, optdict):
-        """get our personal option definition and return a suitable form for
+        """Get our personal option definition and return a suitable form for
         use with optik/optparse
         """
         optdict = copy.copy(optdict)
@@ -173,7 +173,7 @@ class OptionsManagerMixIn:
         return args, optdict
 
     def cb_set_provider_option(self, option, opt, value, parser):
-        """optik callback for option setting"""
+        """Optik callback for option setting"""
         if opt.startswith("--"):
             # remove -- on long option
             opt = opt[2:]
@@ -186,13 +186,13 @@ class OptionsManagerMixIn:
         self.global_set_option(opt, value)
 
     def global_set_option(self, opt, value):
-        """set option on the correct option provider"""
+        """Set option on the correct option provider"""
         self._all_options[opt].set_option(opt, value)
 
     def generate_config(
         self, stream: Optional[TextIO] = None, skipsections: Tuple[str, ...] = ()
     ) -> None:
-        """write a configuration file according to the current configuration
+        """Write a configuration file according to the current configuration
         into the given stream or stdout
         """
         options_by_section: Dict[str, List[Tuple]] = {}
@@ -239,7 +239,7 @@ class OptionsManagerMixIn:
             print(formatter.format_tail(pkginfo), file=stream)
 
     def load_provider_defaults(self):
-        """initialize configuration using default values"""
+        """Initialize configuration using default values"""
         for provider in self.options_providers:
             provider.load_defaults()
 
@@ -343,7 +343,7 @@ class OptionsManagerMixIn:
                     continue
 
     def load_configuration(self, **kwargs):
-        """override configuration according to given parameters"""
+        """Override configuration according to given parameters"""
         return self.load_configuration_from_config(kwargs)
 
     def load_configuration_from_config(self, config):
@@ -370,7 +370,7 @@ class OptionsManagerMixIn:
             return args
 
     def add_help_section(self, title, description, level=0):
-        """add a dummy option section for help purpose"""
+        """Add a dummy option section for help purpose"""
         group = optparse.OptionGroup(
             self.cmdline_parser, title=title.capitalize(), description=description
         )
@@ -379,7 +379,7 @@ class OptionsManagerMixIn:
         self.cmdline_parser.add_option_group(group)
 
     def help(self, level=0):
-        """return the usage string for available options"""
+        """Return the usage string for available options"""
         self.cmdline_parser.formatter.output_level = level
         with _patch_optparse():
             return self.cmdline_parser.format_help()

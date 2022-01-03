@@ -1,4 +1,4 @@
-""" Profiles basic -jX functionality """
+"""Profiles basic -jX functionality """
 # Copyright (c) 2020-2021 Pierre Sassoulas <pierre.sassoulas@gmail.com>
 # Copyright (c) 2020 Frank Harrison <frank@doublethefish.com>
 # Copyright (c) 2021 Daniël van Noord <13665637+DanielNoord@users.noreply.github.com>

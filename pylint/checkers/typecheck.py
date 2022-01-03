@@ -55,7 +55,7 @@
 # Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
 
-"""try to find more bugs in the code using astroid inference capabilities"""
+"""Try to find more bugs in the code using astroid inference capabilities"""
 
 import fnmatch
 import heapq
@@ -781,7 +781,7 @@ def _is_invalid_isinstance_type(arg):
 
 
 class TypeChecker(BaseChecker):
-    """try to find bugs in the code using type inference"""
+    """Try to find bugs in the code using type inference"""
 
     __implements__ = (IAstroidChecker,)
 
@@ -1006,7 +1006,7 @@ accessed. Python regular expressions are accepted.",
 
     @check_messages("no-member", "c-extension-no-member")
     def visit_attribute(self, node: nodes.Attribute) -> None:
-        """check that the accessed attribute exists
+        """Check that the accessed attribute exists
 
         to avoid too much false positives for now, we'll consider the code as
         correct if a single of the inferred nodes has the accessed attribute.
@@ -1142,7 +1142,7 @@ accessed. Python regular expressions are accepted.",
         self._check_dundername_is_string(node)
 
     def _check_assignment_from_function_call(self, node):
-        """check that if assigning to a function call, the function is
+        """Check that if assigning to a function call, the function is
         possibly returning something valuable
         """
         if not isinstance(node.value, nodes.Call):
@@ -1311,7 +1311,7 @@ accessed. Python regular expressions are accepted.",
     # pylint: disable=too-many-branches,too-many-locals
     @check_messages(*(list(MSGS.keys())))
     def visit_call(self, node: nodes.Call) -> None:
-        """check that called functions/methods are inferred to callable objects,
+        """Check that called functions/methods are inferred to callable objects,
         and that the arguments passed to the function match the parameters in
         the inferred function's definition
         """

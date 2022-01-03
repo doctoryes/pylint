@@ -269,7 +269,7 @@ class VCGPrinter(Printer):
         self.emit("}")
 
     def _write_attributes(self, attributes_dict: Mapping[str, Any], **args) -> None:
-        """write graph, node or edge attributes"""
+        """Write graph, node or edge attributes"""
         for key, value in args.items():
             try:
                 _type = attributes_dict[key]

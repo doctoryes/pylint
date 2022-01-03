@@ -459,7 +459,7 @@ class SpellingChecker(BaseTokenChecker):
     visit_asyncfunctiondef = visit_functiondef
 
     def _check_docstring(self, node):
-        """check the node has any spelling errors"""
+        """Check the node has any spelling errors"""
         docstring = node.doc
         if not docstring:
             return

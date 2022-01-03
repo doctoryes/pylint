@@ -197,7 +197,7 @@ OPTIONS = (
 
 
 class Run(ConfigurationMixIn):
-    """base class providing common behaviour for pyreverse commands"""
+    """Base class providing common behaviour for pyreverse commands"""
 
     options = OPTIONS
 
@@ -218,7 +218,7 @@ class Run(ConfigurationMixIn):
         sys.exit(self.run(args))
 
     def run(self, args):
-        """checking arguments and run project"""
+        """Checking arguments and run project"""
         if not args:
             print(self.help())
             return 1

@@ -27,7 +27,7 @@
 # Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
 
-"""a similarities / code duplication command line tool and pylint checker
+"""A similarities / code duplication command line tool and pylint checker
 
 The algorithm is based on comparing the hash value of n successive lines of a file.
 First the files are read and any line that doesn't fulfill requirement are removed (comments, docstrings...)
@@ -352,7 +352,7 @@ class Commonality(NamedTuple):
 
 
 class Similar:
-    """finds copy-pasted lines of code in a project"""
+    """Finds copy-pasted lines of code in a project"""
 
     def __init__(
         self,
@@ -372,7 +372,7 @@ class Similar:
     def append_stream(
         self, streamid: str, stream: STREAM_TYPES, encoding: Optional[str] = None
     ) -> None:
-        """append a file to search for similarities"""
+        """Append a file to search for similarities"""
         if isinstance(stream, BufferedIOBase):
             if encoding is None:
                 raise ValueError
@@ -394,13 +394,13 @@ class Similar:
             pass
 
     def run(self) -> None:
-        """start looking for similarities and display results on stdout"""
+        """Start looking for similarities and display results on stdout"""
         if self.min_lines == 0:
             return
         self._display_sims(self._compute_sims())
 
     def _compute_sims(self) -> List[Tuple[int, Set[LinesChunkLimits_T]]]:
-        """compute similarities in appended files"""
+        """Compute similarities in appended files"""
         no_duplicates: Dict[int, List[Set[LinesChunkLimits_T]]] = defaultdict(list)
 
         for commonality in self._iter_sims():
@@ -534,7 +534,7 @@ class Similar:
                 yield com
 
     def _iter_sims(self) -> Generator[Commonality, None, None]:
-        """iterate on similarities among all files, by making a cartesian
+        """Iterate on similarities among all files, by making a cartesian
         product
         """
         for idx, lineset in enumerate(self.linesets[:-1]):
@@ -719,7 +719,7 @@ def report_similarities(
     stats: LinterStats,
     old_stats: Optional[LinterStats],
 ) -> None:
-    """make a layout with some stats about duplication"""
+    """Make a layout with some stats about duplication"""
     lines = ["", "now", "previous", "difference"]
     lines += table_lines_from_stats(stats, old_stats, "duplicated_lines")
     sect.append(Table(children=lines, cols=4, rheaders=1, cheaders=1))
@@ -727,7 +727,7 @@ def report_similarities(
 
 # wrapper to get a pylint checker from the similar class
 class SimilarChecker(BaseChecker, Similar, MapReduceMixin):
-    """checks for similarities and duplicated code. This computation may be
+    """Checks for similarities and duplicated code. This computation may be
     memory / CPU intensive, so you should disable it if you experiment some
     problems.
     """
@@ -801,7 +801,7 @@ class SimilarChecker(BaseChecker, Similar, MapReduceMixin):
         )
 
     def set_option(self, optname, value, action=None, optdict=None):
-        """method called to set an option (registered in the options list)
+        """Method called to set an option (registered in the options list)
 
         Overridden to report options setting to Similar
         """
@@ -818,12 +818,12 @@ class SimilarChecker(BaseChecker, Similar, MapReduceMixin):
             self.ignore_signatures = self.config.ignore_signatures
 
     def open(self):
-        """init the checkers: reset linesets and statistics information"""
+        """Init the checkers: reset linesets and statistics information"""
         self.linesets = []
         self.linter.stats.reset_duplicated_lines()
 
     def process_module(self, node: nodes.Module) -> None:
-        """process a module
+        """Process a module
 
         the module's content is accessible via the stream object
 
@@ -833,7 +833,7 @@ class SimilarChecker(BaseChecker, Similar, MapReduceMixin):
             self.append_stream(self.linter.current_name, stream, node.file_encoding)
 
     def close(self):
-        """compute and display similarities on closing (i.e. end of parsing)"""
+        """Compute and display similarities on closing (i.e. end of parsing)"""
         total = sum(len(lineset) for lineset in self.linesets)
         duplicated = 0
         stats = self.linter.stats
@@ -878,7 +878,7 @@ def register(linter: "PyLinter") -> None:
 
 
 def usage(status=0):
-    """display command line usage information"""
+    """Display command line usage information"""
     print("finds copy pasted blocks in a set of files")
     print()
     print(
@@ -889,7 +889,7 @@ def usage(status=0):
 
 
 def Run(argv=None):
-    """standalone command line access point"""
+    """Standalone command line access point"""
     if argv is None:
         argv = sys.argv[1:]
 

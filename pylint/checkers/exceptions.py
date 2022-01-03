@@ -506,7 +506,7 @@ class ExceptionsChecker(checkers.BaseChecker):
         "duplicate-except",
     )
     def visit_tryexcept(self, node: nodes.TryExcept) -> None:
-        """check for empty except"""
+        """Check for empty except"""
         self._check_try_except_raise(node)
         exceptions_classes: List[Any] = []
         nb_handlers = len(node.handlers)

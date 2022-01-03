@@ -57,7 +57,7 @@
 # Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
 
-"""some functions that may be useful for various checkers"""
+"""Some functions that may be useful for various checkers"""
 import builtins
 import itertools
 import numbers
@@ -314,7 +314,7 @@ def get_all_elements(
 
 
 def is_super(node: nodes.NodeNG) -> bool:
-    """return True if the node is referencing the "super" builtin function"""
+    """Return True if the node is referencing the "super" builtin function"""
     if getattr(node, "name", None) == "super" and node.root().name == "builtins":
         return True
     return False
@@ -335,7 +335,7 @@ def is_builtin_object(node: nodes.NodeNG) -> bool:
 
 
 def is_builtin(name: str) -> bool:
-    """return true if <name> could be considered as a builtin defined by python"""
+    """Return true if <name> could be considered as a builtin defined by python"""
     return name in builtins or name in SPECIAL_BUILTINS  # type: ignore[attr-defined]
 
 
@@ -417,7 +417,7 @@ def is_defined_before(var_node: nodes.Name) -> bool:
 def is_default_argument(
     node: nodes.NodeNG, scope: Optional[nodes.NodeNG] = None
 ) -> bool:
-    """return true if the given Name node is used in function or lambda
+    """Return true if the given Name node is used in function or lambda
     default argument's value
     """
     if not scope:
@@ -436,7 +436,7 @@ def is_default_argument(
 
 
 def is_func_decorator(node: nodes.NodeNG) -> bool:
-    """return true if the name is used in function decorator"""
+    """Return true if the name is used in function decorator"""
     for parent in node.node_ancestors():
         if isinstance(parent, nodes.Decorators):
             return True
@@ -453,7 +453,7 @@ def is_func_decorator(node: nodes.NodeNG) -> bool:
 
 
 def is_ancestor_name(frame: nodes.ClassDef, node: nodes.NodeNG) -> bool:
-    """return whether `frame` is an astroid.Class node with `node` in the
+    """Return whether `frame` is an astroid.Class node with `node` in the
     subtree of its bases attribute
     """
     if not isinstance(frame, nodes.ClassDef):
@@ -462,19 +462,19 @@ def is_ancestor_name(frame: nodes.ClassDef, node: nodes.NodeNG) -> bool:
 
 
 def is_being_called(node: nodes.NodeNG) -> bool:
-    """return True if node is the function being called in a Call node"""
+    """Return True if node is the function being called in a Call node"""
     return isinstance(node.parent, nodes.Call) and node.parent.func is node
 
 
 def assign_parent(node: nodes.NodeNG) -> nodes.NodeNG:
-    """return the higher parent which is not an AssignName, Tuple or List node"""
+    """Return the higher parent which is not an AssignName, Tuple or List node"""
     while node and isinstance(node, (nodes.AssignName, nodes.Tuple, nodes.List)):
         node = node.parent
     return node
 
 
 def overrides_a_method(class_node: nodes.ClassDef, name: str) -> bool:
-    """return True if <name> is a method overridden from an ancestor
+    """Return True if <name> is a method overridden from an ancestor
     which is not the base object class
     """
     for ancestor in class_node.ancestors():
@@ -486,7 +486,7 @@ def overrides_a_method(class_node: nodes.ClassDef, name: str) -> bool:
 
 
 def check_messages(*messages: str) -> Callable:
-    """decorator to store messages that are handled by a checker method"""
+    """Decorator to store messages that are handled by a checker method"""
 
     def store_messages(func):
         func.checks_msgs = messages
@@ -652,7 +652,7 @@ def parse_format_method_string(
 
 
 def is_attr_protected(attrname: str) -> bool:
-    """return True if attribute name is protected (start with _ and some other
+    """Return True if attribute name is protected (start with _ and some other
     details), False otherwise.
     """
     return (
@@ -1071,7 +1071,7 @@ def node_ignores_exception(node: nodes.NodeNG, exception=Exception) -> bool:
 
 
 def class_is_abstract(node: nodes.ClassDef) -> bool:
-    """return true if the given class node should be considered as an abstract
+    """Return true if the given class node should be considered as an abstract
     class
     """
     # Only check for explicit metaclass=ABCMeta on this specific class

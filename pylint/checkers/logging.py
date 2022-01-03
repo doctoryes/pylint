@@ -23,7 +23,7 @@
 # Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 # For details: https://github.com/PyCQA/pylint/blob/main/LICENSE
 
-"""checker for use of Python logging"""
+"""Checker for use of Python logging"""
 import string
 from typing import TYPE_CHECKING, Set
 

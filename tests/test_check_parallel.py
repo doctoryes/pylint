@@ -110,7 +110,7 @@ class ParallelTestChecker(BaseChecker, MapReduceMixin):
         self.linter = linter
 
     def open(self) -> None:
-        """init the checkers: reset statistics information"""
+        """Init the checkers: reset statistics information"""
         self.linter.stats.reset_node_count()
         self.data = []
 

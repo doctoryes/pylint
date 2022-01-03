@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 
 class GenericTestReporter(BaseReporter):
-    """reporter storing plain text messages"""
+    """Reporter storing plain text messages"""
 
     __implements__ = interfaces.IReporter
     out: StringIO
@@ -56,7 +56,7 @@ class GenericTestReporter(BaseReporter):
     # pylint: enable=unused-argument
 
     def display_reports(self, layout: "Section") -> None:
-        """ignore layouts"""
+        """Ignore layouts"""
 
     def _display(self, layout: "Section") -> None:
         pass

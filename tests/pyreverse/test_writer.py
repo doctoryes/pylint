@@ -61,7 +61,7 @@ HTML_FILES = ["packages_No_Name.html", "classes_No_Name.html"]
 
 
 class Config:
-    """config object for tests"""
+    """Config object for tests"""
 
     def __init__(self):
         for attr, value in _DEFAULTS.items():

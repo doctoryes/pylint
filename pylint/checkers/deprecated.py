@@ -70,7 +70,7 @@ class DeprecatedMixin(BaseChecker):
         "deprecated-class",
     )
     def visit_import(self, node: nodes.Import) -> None:
-        """triggered when an import statement is seen"""
+        """Triggered when an import statement is seen"""
         for name in (name for name, _ in node.names):
             self.check_deprecated_module(node, name)
             if "." in name:
@@ -106,7 +106,7 @@ class DeprecatedMixin(BaseChecker):
         "deprecated-class",
     )
     def visit_importfrom(self, node: nodes.ImportFrom) -> None:
-        """triggered when a from statement is seen"""
+        """Triggered when a from statement is seen"""
         basename = node.modname
         basename = get_import_name(node, basename)
         self.check_deprecated_module(node, basename)

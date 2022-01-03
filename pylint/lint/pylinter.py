@@ -193,7 +193,7 @@ class PyLinter(
     reporters.ReportsHandlerMixIn,
     checkers.BaseTokenChecker,
 ):
-    """lint Python modules using external checkers.
+    """Lint Python modules using external checkers.
 
     This is the main checker controlling the other ones and the reports
     generation. It is itself both a raw checker and an astroid checker in order
@@ -624,7 +624,7 @@ class PyLinter(
         reporters.initialize(self)
 
     def load_plugin_modules(self, modnames):
-        """take a list of module names which are pylint plugins and load
+        """Take a list of module names which are pylint plugins and load
         and register them
         """
         for modname in modnames:
@@ -699,12 +699,12 @@ class PyLinter(
     def set_reporter(
         self, reporter: Union[reporters.BaseReporter, reporters.MultiReporter]
     ) -> None:
-        """set the reporter used to display messages and reports"""
+        """Set the reporter used to display messages and reports"""
         self.reporter = reporter
         reporter.linter = self
 
     def set_option(self, optname, value, action=None, optdict=None):
-        """overridden from config.OptionsProviderMixin to handle some
+        """Overridden from config.OptionsProviderMixin to handle some
         special options
         """
         if optname in self._options_methods or optname in self._bw_options_methods:
@@ -767,7 +767,7 @@ class PyLinter(
             self.disable(checker.name)
 
     def enable_fail_on_messages(self):
-        """enable 'fail on' msgs
+        """Enable 'fail on' msgs
 
         Convert values in config.fail_on (which might be msg category, msg id,
         or symbol) to specific msgs, then enable and flag them for later.
@@ -813,13 +813,13 @@ class PyLinter(
                     self.disable(msgid)
 
     def disable_reporters(self):
-        """disable all reporters"""
+        """Disable all reporters"""
         for _reporters in self._reports.values():
             for report_id, _, _ in _reporters:
                 self.disable_report(report_id)
 
     def error_mode(self):
-        """error mode: enable only errors; no reports, no persistent"""
+        """Error mode: enable only errors; no reports, no persistent"""
         self._error_mode = True
         self.disable_noerror_messages()
         self.disable("miscellaneous")
@@ -934,7 +934,7 @@ class PyLinter(
     # code checking methods ###################################################
 
     def get_checkers(self):
-        """return all available checkers as a list"""
+        """Return all available checkers as a list"""
         return [self] + [
             c
             for _checkers in self._checkers.values()
@@ -954,7 +954,7 @@ class PyLinter(
         )
 
     def prepare_checkers(self):
-        """return checkers needed for activated messages and reports"""
+        """Return checkers needed for activated messages and reports"""
         if not self.config.reports:
             self.disable_reporters()
         # get needed checkers
@@ -1006,7 +1006,7 @@ class PyLinter(
                 self._msgs_state[msg.msgid] = False
 
     def check(self, files_or_modules: Union[Sequence[str], str]) -> None:
-        """main checking entry: check a list of files or modules from their name.
+        """Main checking entry: check a list of files or modules from their name.
 
         files_or_modules is either a string or list of strings presenting modules to check.
         """
@@ -1142,7 +1142,7 @@ class PyLinter(
                 yield FileItem(name, filepath, descr["basename"])
 
     def _expand_files(self, modules) -> List[ModuleDescriptionDict]:
-        """get modules and errors from a list of modules and handle errors"""
+        """Get modules and errors from a list of modules and handle errors"""
         result, errors = expand_modules(
             modules,
             self.config.black_list,
@@ -1159,7 +1159,7 @@ class PyLinter(
         return result
 
     def set_current_module(self, modname, filepath: Optional[str] = None):
-        """set the name of the currently analyzed module and
+        """Set the name of the currently analyzed module and
         init statistics for it
         """
         if not modname and filepath is None:
@@ -1293,7 +1293,7 @@ class PyLinter(
     # IAstroidChecker interface #################################################
 
     def open(self):
-        """initialize counters"""
+        """Initialize counters"""
         self.stats = LinterStats()
         MANAGER.always_load_extensions = self.config.unsafe_load_any_extension
         MANAGER.max_inferable_values = self.config.limit_inference_results
@@ -1306,7 +1306,7 @@ class PyLinter(
         self._ignore_paths = get_global_option(self, "ignore-paths")
 
     def generate_reports(self):
-        """close the whole package /module, it's time to make reports !
+        """Close the whole package /module, it's time to make reports !
 
         if persistent run, pickle results for later comparison
         """
@@ -1334,7 +1334,7 @@ class PyLinter(
         return score_value
 
     def _report_evaluation(self):
-        """make the global evaluation report"""
+        """Make the global evaluation report"""
         # check with at least check 1 statements (usually 0 when there is a
         # syntax error preventing pylint from further processing)
         note = None
